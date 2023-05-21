@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+/*
+ * Customizaçõs Principais
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+:root {
+    --primary-color: #CA1C2A;
+    --bg-color-header-secundario: #AA1824;
+    --text-color-header: #004A7B;
+    --bg-color-form: #d9d9d9b6;
+    --text-color-form: #DF202F;
+    --bg-color-entradas: #D1D1D1;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+ * customizações do header secundario
+*/
+
+#header-secundario {
+    background-color: var(--bg-color-header-secundario);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 27px;
+}
+
+#header-secundario ul {
+    display: flex;
+    margin: 0 20px;
+}
+
+#header-secundario ul li {
+    display: flex;
+    align-items: center;
+    padding: 0 13px;
+    height: 22px;
+    background-color: white;
+    margin: 0 0 0 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#header-secundario ul li:nth-child(2) {
+    background-color: black;
+}
+
+#header-secundario ul li img {
+    width: 30px;
+}
+
+/*
+ * customizações do header primario
+*/
+
+#primary-header {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 63px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 20px 1px rgb(122, 122, 122);
+}
+
+#primary-header img {
+    width: 200px;
+    border-radius: 50px;
+    margin: 0 30px;
+    cursor: default;
+}
+
+#primary-header nav ul {
+    display: flex;
+}
+
+
+#primary-header nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-header);
+    font-weight: bold;
+    font-size: 15px;
+    height: 36px;
+    width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 20px 0 3px;
+}
+
+/*
+ * customizações do formulario
+*/
+
+/*
+ * customizações login
+*/
+
+#form-login {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color-form);
+    width: 550px;
+    padding: 60px 70px;
+}
+
+#banner-area-cliente {
+    background-color: var(--primary-color);
+    width: 298px;
+    height: 58px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 13px 0;
+}
+
+#banner-area-cliente h1 {
+    font-size: 24px;
+    color: white;
+}
+
+#container-entradas-login {
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px 0 45px;
+}
+
+#container-button-login {
+    position: relative;
+    width: 289px;
+    display: flex;
+    justify-content: center;
+}
+
+#msg-login {
+    position: absolute;
+    width: 110px;
+    left: 0px;
+    top: 2px;
+}
+
+#msg-login-senha {
+    position: absolute;
+    width: 95px;
+    right: 0px;
+    top: 0px;
+}
+
+
+
+#container-button-login button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    width: 133px;
+    height: 45px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background 0.8s;
+}
+
+/*
+ * customizações cadastro
+*/
+
+#form-cadastro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--bg-color-form);
+    width: 730px;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.container-entradas-cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+#area-esquerda {
+    margin-right: 40px;
+}
+
+#area-direita {
+    margin-left: 40px;
+}
+
+#conteiner-buttons-cadastro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 730px;
+}
+
+#msg-cadastro {
+    position: absolute;
+    width: 180px;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 80%;
+}
+
+#button-cadastro {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    width: 133px;
+    height: 45px;
+    cursor: pointer;
+    transition: background 0.8s ease-out;
+}
+
+/*
+ * Funcionalidades
+*/
+
+.linkado {
+    border-radius: 48px;
+    background: #ffffff;
+    box-shadow: inset 16px 16px 22px #c9c9c9,
+        inset -16px -16px 22px #ebeaea;
+    color: #072f4d !important;
+    cursor: default;
+}
+
+.icon-theme-write {
+    background-color: white !important;
+}
+
+.icon-theme-black {
+    filter: invert(100);
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -42%);
+}
+
+#button-cadastro:hover,
+#button-login:hover {
+    background-color: #ad121f;
+}
+
+
+#msg-login,
+#msg-cadastro,
+#a-help,
+#a-help-senha {
+    text-decoration: none;
+    font-size: 11px;
+}
+
+#msg-login a, 
+#msg-login-senha a,
+#msg-cadastro a
+{
+    color: var(--text-color-form);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*
+ * Unitarios
+*/
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+
+input,
+select {
+    width: 281px;
+    height: 41px;
+    background-color: #D1D1D1;
+    border: none;
+    padding-left: 8px;
+    transition: outline 80ms;
+}
+
+select {
+    width: 288px !important;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--text-color-form);
+}
+
+
+
