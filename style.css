@@ -501,6 +501,7 @@ h2{
         22px -22px 20px #ffffff;
     margin: 40px 0 70px 0;
     transition: transform 0.5s;
+    border: none;
 }
 
 #display-map:hover{
