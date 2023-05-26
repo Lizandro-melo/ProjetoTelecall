@@ -17,6 +17,7 @@
     --bg-color-form: #d9d9d9b6;
     --text-color-form: #DF202F;
     --bg-color-entradas: #D1D1D1;
+    --text-planos-color: #006bcd
 }
 
 body {
@@ -38,16 +39,16 @@ body {
 
 #header-secundario ul {
     display: flex;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 #header-secundario ul li {
     display: flex;
     align-items: center;
-    padding: 0 13px;
-    height: 22px;
+    padding: 0 11px;
+    height: 20px;
     background-color: white;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 10px;
     border-radius: 100px;
     cursor: pointer;
     font-weight: bold;
@@ -276,10 +277,9 @@ body {
     font-size: 11px;
 }
 
-#msg-login a, 
+#msg-login a,
 #msg-login-senha a,
-#msg-cadastro a
-{
+#msg-cadastro a {
     color: var(--text-color-form);
     font-weight: bold;
     text-decoration: none;
@@ -318,5 +318,191 @@ select:focus {
     outline: 2px solid var(--text-color-form);
 }
 
+#primary-header-tela1 {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 63px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 20px 1px rgb(122, 122, 122);
+}
+
+#primary-header-tela1 img {
+    width: 200px;
+    border-radius: 50px;
+    margin: 0 30px;
+    cursor: default;
+}
+
+#primary-header-tela1 nav ul {
+    display: flex;
+}
+
+#primary-header-tela1 nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-header);
+    font-weight: bold;
+    font-size: 15px;
+    height: 30px;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 20px 0 3px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color-header);
+}
+
+#carrossel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    width: 1100px;
+    margin: 30px 0;
+}
+
+#beneficios,
+#planos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#beneficios::before,
+#planos::before,
+#mapa::before{
+    content: "";
+    width: 800px;
+    box-shadow: 0 0 10px 1px rgb(150, 149, 149);
+    margin: 50px 0;
+}
+
+#container-beneficios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+
+}
+
+h2{
+    z-index: 1;
+}
+
+#container-beneficios article h2 {
+    font-size: 18px;
+}
+
+#container-beneficios article p {
+    font-size: 12px;
+    text-align: center;
+}
+
+#container-beneficios article,
+#internet article,
+#telefonia article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 40px;
+    background: #f0f0f0;
+    box-shadow: -22px 22px 20px #e7e7e7,
+        22px -22px 20px #ffffff;
+    width: 230px;
+    height: 230px;
+    margin: 30px 30px;
+    padding: 10px;
+    transition: transform 0.5s;
+}
+
+#container-beneficios article:hover,
+#internet article:hover,
+#telefonia article:hover{
+    transform: scale(110%);
+}
+
+#internet article .black,
+#telefonia article .black{
+    color: black;
+}
+
+#internet article span,
+#telefonia article span{
+    font-weight: bold;
+    color: var(--text-planos-color);
+}
+
+#internet article h2,
+#internet article h3,
+#telefonia article h2{
+    font-weight: lighter;
+}
 
 
+
+#container-planos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container-planos h2{
+    margin: 20px 0 0 0;
+    font-size: 20px;
+}
+
+
+
+#internet,
+#telefonia {
+    display: flex;
+}
+
+#internet article button,
+#telefonia article button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--text-planos-color);
+    color: var(--text-planos-color);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+
+#internet article button:hover,
+#telefonia article button:hover {
+    background-color: var(--text-planos-color);
+    color: white;
+}
+
+#mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#display-map{
+    border-radius: 40px;
+    box-shadow: -22px 22px 20px #c9c9c9,
+        22px -22px 20px #ffffff;
+    margin: 40px 0 70px 0;
+    transition: transform 0.5s;
+}
+
+#display-map:hover{
+    transform: scale(110%);
+}

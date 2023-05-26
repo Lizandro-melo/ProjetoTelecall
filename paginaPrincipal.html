@@ -1,37 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telecall - Pagina Principal</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="jason.js" defer></script>
 </head>
+
 <body>
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><img src="img/icons/TTps.png" alt="icone-font"></li>
-                <li><img src="img/icons/icone_ps.png" alt="icone-tema"></li>
+                <li><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></li>
+                <li><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></li>
                 <li>User_name</li>
             </ul>
         </nav>
-        <section id="primary-header">
+        <section id="primary-header-tela1">
             <img src="img/logo-telecall.png" alt="Logo-Telecall">
-            <nav>
+            <nav id="btn-header">
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <a href="#benef">Beneficios</a>
+                    </li>
+                    <li>
+                        <a href="#plan">Planos</a>
+                    </li>
+                    <li>
+                        <a href="#map">Mapa</a>
+                    </li>
+                    <li>
+                        <a href="">Mobilidade</a>
+                    </li>
                 </ul>
             </nav>
         </section>
     </header>
     <main>
+        <section id="carrossel">
+            <img class="slides" src="carousel/PABX2.png" alt="...">
+        </section>
+        <section id="beneficios">
+            <h2 id="benef">
+                Beneficios para sua empresa.
+            </h2>
+            <section id="container-beneficios">
+                <article>
+                    <h2>
+                        Redução de custos
+                    </h2>
+                    <img src="img/icons/icons-beneficios/icone-reducao.png" alt="icone Redução">
+                    <p>
+                        Elimine o custo de investimento em equipamentos e manutenção.
+                    </p>
+                </article>
+                <article>
+                    <h2>
+                        Pronto para usar
+                    </h2>
+                    <img src="img/icons/icons-beneficios/icone-pronto.png" alt="icone Pronto para usar">
+                    <p>
+                        Receba os aparelhos já formatos, com tudo instalado e configurado conforme sua necessidade.
+                    </p>
+                </article>
+                
+                <article>
+                    <h2>
+                        Modernização
+                    </h2>
+                    <img src="img/icons/icons-beneficios/icone-modernizacao.png" alt="icone Modernização">
+                    <p>
+                        O parque de TI da sua empresa sempre atualizado com os equipamentos mais modernos do mercado.
+                    </p>
+                </article>
+                <article>
+                    <h2>
+                        Manutenção
+                    </h2>
+                    <img src="img/icons/icons-beneficios/icone-manutencao.png" alt="icone manutenção">
+                    <p>
+                        Realizadas de forma ágil e sem custo adicional.
+                    </p>
+                </article>
+                <article>
+                    <h2>
+                        Logística Completa
+                    </h2>
+                    <img src="img/icons/icons-beneficios/icone-logistica.png" alt="icone logistica">
+                    <p>
+                        Entrega e retirada em todo o Brasil.
+                    </p>
+                </article>
+                <article>
+                    <h2>
+                        Suporte
+                    </h2>
+                    <img src="img/icons/icons-beneficios/icone-suporte.png" alt="icone Suporte">
+                    <p>
+                        Time de especialistas disponível 24x7.
+                    </p>
+                </article>
+            </section>
+        </section>
+        <section id="planos">
+            <h2 id="plan">Conheça nossos planos</h2>
+            <section id="container-planos">
+                <h2>Internet</h2>
+                <section id="internet">
+                    <article>
+                        <h2>Banda larga</h2>
+                        <h3>100MB</h3>
+                        <span><span class="black">R$ </span>99,90<span class="black">/mês</span></span>
+                        <button>Contrate</button>
+                    </article>
+                    <article>
+                        <h2>Banda larga</h2>
+                        <h3>300MB</h3>
+                        <span><span class="black">R$ </span>119,90<span class="black">/mês</span></span>
+                        <button>Contrate</button>
+                    </article>
+                    <article>
+                        <h2>Banda larga</h2>
+                        <h3>600MB</h3>
+                        <span><span class="black">R$ </span>299,99<span class="black">/mês</span></span>
+                        <button>Contrate</button>
+                    </article>
+                </section>
+                <h2>Telefonia</h2>
+                <section id="telefonia">
 
+                    <article>
+                        <h2>Softphone</h2>
+                        <span><span class="black">R$ </span>69,90<span class="black">/mês</span></span>
+                        <button>Contrate</button>
+                    </article>
+                    <article>
+                        <h2>Aparelho IP</h2>
+                        <span><span class="black">R$ </span>79,90<span class="black">/mês</span></span>
+                        <button>Contrate</button>
+                    </article>
+                    <article>
+                        <h2>Call center <br> Aparelho IP</h2>
+                        <span><span class="black">R$ </span>239,90<span class="black">/mês</span></span>
+                        <button>Contrate</button>
+                    </article>
+                </section>
+            </section>
+        </section>
+        <section id="mapa">
+            <h2 id="map">Nossa localização</h2>
+            <iframe id="display-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1836.3524211121767!2d-43.34734190448022!3d-22.997878752823084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda488eb4a8e5%3A0xd92e16bc83ef0d07!2sTelecall!5e0!3m2!1spt-BR!2sbr!4v1685073986609!5m2!1spt-BR!2sbr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
     </main>
-    <footer>
-
-    </footer>
 </body>
+
 </html>
