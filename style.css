@@ -135,7 +135,7 @@ body {
 
 .banner h1 {
     font-size: 24px;
-    color: white; 
+    color: white;
 }
 
 #container-entradas-login {
@@ -145,7 +145,7 @@ body {
     margin: 0 50px 0 45px;
 }
 
-.entrada-login{
+.entrada-login {
     width: 289px !important;
 }
 
@@ -189,7 +189,7 @@ body {
  * customizações cadastro
 */
 
-#form-cadastro{
+#form-cadastro {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -201,34 +201,30 @@ body {
     border-radius: 30px;
 }
 
-#area-entradas{
+#area-entradas {
     display: flex;
     justify-content: center;
-} 
+}
 
 .container-entradas-cadastro {
     display: flex;
     flex-direction: column;
 }
 
-#banner-cadastro {
-    
-}
-
 #area-esquerda {
     margin-right: 20px;
 }
 
-.area-dupla{
+.area-dupla {
     display: flex;
 }
 
-.area-dupla div{
+.area-dupla div {
     display: flex;
     flex-direction: column;
 }
 
-.area-dupla div:first-child{
+.area-dupla div:first-child {
     margin-right: 10px;
 }
 
@@ -351,9 +347,9 @@ input[type="date"] {
 
 input[type=password]::-ms-reveal,
 input[type=password]::-ms-clear {
-  position: absolute;
-  right: 5px;
-  width: 20px;
+    position: absolute;
+    right: 5px;
+    width: 20px;
 }
 
 input:focus,
@@ -423,7 +419,7 @@ main {
 
 #beneficios::before,
 #planos::before,
-#mapa::before{
+#mapa::before {
     content: "";
     width: 800px;
     box-shadow: 0 0 10px 1px rgb(150, 149, 149);
@@ -438,7 +434,7 @@ main {
 
 }
 
-h2{
+h2 {
     z-index: 1;
 }
 
@@ -471,24 +467,24 @@ h2{
 
 #container-beneficios article:hover,
 #internet article:hover,
-#telefonia article:hover{
+#telefonia article:hover {
     transform: scale(110%);
 }
 
 #internet article .black,
-#telefonia article .black{
+#telefonia article .black {
     color: black;
 }
 
 #internet article span,
-#telefonia article span{
+#telefonia article span {
     font-weight: bold;
     color: var(--text-planos-color);
 }
 
 #internet article h2,
 #internet article h3,
-#telefonia article h2{
+#telefonia article h2 {
     font-weight: lighter;
 }
 
@@ -500,7 +496,7 @@ h2{
     align-items: center;
 }
 
-#container-planos h2{
+#container-planos h2 {
     margin: 20px 0 0 0;
     font-size: 20px;
 }
@@ -530,14 +526,14 @@ h2{
     color: white;
 }
 
-#mapa{
+#mapa {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-#display-map{
+#display-map {
     border-radius: 40px;
     box-shadow: -22px 22px 20px #c9c9c9,
         22px -22px 20px #ffffff;
@@ -546,7 +542,7 @@ h2{
     border: none;
 }
 
-#display-map:hover{
+#display-map:hover {
     transform: scale(110%);
     position: sticky;
 }
