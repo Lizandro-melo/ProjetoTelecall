@@ -10,16 +10,12 @@
     <title>Telecall - Cadastro</title>
 </head>
 
-<body>
+<body onload="carregamentoDaPagina()">
     <header>
         <nav id="header-secundario">
             <ul>
-                <li>
-                    <img src="img/icons/icons-buttons/TTps.png" alt="icone-font" />
-                </li>
-                <li>
-                    <img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema" />
-                </li>
+                <li><button id="font" ><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
+                <li><button id="themes"><img  src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
             </ul>
         </nav>
         <section id="primary-header">
@@ -46,17 +42,17 @@
                     <section class="area-dupla">
                         <div>
                             <label for="nome">Nome</label>
-                            <input name="entradas" type="text" id="nome" autofocus />
+                            <input placeholder="Digite seu nome"  name="entradas" type="text" id="nome" autofocus />
                         </div>
                         <div>
                             <label for="sobrenome">Sobrenome</label>
-                            <input name="entradas" type="text" id="sobrenome" />
+                            <input placeholder="Digite seu sobrenome"  name="entradas" type="text" id="sobrenome" />
                         </div>
                     </section>
                     <section class="area-dupla">
                         <div>
                             <label for="cpf">CPF</label>
-                            <input name="entradas" type="text" id="cpf" maxlength="14" />
+                            <input placeholder="Digite seu CPF"  name="entradas" type="text" id="cpf" maxlength="14" />
                         </div>
                         <div>
                             <label for="data">Data de nascimento</label>
@@ -70,31 +66,31 @@
                         <option value="o">Outros</option>
                     </select>
                     <label for="nome-materno">Nome materno</label>
-                    <input name="entradas" type="text" id="nome-materno" />
+                    <input placeholder="Digite o nome Materno"  name="entradas" type="text" id="nome-materno" />
                 </section>
                 <section class="container-entradas-cadastro" id="area-direita">
                     <section class="area-dupla">
                         <div>
                             <label for="tel-cel">Telefone celular</label>
-                            <input name="entradas" type="tel" id="tel-cel" />
+                            <input placeholder="Digite seu N° celular"  name="entradas" type="tel" id="tel-cel" />
                         </div>
                         <div>
                             <label for="tel-fix">Telefone fixo</label>
-                            <input name="entradas" type="tel" id="tel-fix" />
+                            <input placeholder="Digite seu N° fixo"  name="entradas" type="tel" id="tel-fix" />
                         </div>
                     </section>
                     <label for="endereco">Endereço</label>
-                    <input name="entradas" type="text" id="endereco" />
+                    <input placeholder="Digite seu endereço completo"  name="entradas" type="text" id="endereco" />
                     <label for="login">Login</label>
-                    <input name="entradas" type="text" id="login" />
+                    <input placeholder="Digite seu login"  name="entradas" type="text" id="login" />
                     <section class="area-dupla">
                         <div>
                             <label for="senha">Senha</label>
-                            <input name="entradas" type="password" id="senha" />
+                            <input placeholder="Digite uma senha"  name="entradas" type="password" id="senha" />
                         </div>
                         <div>
                             <label for="confirm-senha">Confirmar senha</label>
-                            <input name="entradas" type="password" id="confirm-senha" />
+                            <input placeholder="Comfirme sua senha" name="entradas" type="password" id="confirm-senha" />
                         </div>
                     </section>
                 </section>
@@ -113,6 +109,7 @@
     <script src="js/cadastro/createUser.js"></script>
     <script src="js/cadastro/envioDados.js"></script>
     <script src="js/cadastro/validarCampos.js"></script>
+    <script src="js/darkTheme.js"></script>
 </body>
 
 </html>

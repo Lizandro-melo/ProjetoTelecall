@@ -14,13 +14,23 @@
     --primary-color: #CA1C2A;
     --secundary-color: #AA1824;
     --text-primary-color: #004A7B;
+    --text-color-article: #004A7B;
     --bg-color-form: #d9d9d9b6;
     --text-secundary-color: #DF202F;
     --bg-color-entradas: #D1D1D1;
     --text-planos-color: #006bcd;
+    --bg-color-article: #f0f0f0;
+    --shadow-color-primary: #e7e7e7;
+    --shadow-color-secundary: #ffffff;
+    --bg-color-padrao: white;
+    --text-button-hover: white;
+    --bg-color-button-theme: black;
+    --invert:0;
 }
 
+
 body {
+    background-color: var(--bg-color-padrao);
     width: 100%;
     height: 100%;
 }
@@ -42,8 +52,10 @@ body {
     margin: 0 10px;
 }
 
-#header-secundario ul li {
+
+#header-secundario ul li button{
     display: flex;
+    border: none;
     align-items: center;
     padding: 0 11px;
     height: 20px;
@@ -54,11 +66,15 @@ body {
     font-weight: bold;
 }
 
-#header-secundario ul li:nth-child(2) {
-    background-color: black;
+#themes {
+    background-color: var(--bg-color-button-theme) !important;
 }
 
-#header-secundario ul li img {
+#themes img{
+    filter: invert(var(--invert));
+}
+
+#header-secundario ul li button img {
     width: 30px;
 }
 
@@ -278,10 +294,6 @@ body {
     background-color: white !important;
 }
 
-.icon-theme-black {
-    filter: invert(100);
-}
-
 .formulario {
     position: absolute;
     top: 50%;
@@ -329,7 +341,7 @@ input,
 select {
     width: auto;
     height: 41px;
-    background-color: #D1D1D1;
+    background-color: var(--bg-color-entradas);
     border: none;
     text-align: center;
     transition: outline 80ms;
@@ -393,9 +405,10 @@ select:focus {
 }
 
 main {
+    
     display: flex;
     flex-direction: column;
-    color: var(--text-primary-color);
+    color: var(--text-color-article);
 }
 
 #carrossel {
@@ -455,9 +468,9 @@ h2 {
     align-items: center;
     flex-direction: column;
     border-radius: 40px;
-    background: #f0f0f0;
-    box-shadow: -22px 22px 20px #e7e7e7,
-        22px -22px 20px #ffffff;
+    background: var(--bg-color-article);
+    box-shadow: -22px 22px 20px var(--shadow-color-primary),
+        22px -22px 20px var(--shadow-color-secundary);
     width: 230px;
     height: 230px;
     margin: 30px 30px;
@@ -510,6 +523,7 @@ h2 {
 
 #internet article button,
 #telefonia article button {
+    background-color: var(--bg-color-article);
     width: 100px;
     height: 30px;
     border: 1px solid var(--text-planos-color);
@@ -523,7 +537,7 @@ h2 {
 #internet article button:hover,
 #telefonia article button:hover {
     background-color: var(--text-planos-color);
-    color: white;
+    color: var(--text-button-hover);
 }
 
 #mapa {
@@ -535,8 +549,8 @@ h2 {
 
 #display-map {
     border-radius: 40px;
-    box-shadow: -22px 22px 20px #c9c9c9,
-        22px -22px 20px #ffffff;
+    box-shadow: -22px 22px 20px var(--shadow-color-primary),
+        22px -22px 20px var(--shadow-color-secundary);
     margin: 40px 0 70px 0;
     transition: transform 0.5s;
     border: none;

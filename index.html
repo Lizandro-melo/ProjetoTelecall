@@ -7,12 +7,12 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>Telecall - Area do Cliente</title>
 </head>
-<body>
+<body onload="carregamentoDaPagina()">
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></li>
-                <li><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></li>
+                <li><button id="font" ><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
+                <li><button id="themes"><img  src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
             </ul>
         </nav>
         <section id="primary-header">
@@ -36,9 +36,9 @@
             </div>
             <section id="container-entradas-login">
                 <label for="login">Login</label>
-                <input name="entradas" class="entrada-login" type="text" id="login">
+                <input placeholder="Digite seu login" name="entradas" class="entrada-login" type="text" id="login">
                 <label for="senha">Senha</label>
-                <input name="entradas" class="entrada-login" type="password" id="senha">
+                <input placeholder="Digite sua senha" name="entradas" class="entrada-login" type="password" id="senha">
             </section>
             <section id="container-button-login">
                 <span id="msg-login">Ainda não é cliente?<br>
@@ -53,6 +53,7 @@
             </section>
         </form>
     </main>
+    <script src="js/darkTheme.js"></script>
 </body>
 
 </html>

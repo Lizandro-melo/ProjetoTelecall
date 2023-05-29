@@ -7,16 +7,16 @@
     <title>Telecall - Pagina Principal</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="jason.js" defer></script>
+    
 </head>
 
-<body>
+<body onload="carregamentoDaPagina()" >
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></li>
-                <li><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></li>
-                <li>User_name</li>
+                <li><button id="font" ><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
+                <li><button id="themes"><img  src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
+                <li><button>User_name</button></li>
             </ul>
         </nav>
         <section id="primary-header-tela1">
@@ -155,6 +155,7 @@
             <iframe id="display-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1836.3524211121767!2d-43.34734190448022!3d-22.997878752823084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda488eb4a8e5%3A0xd92e16bc83ef0d07!2sTelecall!5e0!3m2!1spt-BR!2sbr!4v1685073986609!5m2!1spt-BR!2sbr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
+    <script src="js/darkTheme.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 const cpfInput = document.getElementById("cpf");
 
-cpfInput.addEventListener("input", function () {
+cpfInput.addEventListener("input", () => {
     let cpf = cpfInput.value;
     cpf = cpf.replace(/\D/g, ""); // Remove qualquer caractere não numérico
 
