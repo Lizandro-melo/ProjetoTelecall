@@ -78,6 +78,39 @@ body {
     width: 30px;
 }
 
+#janela-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    transition: 500ms;
+    top: -120px;
+}
+
+#janela-user nav ul{
+    list-style-type: none;
+}
+
+#janela-user nav ul li button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid rgb(177, 177, 177);
+    font-size: 12px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+#janela-user nav ul li button:hover{
+    
+    background-color: rgb(207, 207, 207);
+    
+}
+
 /*
  * customizações do header primario
 */

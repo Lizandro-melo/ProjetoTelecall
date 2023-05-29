@@ -1,17 +1,6 @@
-const user = {
-    nome:"",
-    cpf:"",
-    dataNascimento:"",
-    sexo:"",
-    nomeMaterno:"",
-    celular:"",
-    telefone:"",
-    endereco:"",
-    login:"",
-    senha:""
-}
 
 const criarUser = () => {
+    const user = {}
     user.nome = entradas[0].value + " " + entradas[1].value;
     user.cpf = entradas[2].value;
     user.dataNascimento = entradas[3].value;

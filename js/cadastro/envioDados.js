@@ -1,13 +1,19 @@
 const cadastrar = () => {
     botao.addEventListener("click", (event) => {
         event.preventDefault();
-        if (verificarCampos()) return console.log("Não enviou") //teste de campos
+
+        if (verificarCampos() == "Campos Vazios") {
+            return alert("Preencha todos os campos!")
+        } else if (verificarCampos() == "Senhas diferentes") {
+            return alert("As senhas devem ser iguais!")
+        }
+
+
+
         const user = criarUser();
         localStorage.setItem("user", JSON.stringify(user));
-        console.log("Enviou os dados")
-        //window.open("index.html",  "_self")
-    })    
+        window.open("index.html", "_self")
+    })
 }
-
 
 cadastrar()
