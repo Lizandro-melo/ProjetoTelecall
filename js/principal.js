@@ -1,0 +1,5 @@
+
+obsevadorDeThema();
+trocarTema();
+painelUsuario();
+preConfig();

@@ -1,0 +1,3 @@
+obsevadorDeThema();
+trocarTema();
+logarUser();
