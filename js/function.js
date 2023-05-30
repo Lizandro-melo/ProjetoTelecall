@@ -4,7 +4,7 @@ const verificarCampos = () => {
     entradas.forEach(entrada => {
         if (entrada.value == "") {
             codigo = 0001;
-        } else if (entradas[10].value != entradas[11].value) {
+        } else if (entradas[8].value != entradas[9].value) {
             codigo = 0010;
         }
     });
@@ -32,17 +32,19 @@ const enviarDados = () => {
 
 const criarUser = () => {
     const entradas = document.getElementsByName("entradas");
+    const nomeMaterno = document.getElementById("nome-materno");
+    const telfix = document.getElementById("tel-fix");
     const user = {}
     user.nome = entradas[0].value + " " + entradas[1].value;
     user.cpf = entradas[2].value;
     user.dataNascimento = entradas[3].value;
     user.sexo = entradas[4].value;
-    user.nomeMaterno = entradas[5].value;
-    user.celular = entradas[6].value;
-    user.telefone = entradas[7].value;
-    user.endereco = entradas[8].value;
-    user.login = entradas[9].value;
-    user.senha = entradas[10].value;
+    user.nomeMaterno = nomeMaterno.value;
+    user.cel = entradas[5].value;
+    user.telefone = telfix.value;
+    user.endereco = entradas[6].value;
+    user.login = entradas[7].value;
+    user.senha = entradas[8].value;
     return user;
 }
 
@@ -85,11 +87,12 @@ const [classNames, blacks, whites] = [[
 
 const filtrarCampos = () => {
     const cpfInput = document.getElementById("cpf");
-    cpfInput.addEventListener("input", () => {
+    const celInput = document.getElementById("tel-cel");
+    const fixInput = document.getElementById("tel-fix");
 
+    cpfInput.addEventListener("input", () => {
         let cpf = cpfInput.value;
         cpf = cpf.replace(/\D/g, ""); // Remove qualquer caractere não numérico
-
         if (cpf.length > 3 && cpf.length <= 6) {
             cpf = cpf.replace(/^(\d{3})(\d{1,3})$/, "$1.$2");
         } else if (cpf.length > 6 && cpf.length <= 9) {
@@ -97,8 +100,27 @@ const filtrarCampos = () => {
         } else if (cpf.length > 9) {
             cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{1,2})$/, "$1.$2.$3-$4");
         }
-
         cpfInput.value = cpf;
+    })
+    celInput.addEventListener("input", () => {
+        let cel = celInput.value;
+        cel = cel.replace(/\D/g, "")
+        if (cel.length > 2 && cel.length <= 7) {
+            cel = cel.replace(/^(\d{2})(\d{1,5})$/, "($1) $2");
+        } else if (cel.length <= 11){
+            cel = cel.replace(/^(\d{2})(\d{5})(\d{1,4})$/, "($1) $2-$3");
+        }
+        celInput.value = cel
+    })
+    fixInput.addEventListener("input", () => {
+        let fix = fixInput.value;
+        fix = fix.replace(/\D/g, "")
+        if (fix.length > 2 && fix.length <= 6) {
+            fix = fix.replace(/^(\d{2})(\d{1,4})$/, "($1) $2");
+        } else if (fix.length <= 10){
+            fix = fix.replace(/^(\d{2})(\d{4})(\d{1,4})$/, "($1) $2-$3");
+        }
+        fixInput.value = fix
     })
 }
 
