@@ -31,11 +31,8 @@ const enviarDados = () => {
 }
 
 const criarUser = () => {
-    const user = {
-        nome,
-        login,
-        senha
-    }
+    const entradas = document.getElementsByName("entradas");
+    const user = {}
     user.nome = entradas[0].value + " " + entradas[1].value;
     user.cpf = entradas[2].value;
     user.dataNascimento = entradas[3].value;
