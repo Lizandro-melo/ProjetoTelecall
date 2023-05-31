@@ -107,7 +107,7 @@ const filtrarCampos = () => {
         cel = cel.replace(/\D/g, "")
         if (cel.length > 2 && cel.length <= 7) {
             cel = cel.replace(/^(\d{2})(\d{1,5})$/, "($1) $2");
-        } else if (cel.length <= 11){
+        } else if (cel.length <= 11) {
             cel = cel.replace(/^(\d{2})(\d{5})(\d{1,4})$/, "($1) $2-$3");
         }
         celInput.value = cel
@@ -117,7 +117,7 @@ const filtrarCampos = () => {
         fix = fix.replace(/\D/g, "")
         if (fix.length > 2 && fix.length <= 6) {
             fix = fix.replace(/^(\d{2})(\d{1,4})$/, "($1) $2");
-        } else if (fix.length <= 10){
+        } else if (fix.length <= 10) {
             fix = fix.replace(/^(\d{2})(\d{4})(\d{1,4})$/, "($1) $2-$3");
         }
         fixInput.value = fix
@@ -173,7 +173,7 @@ const logarUser = () => {
         event.preventDefault();
         if (entradas[0].value == "" || entradas[1].value == "") {
             alert("Preencha todos os campos!")
-        } else if (entradas[0].value == userLogin && entradas[1].value == userSenha) {
+        } else if (entradas[0].value == user.login && entradas[1].value == user.senha) {
             window.open("paginaPrincipal.html", "_self")
         } else {
             alert("Login ou senha não conferem!")
@@ -188,7 +188,7 @@ const preConfig = () => {
     const buttonUser = document.getElementById("user_name");
     painel.style.top = "-120px"
     try {
-        buttonUser.innerHTML = user.name
+        buttonUser.innerHTML = user.nome
     } catch (Error) {
         alert("Nome de usuario não encontrado, por favor faça o login...")
     }
@@ -209,4 +209,16 @@ const painelUsuario = () => {
     buttonSair.addEventListener("click", () => {
         window.open("index.html", "_self");
     })
+}
+
+const carrossel = () => {
+    const carrosselSlides = document.getElementById("imagens");
+    const imagens = carrosselSlides.querySelectorAll(".slides");
+    let pontoFinal = (imagens.length - 1) * 900
+    setInterval(() => {
+        carrosselSlides.scrollLeft += 900
+        if (carrosselSlides.scrollLeft > pontoFinal) {
+            carrosselSlides.scrollLeft = 0
+        }
+    }, 3000)
 }

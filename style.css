@@ -25,7 +25,7 @@
     --bg-color-padrao: white;
     --text-button-hover: white;
     --bg-color-button-theme: black;
-    --invert:0;
+    --invert: 0;
 }
 
 
@@ -53,7 +53,7 @@ body {
 }
 
 
-#header-secundario ul li button{
+#header-secundario ul li button {
     display: flex;
     border: none;
     align-items: center;
@@ -70,7 +70,7 @@ body {
     background-color: var(--bg-color-button-theme) !important;
 }
 
-#themes img{
+#themes img {
     filter: invert(var(--invert));
 }
 
@@ -78,7 +78,7 @@ body {
     width: 30px;
 }
 
-#janela-user{
+#janela-user {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,11 +88,11 @@ body {
     top: -120px;
 }
 
-#janela-user nav ul{
+#janela-user nav ul {
     list-style-type: none;
 }
 
-#janela-user nav ul li button{
+#janela-user nav ul li button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,10 +105,10 @@ body {
     cursor: pointer;
 }
 
-#janela-user nav ul li button:hover{
-    
+#janela-user nav ul li button:hover {
+
     background-color: rgb(207, 207, 207);
-    
+
 }
 
 /*
@@ -438,21 +438,39 @@ select:focus {
 }
 
 main {
-    
+
     display: flex;
     flex-direction: column;
     color: var(--text-color-article);
 }
 
 #carrossel {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+    box-shadow: inset 200px 0 600px -150px #5a5a5a,
+        inset -200px 0 600px -150px #535353;
+}
+
+#imagens {
+    width: 100vw;
+    height: 352px;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding: 0 50px;
 }
 
 .slides {
+    flex: none;
     width: 1100px;
-    margin: 30px 0;
+    height: 100%;
+    margin: 0 70px;
+    z-index: -1;
+    scroll-snap-align: center;
 }
 
 #beneficios,
@@ -469,7 +487,7 @@ main {
     content: "";
     width: 800px;
     box-shadow: 0 0 10px 1px rgb(150, 149, 149);
-    margin: 50px 0;
+    margin: 50px 0 50px 0;
 }
 
 #container-beneficios {
@@ -477,6 +495,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     width: 1000px;
+    margin-bottom: 20px;
 
 }
 
@@ -540,6 +559,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #container-planos h2 {
