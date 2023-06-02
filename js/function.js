@@ -212,17 +212,16 @@ const painelUsuario = () => {
 }
 
 const carrossel = () => {
-    console.log(window.screen.width)
     const carrosselSlides = document.getElementById("imagens");
     const imagens = carrosselSlides.querySelectorAll(".slides");
-    let tamanhoTela = window.screen.width
-    pontoFinal = (imagens.length - 1) * (tamanhoTela / 2)
+    let tamanhoTela = imagens[0].width
+    pontoFinal = (imagens.length - 1) * (tamanhoTela)
     setInterval(() => {
-        carrosselSlides.scrollLeft += tamanhoTela / 2
+        carrosselSlides.scrollLeft += tamanhoTela / 1.5
         if (carrosselSlides.scrollLeft > pontoFinal) {
             carrosselSlides.scrollLeft = 0
         }
-    }, 3000)
+    }, 1000)
 }
 
 const buttonTop = () => {
