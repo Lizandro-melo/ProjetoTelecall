@@ -20,6 +20,7 @@
     --bg-color-entradas: #D1D1D1;
     --text-planos-color: #006bcd;
     --bg-color-article: #f0f0f0;
+    --bg-color-footer:  #CA1C2A;
     --shadow-color-primary: #e7e7e7;
     --shadow-color-secundary: #ffffff;
     --bg-color-padrao: white;
@@ -86,6 +87,7 @@ body {
     right: 5px;
     transition: 500ms;
     top: -120px;
+    z-index: 100;
 }
 
 #janela-user nav ul {
@@ -409,7 +411,6 @@ select:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 10px 20px 1px rgb(122, 122, 122);
 }
 
 #primary-header-tela1 img {
@@ -446,16 +447,17 @@ main {
 
 #carrossel {
     width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    box-shadow: inset 200px 0 600px -150px #5a5a5a,
-        inset -200px 0 600px -150px #535353;
+    z-index: 0;
+    box-shadow: inset 100px 0 100px -100px white,
+    inset -100px 0 100px -100px white;
 }
 
 #imagens {
-    width: 100vw;
+    width: 100%;
     height: 352px;
     display: flex;
     scroll-snap-type: x mandatory;
@@ -494,9 +496,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 1000px;
+    width: 1200px;
     margin-bottom: 20px;
-
 }
 
 h2 {
@@ -556,6 +557,7 @@ h2 {
 
 
 #container-planos {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -571,7 +573,9 @@ h2 {
 
 #internet,
 #telefonia {
+    justify-content: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #internet article button,
@@ -601,6 +605,7 @@ h2 {
 }
 
 #display-map {
+    width: 100%;
     border-radius: 40px;
     box-shadow: -22px 22px 20px var(--shadow-color-primary),
         22px -22px 20px var(--shadow-color-secundary);
@@ -609,7 +614,94 @@ h2 {
     border: none;
 }
 
-#display-map:hover {
-    transform: scale(110%);
-    position: sticky;
+footer{
+    height: 400px;
+    background-color: var(--bg-color-footer);
+    position: relative;
+    display: flex;
+}
+
+footer:after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    left: 50%;
+    transform: translate(50%);
+}
+
+#container-footer{
+    display: flex;
+    align-items: center;
+}
+
+#container-footer:nth-child(1){
+    width: 675px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-footer:nth-child(1) img{
+    width: 250px;
+}
+
+
+#btnTop {
+    position: fixed;
+    bottom: 30px;
+    right: -70px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--bg-color-article);
+    color: var(--text-planos-color);
+    border: 1px solid var(--text-planos-color);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: 1s;
+    z-index: 100;
+}
+
+#btnTop:hover {
+    background-color: var(--text-planos-color);
+    color: var(--text-button-hover);
+}
+
+
+@media screen and (min-width: 1440px) {
+    #carrossel{
+        width: 1300px;
+    }
+
+    #container-beneficios{
+        width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #primary-header-tela1 nav ul {
+        display: none;
+    }
+    #container-beneficios{
+        width: 100%;
+    }
+    #primary-header-tela1 {
+        justify-content: center;
+    }
+    #header-secundario {
+        justify-content: center;
+    }
+    #header-secundario ul li{
+        justify-content: space-between;
+        margin: 20px;
+    }
+    #imagens{
+        height: 100%;
+    }
+    .slides {
+        width: 100%;
+    }
 }

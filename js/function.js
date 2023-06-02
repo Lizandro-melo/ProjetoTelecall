@@ -212,13 +212,33 @@ const painelUsuario = () => {
 }
 
 const carrossel = () => {
+    console.log(window.screen.width)
     const carrosselSlides = document.getElementById("imagens");
     const imagens = carrosselSlides.querySelectorAll(".slides");
-    let pontoFinal = (imagens.length - 1) * 900
+    let tamanhoTela = window.screen.width
+    pontoFinal = (imagens.length - 1) * (tamanhoTela / 2)
     setInterval(() => {
-        carrosselSlides.scrollLeft += 900
+        carrosselSlides.scrollLeft += tamanhoTela / 2
         if (carrosselSlides.scrollLeft > pontoFinal) {
             carrosselSlides.scrollLeft = 0
         }
     }, 3000)
+}
+
+const buttonTop = () => {
+    console.log(document.documentElement.scrollTop)
+    window.onscroll = () => {
+        const mybutton = document.getElementById("btnTop");
+        mybutton.style.right = "-70px";
+        if (document.body.scrollTop > 490 || document.documentElement.scrollTop > 490) {
+            mybutton.style.right = "30px";
+        } else {
+            mybutton.style.right = "-70px";
+        }
+
+        mybutton.addEventListener("click", () => {
+            document.documentElement.scrollTop = 0;
+        }
+        )
+    };
 }
