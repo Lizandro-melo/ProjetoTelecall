@@ -30,24 +30,46 @@
             </nav>
         </section>
     </header>
+    <section id="janela-mensagem" class="esconder-container">
+        <button type="button" class="exit">X</button>
+        <h2 id="mensagem">
+
+        </h2>
+    </section>
+    
     <main>
-        <form id="form-login" class="formulario">
+        <form id="esqueci-senha" class="esconder-container">
+            <div class="banner">
+                <h1>Esqueceu a senha?</h1>
+            </div>
+            <button type="button" class="exit">X</button>
+            <section class="container-entradas-login">
+                <label for="login">Digite o seu login / CPF</label>
+                <input placeholder="Digite seu login" class="entrada-login" type="text" >
+            </section>
+            <section class="container-button-login">
+                <button type="button">
+                    Enviar
+                </button>
+            </section>
+        </form>
+        <form id="form-login" class="aparecer-container">
             <div class="banner">
                 <h1>Área do cliente</h1>
             </div>
-            <section id="container-entradas-login">
+            <section class="container-entradas-login">
                 <label for="login">Login</label>
                 <input placeholder="Digite seu login" name="entradas" class="entrada-login" type="text" id="login">
                 <label for="senha">Senha</label>
                 <input placeholder="Digite sua senha" name="entradas" class="entrada-login" type="password" id="senha">
             </section>
-            <section id="container-button-login">
+            <section class="container-button-login">
                 <span id="msg-login">Ainda não é cliente?<br>
                     <a id="a-help" href="paginaCadastro.html">Cadastre-se aqui.</a>
                 </span>
                 <span id="msg-login-senha"><a id="a-help-senha" href="#">Esqueci a senha.
                     </a></span>
-                <button id="entrar">
+                <button type="button" id="entrar">
                     Entrar
                 </button>
 

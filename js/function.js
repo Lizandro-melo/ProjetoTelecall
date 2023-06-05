@@ -9,19 +9,20 @@ const verificarCampos = () => {
         }
     });
     if (codigo == 0001) {
-        return "Campos vazios";
+        return "Preencha todos os campos";
     } else if (codigo == 0010) {
-        return "Senhas Diferentes";
+        return "As senhas não conferem";
     }
 }
 
 const enviarDados = () => {
+    const cadastro = document.getElementById("form-cadastro");
     const botao = document.querySelector("#button-cadastro");
     botao.addEventListener("click", (event) => {
         event.preventDefault();
 
         if (verificarCampos() != undefined) {
-            return alert(verificarCampos());
+            return modal(verificarCampos(), cadastro );
         }
 
         const user = criarUser();
@@ -58,6 +59,7 @@ const [classNames, blacks, whites] = [[
     "--bg-color-padrao",
     "--text-button-hover",
     "--bg-color-button-theme",
+    "--text-mensagem-color",
     "--invert"
 ], [
     "#dfdfdf",
@@ -69,6 +71,7 @@ const [classNames, blacks, whites] = [[
     "#2e2e2e",
     "black",
     "white",
+    "white",
     100
 ], [
     "#004A7B",
@@ -79,6 +82,7 @@ const [classNames, blacks, whites] = [[
     "#ffffff",
     "white",
     "white",
+    "black",
     "black",
     0
 ]]
@@ -160,6 +164,7 @@ const verificarTema = (classname, color) => {
 
 const logarUser = () => {
     const entradas = document.getElementsByName("entradas");
+    const login = document.getElementById("form-login");
     const button = document.querySelector("#entrar")
     const user = JSON.parse(localStorage.getItem("user"));
     try {
@@ -172,11 +177,11 @@ const logarUser = () => {
     button.addEventListener("click", (event) => {
         event.preventDefault();
         if (entradas[0].value == "" || entradas[1].value == "") {
-            alert("Preencha todos os campos!")
+            modal("Preencha todos os Campos", login)
         } else if (entradas[0].value == user.login && entradas[1].value == user.senha) {
             window.open("paginaPrincipal.html", "_self")
         } else {
-            alert("Login ou senha não conferem!")
+            modal("O Login/Senha não conferem", login)
         }
     })
 }
@@ -190,7 +195,7 @@ const preConfig = () => {
     try {
         buttonUser.innerHTML = user.nome
     } catch (Error) {
-        alert("Nome de usuario não encontrado, por favor faça o login...")
+        window.open("index.html", "_self")
     }
 
 }
@@ -240,4 +245,47 @@ const buttonTop = () => {
         }
         )
     };
+}
+
+const aparecerContainer = (elementPrincipal, elementSecundario) => {
+    elementSecundario.classList.remove("esconder-container")
+    elementPrincipal.classList.remove("aparecer-container")
+    elementSecundario.classList.add("aparecer-container")
+    elementPrincipal.classList.add("esconder-container")
+}
+
+const desaparecerContainer = (elementPrincipal, elementSecundario) => {
+    elementSecundario.classList.remove("aparecer-container")
+    elementPrincipal.classList.remove("esconder-container")
+    elementSecundario.classList.add("esconder-container")
+    elementPrincipal.classList.add("aparecer-container")
+}
+
+const exitButton = (elementPrincipal, elementSecundario) => {
+    const exitButtons = document.querySelectorAll(".exit");
+    for (let i = 0; i < exitButtons.length; i++) {
+        exitButtons[i].addEventListener("click", () =>{
+            desaparecerContainer(elementPrincipal, elementSecundario)
+        })
+    }
+}
+
+const janelaSenha = () => {
+    const text = document.getElementById("a-help-senha");
+    const login = document.getElementById("form-login");
+    const janela = document.getElementById("esqueci-senha")
+    text.addEventListener("click", () => {
+        aparecerContainer(login, janela);
+    })
+    exitButton(login, janela);
+}
+
+
+const modal = (msg, elementPrincipal) => {
+    const janelaMensagem = document.querySelector("#janela-mensagem")
+    const mensagem = document.querySelector("#mensagem");
+
+    mensagem.innerHTML = msg
+    aparecerContainer(elementPrincipal,janelaMensagem)
+    exitButton(elementPrincipal, janelaMensagem);
 }

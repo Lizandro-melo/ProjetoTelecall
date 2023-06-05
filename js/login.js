@@ -1,3 +1,4 @@
 obsevadorDeThema();
 trocarTema();
 logarUser();
+janelaSenha()

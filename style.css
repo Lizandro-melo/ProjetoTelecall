@@ -20,12 +20,13 @@
     --bg-color-entradas: #D1D1D1;
     --text-planos-color: #006bcd;
     --bg-color-article: #f0f0f0;
-    --bg-color-footer:  #CA1C2A;
+    --bg-color-footer: #CA1C2A;
     --shadow-color-primary: #e7e7e7;
     --shadow-color-secundary: #ffffff;
     --bg-color-padrao: white;
     --text-button-hover: white;
     --bg-color-button-theme: black;
+    --text-mensagem-color: black;
     --invert: 0;
 }
 
@@ -162,6 +163,70 @@ body {
  * customizações login
 */
 
+#janela-mensagem{
+    width: 200px;
+    height: 80px;
+    background-color: var(--bg-color-form);
+    border: 2px solid;
+    border-radius: 30px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+    z-index: 2;
+    transition: transform 200ms;
+}
+
+#janela-mensagem h2{
+    font-size: 20px;
+    text-align: center;
+    color: var(--text-mensagem-color);
+}
+
+.exit {
+    position: absolute;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    right: 30px;
+    top: 20px;
+}
+
+#esqueci-senha {
+    width: 400px;
+    background-color: var(--bg-color-form);
+    border-radius: 30px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px;
+    z-index: 2;
+    transition: transform 200ms;
+}
+
+.aparecer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(100%);
+}
+
+.esconder-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(0%);
+}
+
 #form-login {
     border-radius: 30px;
     display: flex;
@@ -169,7 +234,9 @@ body {
     align-items: center;
     background-color: var(--bg-color-form);
     width: 400px;
-    padding: 70px 70px;
+    padding: 70px;
+    transition: transform 200ms;
+
 }
 
 .banner {
@@ -189,7 +256,7 @@ body {
     color: white;
 }
 
-#container-entradas-login {
+.container-entradas-login {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -200,7 +267,7 @@ body {
     width: 289px !important;
 }
 
-#container-button-login {
+.container-button-login {
     position: relative;
     width: 289px;
     display: flex;
@@ -223,7 +290,7 @@ body {
 
 
 
-#container-button-login button {
+.container-button-login button {
     background-color: var(--primary-color);
     border: none;
     color: white;
@@ -329,12 +396,6 @@ body {
     background-color: white !important;
 }
 
-.formulario {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -42%);
-}
 
 #button-cadastro:hover,
 #button-login:hover {
@@ -388,7 +449,7 @@ select {
 }
 
 input[type="date"] {
-    width: 122% !important;
+    width: 114% !important;
     text-align: center;
 }
 
@@ -611,7 +672,7 @@ h2 {
     border: none;
 }
 
-footer{
+footer {
     width: 100%;
     height: 400px;
     background-color: var(--bg-color-footer);
@@ -622,10 +683,10 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.partes-footer:nth-child(1){
+.partes-footer:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -633,7 +694,7 @@ footer{
     height: 400px;
 }
 
-.partes-footer:nth-child(1)::after{
+.partes-footer:nth-child(1)::after {
     content: "";
     width: 1px;
     height: 100%;
@@ -643,7 +704,7 @@ footer{
     transform: translate(50%);
 }
 
-.partes-footer:nth-child(2){
+.partes-footer:nth-child(2) {
     display: flex;
     width: 100%;
     height: 400px;
@@ -661,19 +722,19 @@ footer{
     margin: 10px 60px;
 }
 
-#table-footer{
+#table-footer {
     display: flex;
     align-items: center;
 }
 
-#container-logo-footer{
+#container-logo-footer {
     background-color: #e7e7e7;
     filter: opacity(90%);
     padding: 20px;
     border-radius: 40px;
 }
 
-#logo-footer{
+#logo-footer {
     filter: invert(100%);
 }
 
@@ -701,11 +762,11 @@ footer{
 
 
 @media screen and (min-width: 1440px) {
-    #carrossel{
+    #carrossel {
         width: 1300px;
     }
 
-    #container-beneficios{
+    #container-beneficios {
         width: 1400px;
     }
 }
@@ -714,22 +775,28 @@ footer{
     #primary-header-tela1 nav ul {
         display: none;
     }
-    #container-beneficios{
+
+    #container-beneficios {
         width: 100%;
     }
+
     #primary-header-tela1 {
         justify-content: center;
     }
+
     #header-secundario {
         justify-content: center;
     }
-    #header-secundario ul li{
+
+    #header-secundario ul li {
         justify-content: space-between;
         margin: 20px;
     }
-    #imagens{
+
+    #imagens {
         height: 100%;
     }
+
     .slides {
         width: 100%;
     }
