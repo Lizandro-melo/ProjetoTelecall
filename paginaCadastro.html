@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta class="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/function.js"></script>
     <title>Telecall - Cadastro</title>
 </head>
@@ -48,25 +49,25 @@
                     <section class="area-dupla">
                         <div>
                             <label for="nome">Nome *</label>
-                            <input placeholder="Digite seu nome"  name="entradas" type="text" id="nome" maxlength="15" autofocus />
+                            <input placeholder="Digite seu nome"  class="entradas" type="text" id="nome" maxlength="15" autofocus />
                         </div>
                         <div>
                             <label for="sobrenome">Sobrenome *</label>
-                            <input placeholder="Digite seu sobrenome"  name="entradas" type="text" id="sobrenome" maxlength="15" />
+                            <input placeholder="Digite seu sobrenome"  class="entradas" type="text" id="sobrenome" maxlength="15" />
                         </div>
                     </section>
                     <section class="area-dupla">
                         <div>
                             <label for="cpf">CPF *</label>
-                            <input placeholder="Digite seu CPF"  name="entradas" type="text" id="cpf" maxlength="14" />
+                            <input placeholder="Digite seu CPF"  class="entradas" type="text" id="cpf" maxlength="14" />
                         </div>
                         <div>
                             <label for="data">Data de nascimento *</label>
-                            <input name="entradas" type="date" id="data" />
+                            <input class="entradas" type="date" id="data" />
                         </div>
                     </section>
                     <label for="sexo">Sexo *</label>
-                    <select id="sexo" name="entradas">
+                    <select id="sexo" class="entradas">
                         <option value="m">Masculino</option>
                         <option value="f">Feminino</option>
                         <option value="o">Outros</option>
@@ -78,7 +79,7 @@
                     <section class="area-dupla">
                         <div>
                             <label for="tel-cel">Telefone celular *</label>
-                            <input placeholder="Digite seu N° celular"  name="entradas" type="tel" id="tel-cel" maxlength="15" />
+                            <input placeholder="Digite seu N° celular"  class="entradas" type="tel" id="tel-cel" maxlength="15" />
                         </div>
                         <div>
                             <label for="tel-fix">Telefone fixo</label>
@@ -86,17 +87,17 @@
                         </div>
                     </section>
                     <label for="endereco">Endereço *</label>
-                    <input placeholder="Digite seu endereço completo"  name="entradas" type="text" id="endereco" />
+                    <input placeholder="Digite seu endereço completo"  class="entradas" type="text" id="endereco" />
                     <label for="login">Login *</label>
-                    <input placeholder="Digite seu login"  name="entradas" type="text" id="login" />
+                    <input placeholder="Digite seu login"  class="entradas" type="text" id="login" />
                     <section class="area-dupla">
                         <div>
                             <label for="senha">Senha *</label>
-                            <input placeholder="Digite uma senha"  name="entradas" type="password" id="senha" />
+                            <input placeholder="Digite uma senha"  class="entradas" type="password" id="senha" />
                         </div>
                         <div>
                             <label for="confirm-senha">Confirmar senha *</label>
-                            <input placeholder="Comfirme sua senha" name="entradas" type="password" id="confirm-senha" />
+                            <input placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha" />
                         </div>
                     </section>
                 </section>

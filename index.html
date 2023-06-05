@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/function.js"></script>
     <title>Telecall - Area do Cliente</title>
 </head>
+
 <body>
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><button id="font" ><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
-                <li><button id="themes"><img  src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
+                <li><button id="font"><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
+                <li><button id="themes"><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
             </ul>
         </nav>
         <section id="primary-header">
@@ -36,7 +39,7 @@
 
         </h2>
     </section>
-    
+
     <main>
         <form id="esqueci-senha" class="esconder-container">
             <div class="banner">
@@ -45,7 +48,7 @@
             <button type="button" class="exit">X</button>
             <section class="container-entradas-login">
                 <label for="login">Digite o seu login / CPF</label>
-                <input placeholder="Digite seu login" class="entrada-login" type="text" >
+                <input placeholder="Digite seu login" class="entrada-login" type="text">
             </section>
             <section class="container-button-login">
                 <button type="button">
@@ -59,9 +62,9 @@
             </div>
             <section class="container-entradas-login">
                 <label for="login">Login</label>
-                <input placeholder="Digite seu login" name="entradas" class="entrada-login" type="text" id="login">
+                <input placeholder="Digite seu login" class="entradas entrada-login" type="text" id="login">
                 <label for="senha">Senha</label>
-                <input placeholder="Digite sua senha" name="entradas" class="entrada-login" type="password" id="senha">
+                <input placeholder="Digite sua senha" class="entradas entrada-login" type="password" id="senha">
             </section>
             <section class="container-button-login">
                 <span id="msg-login">Ainda não é cliente?<br>
@@ -69,7 +72,7 @@
                 </span>
                 <span id="msg-login-senha"><a id="a-help-senha" href="#">Esqueci a senha.
                     </a></span>
-                <button type="button" id="entrar">
+                <button type="submit" id="entrar">
                     Entrar
                 </button>
 

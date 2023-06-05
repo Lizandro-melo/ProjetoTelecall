@@ -1,13 +1,13 @@
 const verificarCampos = () => {
-    const entradas = document.getElementsByName("entradas");
     let codigo;
-    entradas.forEach(entrada => {
-        if (entrada.value == "") {
+    for (let i = 0; i < $(".entradas").length; i++) {
+        const element = $(".entradas")[i];
+        if (element.value == "") {
             codigo = 0001;
-        } else if (entradas[8].value != entradas[9].value) {
+        } else if ($(".entradas")[8].value != $(".entradas")[9].value) {
             codigo = 0010;
         }
-    });
+    };
     if (codigo == 0001) {
         return "Preencha todos os campos";
     } else if (codigo == 0010) {
@@ -16,37 +16,29 @@ const verificarCampos = () => {
 }
 
 const enviarDados = () => {
-    const cadastro = document.getElementById("form-cadastro");
-    const botao = document.querySelector("#button-cadastro");
-    botao.addEventListener("click", (event) => {
+    $("#button-cadastro").click((event) => {
         event.preventDefault();
-
         if (verificarCampos() != undefined) {
-            return modal(verificarCampos(), cadastro );
+            return modal(verificarCampos(), $("#form-cadastro")[0]);
         }
-
-        const user = criarUser();
-        localStorage.setItem("user", JSON.stringify(user));
+        criarUser();
         window.open("index.html", "_self")
     })
 }
 
 const criarUser = () => {
-    const entradas = document.getElementsByName("entradas");
-    const nomeMaterno = document.getElementById("nome-materno");
-    const telfix = document.getElementById("tel-fix");
     const user = {}
-    user.nome = entradas[0].value + " " + entradas[1].value;
-    user.cpf = entradas[2].value;
-    user.dataNascimento = entradas[3].value;
-    user.sexo = entradas[4].value;
-    user.nomeMaterno = nomeMaterno.value;
-    user.cel = entradas[5].value;
-    user.telefone = telfix.value;
-    user.endereco = entradas[6].value;
-    user.login = entradas[7].value;
-    user.senha = entradas[8].value;
-    return user;
+    user.nome = $(".entradas")[0].value + " " + $(".entradas")[1].value;
+    user.cpf = $(".entradas")[2].value;
+    user.dataNascimento = $(".entradas")[3].value;
+    user.sexo = $(".entradas")[4].value;
+    user.nomeMaterno = $("#nome-materno").val();
+    user.cel = $(".entradas")[5].value;
+    user.telefone = $("#tel-fix").val();
+    user.endereco = $(".entradas")[6].value;
+    user.login = $(".entradas")[7].value;
+    user.senha = $(".entradas")[8].value;
+    localStorage.setItem("user", JSON.stringify(user));
 }
 
 const [classNames, blacks, whites] = [[
@@ -90,41 +82,28 @@ const [classNames, blacks, whites] = [[
 
 
 const filtrarCampos = () => {
-    const cpfInput = document.getElementById("cpf");
-    const celInput = document.getElementById("tel-cel");
-    const fixInput = document.getElementById("tel-fix");
+    $("#cpf").on("input", () => {
+        let cpf = $("#cpf").val();
+        cpf = cpf.replace(/\D/g, "");
 
-    cpfInput.addEventListener("input", () => {
-        let cpf = cpfInput.value;
-        cpf = cpf.replace(/\D/g, ""); // Remove qualquer caractere não numérico
-        if (cpf.length > 3 && cpf.length <= 6) {
-            cpf = cpf.replace(/^(\d{3})(\d{1,3})$/, "$1.$2");
-        } else if (cpf.length > 6 && cpf.length <= 9) {
-            cpf = cpf.replace(/^(\d{3})(\d{3})(\d{1,3})$/, "$1.$2.$3");
-        } else if (cpf.length > 9) {
-            cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{1,2})$/, "$1.$2.$3-$4");
-        }
-        cpfInput.value = cpf;
+        cpf = cpf.replace(/^(\d{1,3})(\d{1,3})(\d{1,3})(\d{1,2})$/, "$1.$2.$3-$4");
+
+        $("#cpf").val(cpf);
     })
-    celInput.addEventListener("input", () => {
-        let cel = celInput.value;
+
+    $("#tel-cel").on("input", () => {
+        let cel = $("#tel-cel").val();
         cel = cel.replace(/\D/g, "")
-        if (cel.length > 2 && cel.length <= 7) {
-            cel = cel.replace(/^(\d{2})(\d{1,5})$/, "($1) $2");
-        } else if (cel.length <= 11) {
-            cel = cel.replace(/^(\d{2})(\d{5})(\d{1,4})$/, "($1) $2-$3");
-        }
-        celInput.value = cel
+
+        cel = cel.replace(/^(\d{1,2})(\d{1,5})(\d{1,4})$/, "($1) $2-$3");
+
+        $("#tel-cel").val(cel)
     })
-    fixInput.addEventListener("input", () => {
-        let fix = fixInput.value;
+    $("#tel-fix").on("input", () => {
+        let fix = $("#tel-fix").val();
         fix = fix.replace(/\D/g, "")
-        if (fix.length > 2 && fix.length <= 6) {
-            fix = fix.replace(/^(\d{2})(\d{1,4})$/, "($1) $2");
-        } else if (fix.length <= 10) {
-            fix = fix.replace(/^(\d{2})(\d{4})(\d{1,4})$/, "($1) $2-$3");
-        }
-        fixInput.value = fix
+        fix = fix.replace(/^(\d{1,2})(\d{1,4})(\d{1,4})$/, "($1) $2-$3");
+        $("#tel-fix").val(fix)
     })
 }
 
@@ -137,8 +116,7 @@ const obsevadorDeThema = () => {
 }
 
 const trocarTema = () => {
-    const buttonThemes = document.getElementById('themes');
-    buttonThemes.addEventListener("click", () => {
+    $("#themes").click(() => {
         if (localStorage.getItem("themes") == "white" || localStorage.getItem("themes") == null) {
             verificarTema(classNames, blacks)
         } else if (localStorage.getItem("themes") == "black") {
@@ -148,24 +126,20 @@ const trocarTema = () => {
 }
 
 const verificarTema = (classname, color) => {
-    const bodyDoc = document.body;
     if (color == blacks) {
         for (let i = 0; i <= classname.length; i++) {
-            bodyDoc.style.setProperty(classname[i], color[i])
+            $("body").css(classname[i], color[i])
         }
         localStorage.setItem("themes", "black")
     } else {
         for (let i = 0; i <= classname.length; i++) {
-            bodyDoc.style.setProperty(classname[i], color[i])
+            $("body").css(classname[i], color[i])
         }
         localStorage.setItem("themes", "white")
     }
 }
 
 const logarUser = () => {
-    const entradas = document.getElementsByName("entradas");
-    const login = document.getElementById("form-login");
-    const button = document.querySelector("#entrar")
     const user = JSON.parse(localStorage.getItem("user"));
     try {
         const userLogin = user.login;
@@ -173,64 +147,42 @@ const logarUser = () => {
     } catch (error) {
         console.log("Ignore")
     }
-
-    button.addEventListener("click", (event) => {
-        event.preventDefault();
-        if (entradas[0].value == "" || entradas[1].value == "") {
-            modal("Preencha todos os Campos", login)
-        } else if (entradas[0].value == user.login && entradas[1].value == user.senha) {
+    $("#form-login").submit((event) => {
+        if ($(".entradas")[0].value == "" || $(".entradas")[1].value == "") {
+            event.preventDefault()
+            modal("Preencha todos os Campos", $("#form-login")[0])
+        } else if ($(".entradas")[0].value == user.login && $(".entradas")[1].value == user.senha) {
+            event.preventDefault()
             window.open("paginaPrincipal.html", "_self")
         } else {
-            modal("O Login/Senha não conferem", login)
+            event.preventDefault()
+            modal("O Login/Senha não conferem", $("#form-login")[0])
         }
     })
 }
 
 
 const preConfig = () => {
-    const painel = document.getElementById("janela-user");
     const user = JSON.parse(localStorage.getItem("user"));
-    const buttonUser = document.getElementById("user_name");
-    painel.style.top = "-120px"
     try {
-        buttonUser.innerHTML = user.nome
+        $("#user_name").html(user.nome)
     } catch (Error) {
         window.open("index.html", "_self")
     }
-
-}
-
-const painelUsuario = () => {
-    const painel = document.getElementById("janela-user");
-    const buttonUser = document.getElementById("user_name");
-    const buttonSair = document.getElementById("sair");
-    buttonUser.addEventListener("click", () => {
-        if (painel.style.top == "-120px") {
-            painel.style.top = "25px"
-        } else if (painel.style.top == "25px") {
-            painel.style.top = "-120px"
-        }
-    })
-    buttonSair.addEventListener("click", () => {
-        window.open("index.html", "_self");
-    })
 }
 
 const carrossel = () => {
-    const carrosselSlides = document.getElementById("imagens");
-    const imagens = carrosselSlides.querySelectorAll(".slides");
-    let tamanhoTela = imagens[0].width
-    pontoFinal = (imagens.length - 1) * (tamanhoTela)
+    let tamanhoTela = $(".slides")[0].width
+    pontoFinal = ($(".slides").length - 1) * (tamanhoTela)
     setInterval(() => {
-        carrosselSlides.scrollLeft += tamanhoTela / 1.5
-        if (carrosselSlides.scrollLeft > pontoFinal) {
-            carrosselSlides.scrollLeft = 0
+        $("#imagens")[0].scrollLeft += tamanhoTela / 1.5
+        if ($("#imagens")[0].scrollLeft > pontoFinal) {
+            $("#imagens")[0].scrollLeft = 0
         }
-    }, 1000)
+    }, 2500)
 }
 
 const buttonTop = () => {
-    console.log(document.documentElement.scrollTop)
     window.onscroll = () => {
         const mybutton = document.getElementById("btnTop");
         mybutton.style.right = "-70px";
@@ -264,7 +216,7 @@ const desaparecerContainer = (elementPrincipal, elementSecundario) => {
 const exitButton = (elementPrincipal, elementSecundario) => {
     const exitButtons = document.querySelectorAll(".exit");
     for (let i = 0; i < exitButtons.length; i++) {
-        exitButtons[i].addEventListener("click", () =>{
+        exitButtons[i].addEventListener("click", () => {
             desaparecerContainer(elementPrincipal, elementSecundario)
         })
     }
@@ -286,6 +238,6 @@ const modal = (msg, elementPrincipal) => {
     const mensagem = document.querySelector("#mensagem");
 
     mensagem.innerHTML = msg
-    aparecerContainer(elementPrincipal,janelaMensagem)
+    aparecerContainer(elementPrincipal, janelaMensagem)
     exitButton(elementPrincipal, janelaMensagem);
 }
