@@ -22,12 +22,15 @@ const enviarDados = () => {
             return modal(verificarCampos(), $("#form-cadastro")[0]);
         }
         criarUser();
-        window.open("index.html", "_self")
+        window.open("index.html", "_self");
+
     })
 }
 
 const criarUser = () => {
-    const user = {}
+    const user = {
+
+    }
     user.nome = $(".entradas")[0].value + " " + $(".entradas")[1].value;
     user.cpf = $(".entradas")[2].value;
     user.dataNascimento = $(".entradas")[3].value;
@@ -140,35 +143,34 @@ const verificarTema = (classname, color) => {
 }
 
 const logarUser = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    try {
-        const userLogin = user.login;
-        const userSenha = user.senha;
-    } catch (error) {
-        console.log("Ignore")
+
+    for (let i = 0; i < 10; i++) {
+        const user = JSON.parse(localStorage.getItem(`user`));
+        $("#form-login").submit((event) => {
+            if ($(".entradas")[0].value == "" || $(".entradas")[1].value == "") {
+                event.preventDefault()
+                modal("Preencha todos os Campos", $("#form-login")[0])
+            } else if ($(".entradas")[0].value == user.login && $(".entradas")[1].value == user.senha) {
+                event.preventDefault()
+                window.open("paginaPrincipal.html", "_self")
+            } else {
+                event.preventDefault()
+                modal("O Login/Senha não conferem", $("#form-login")[0])
+            }
+        })
     }
-    $("#form-login").submit((event) => {
-        if ($(".entradas")[0].value == "" || $(".entradas")[1].value == "") {
-            event.preventDefault()
-            modal("Preencha todos os Campos", $("#form-login")[0])
-        } else if ($(".entradas")[0].value == user.login && $(".entradas")[1].value == user.senha) {
-            event.preventDefault()
-            window.open("paginaPrincipal.html", "_self")
-        } else {
-            event.preventDefault()
-            modal("O Login/Senha não conferem", $("#form-login")[0])
-        }
-    })
 }
 
 
 const preConfig = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    try {
-        $("#user_name").html(user.nome)
-    } catch (Error) {
-        window.open("index.html", "_self")
-    }
+        const user = JSON.parse(localStorage.getItem(`user`));
+        try {
+            $("#user_name").html(user.nome)
+            return;
+        } catch (Error) {
+            window.open("index.html", "_self")
+        }
+
 }
 
 const carrossel = () => {

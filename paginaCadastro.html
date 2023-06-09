@@ -49,7 +49,7 @@
                     <section class="area-dupla">
                         <div>
                             <label for="nome">Nome *</label>
-                            <input placeholder="Digite seu nome"  class="entradas" type="text" id="nome" maxlength="15" autofocus />
+                            <input placeholder="Digite seu nome" pattern="\d,\d\d" class="entradas" type="text" id="nome" maxlength="15" autofocus />
                         </div>
                         <div>
                             <label for="sobrenome">Sobrenome *</label>
@@ -97,7 +97,7 @@
                         </div>
                         <div>
                             <label for="confirm-senha">Confirmar senha *</label>
-                            <input placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha" />
+                            <input placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha" required/>
                         </div>
                     </section>
                 </section>
