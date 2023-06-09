@@ -3,14 +3,14 @@ const verificarCampos = () => {
     for (let i = 0; i < $(".entradas").length; i++) {
         const element = $(".entradas")[i];
         if (element.value == "") {
-            codigo = 0001;
+            codigo = "0001";
         } else if ($(".entradas")[8].value != $(".entradas")[9].value) {
-            codigo = 0010;
+            codigo = "0010";
         }
     };
-    if (codigo == 0001) {
+    if (codigo == "0001") {
         return "Preencha todos os campos";
-    } else if (codigo == 0010) {
+    } else if (codigo == "0010") {
         return "As senhas não conferem";
     }
 }
@@ -203,7 +203,6 @@ const buttonTop = () => {
 
 const aparecerContainer = (elementPrincipal, elementSecundario) => {
     elementSecundario.classList.remove("esconder-container")
-    elementPrincipal.classList.remove("aparecer-container")
     elementSecundario.classList.add("aparecer-container")
     elementPrincipal.classList.add("esconder-container")
 }
@@ -212,7 +211,6 @@ const desaparecerContainer = (elementPrincipal, elementSecundario) => {
     elementSecundario.classList.remove("aparecer-container")
     elementPrincipal.classList.remove("esconder-container")
     elementSecundario.classList.add("esconder-container")
-    elementPrincipal.classList.add("aparecer-container")
 }
 
 const exitButton = (elementPrincipal, elementSecundario) => {
