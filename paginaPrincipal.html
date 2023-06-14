@@ -15,21 +15,33 @@
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><button id="font"><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
-                <li><button id="themes"><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
-                <li><button id="user_name"></button></li>
+                <li class="button-font-size"><button id="font"><img src="img/icons/icons-buttons/TTps.png"
+                            alt="icone-font"></button>
+                    <section class="input-font-size input-font-size-hidden">
+                        <input type="range" min="1" max="100" step="0.1" class="font-size-input" id="font-size">
+                    </section>
+                </li>
+                <li><button class="button-header-secundario" id="themes"><img src="img/icons/icons-buttons/icone_ps.png"
+                            alt="icone-tema"></button></li>
+                <li id="user-li"><button class="button-header-secundario" id="user_name">
+                    </button>
+                    <section class="janela-user janela-user-hidden">
+                        <nav class="janela-user-nav">
+                            <ul class="janela-user-ul">
+                                <li class="janela-user-li"><button class="janela-user-button">Area de Usuario</button>
+                                </li>
+                                <li class="janela-user-li"><button class="janela-user-button">Configurações</button>
+                                </li>
+                                <li class="janela-user-li"><button class="janela-user-button">Suporte</button></li>
+                                <li class="janela-user-li"><button class="janela-user-button" id="sair">Sair</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </li>
             </ul>
         </nav>
-        <section id="janela-user">
-            <nav>
-                <ul>
-                    <li><button>Area de Usuario</button></li>
-                    <li><button>Configurações</button></li>
-                    <li><button>Suporte</button></li>
-                    <li><button id="sair">Sair</button></li>
-                </ul>
-            </nav>
-        </section>
+
         <section id="primary-header">
             <img src="img/logo-telecall.png" alt="Logo-Telecall">
             <nav id="btn-header">
@@ -43,19 +55,10 @@
                     <li>
                         <a href="#map">Mapa</a>
                     </li>
-                    <li>
-                        <a href="">Mobilidade</a>
-                    </li>
                 </ul>
             </nav>
         </section>
     </header>
-    <section id="janela-mensagem" class="esconder-container">
-        <button type="button" class="exit">X</button>
-        <h2 id="mensagem">
-
-        </h2>
-    </section>
     <main>
         <section id="carrossel">
             <section id="imagens">

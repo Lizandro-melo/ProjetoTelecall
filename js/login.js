@@ -1,4 +1,5 @@
 obsevadorDeThema();
 trocarTema();
 logarUser();
-janelaSenha()
+redefinirSenha();
+fontSize();

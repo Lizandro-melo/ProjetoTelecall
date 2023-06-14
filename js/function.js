@@ -33,12 +33,6 @@ const criarUser = () => {
     }
     user.nome = $(".entradas")[0].value + " " + $(".entradas")[1].value;
     user.cpf = $(".entradas")[2].value;
-    user.dataNascimento = $(".entradas")[3].value;
-    user.sexo = $(".entradas")[4].value;
-    user.nomeMaterno = $("#nome-materno").val();
-    user.cel = $(".entradas")[5].value;
-    user.telefone = $("#tel-fix").val();
-    user.endereco = $(".entradas")[6].value;
     user.login = $(".entradas")[7].value;
     user.senha = $(".entradas")[8].value;
     localStorage.setItem("user", JSON.stringify(user));
@@ -149,13 +143,13 @@ const logarUser = () => {
         $("#form-login").submit((event) => {
             if ($(".entradas")[0].value == "" || $(".entradas")[1].value == "") {
                 event.preventDefault()
-                modal("Preencha todos os Campos", $("#form-login")[0])
+                modal("Preencha todos os Campos")
             } else if ($(".entradas")[0].value == user.login && $(".entradas")[1].value == user.senha) {
                 event.preventDefault()
                 window.open("paginaPrincipal.html", "_self")
             } else {
                 event.preventDefault()
-                modal("O Login/Senha não conferem", $("#form-login")[0])
+                modal("O Login ou senha não conferem")
             }
         })
     }
@@ -163,13 +157,13 @@ const logarUser = () => {
 
 
 const preConfig = () => {
-        const user = JSON.parse(localStorage.getItem(`user`));
-        try {
-            $("#user_name").html(user.nome)
-            return;
-        } catch (Error) {
-            window.open("index.html", "_self")
-        }
+    const user = JSON.parse(localStorage.getItem(`user`));
+    try {
+        $("#user_name").html(user.nome)
+        return;
+    } catch (Error) {
+        window.open("index.html", "_self")
+    }
 
 }
 
@@ -201,43 +195,49 @@ const buttonTop = () => {
     };
 }
 
-const aparecerContainer = (elementPrincipal, elementSecundario) => {
-    elementSecundario.classList.remove("esconder-container")
-    elementSecundario.classList.add("aparecer-container")
-    elementPrincipal.classList.add("esconder-container")
-}
-
-const desaparecerContainer = (elementPrincipal, elementSecundario) => {
-    elementSecundario.classList.remove("aparecer-container")
-    elementPrincipal.classList.remove("esconder-container")
-    elementSecundario.classList.add("esconder-container")
-}
-
-const exitButton = (elementPrincipal, elementSecundario) => {
-    const exitButtons = document.querySelectorAll(".exit");
-    for (let i = 0; i < exitButtons.length; i++) {
-        exitButtons[i].addEventListener("click", () => {
-            desaparecerContainer(elementPrincipal, elementSecundario)
+const redefinirSenha = () => {
+    $("#msg-login-senha").click(() => {
+        $(".esqueci-senha").addClass("aparecer-container");
+        $("#form-login").addClass("esconder-container");
+        $(".exit").click(() => {
+            $(".esqueci-senha").removeClass("aparecer-container");
+            $("#form-login").removeClass("esconder-container");
         })
-    }
-}
-
-const janelaSenha = () => {
-    const text = document.getElementById("a-help-senha");
-    const login = document.getElementById("form-login");
-    const janela = document.getElementById("esqueci-senha")
-    text.addEventListener("click", () => {
-        aparecerContainer(login, janela);
     })
-    exitButton(login, janela);
+
+}
+
+const modal = (msg) => {
+    $("#mensagem").html(msg);
+    $(".janela-mensagem").addClass("aparecer-container");
+    botaoExit($(".janela-mensagem"));
+}
+
+const botaoExit = janela => {
+    $(".exit").click(() => {
+        janela.removeClass("aparecer-container");
+    })
+}
+
+const janelaUser = () => {
+
+    $('#user_name').click(() => {
+        $(".janela-user").toggleClass("janela-user-hidden");
+    })
+
+    $("#sair").click(() => {
+        window.open("index.html", "_self");
+    })
+
+
+
 }
 
 
-const modal = (msg, elementPrincipal) => {
-    const janelaMensagem = document.querySelector("#janela-mensagem")
-    const mensagem = document.querySelector("#mensagem");
+const fontSize = () => {
+    $('#font').click(() => {
+        $(".input-font-size").toggleClass("input-font-size-hidden");
+        $("#font-size").val(1)
+    })
 
-    mensagem.innerHTML = msg
-    aparecerContainer(elementPrincipal, janelaMensagem)
-    exitButton(elementPrincipal, janelaMensagem);
 }

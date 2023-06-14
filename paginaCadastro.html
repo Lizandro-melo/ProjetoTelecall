@@ -15,22 +15,17 @@
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><button id="font" ><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
-                <li><button id="themes"><img  src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
+                <li class="button-font-size"><button id="font"><img src="img/icons/icons-buttons/TTps.png"
+                            alt="icone-font"></button>
+                    <section class="input-font-size input-font-size-hidden">
+                        <input type="range" min="1" max="100" step="0.1" class="font-size-input" id="font-size">
+                    </section>
+                </li>
+                <li><button id="themes"><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
             </ul>
         </nav>
         <section id="primary-header">
             <img src="img/logo-telecall.png" alt="Logo-Telecall" />
-            <nav>
-                <ul>
-                    <li>
-                        <a class="" href="index.html">Área do Cliente</a>
-                    </li>
-                    <li>
-                        <a class="linkado">Cadastro</a>
-                    </li>
-                </ul>
-            </nav>
         </section>
     </header>
     <section id="janela-mensagem" class="esconder-container">
@@ -49,17 +44,19 @@
                     <section class="area-dupla">
                         <div>
                             <label for="nome">Nome *</label>
-                            <input placeholder="Digite seu nome" pattern="\d,\d\d" class="entradas" type="text" id="nome" maxlength="15" autofocus />
+                            <input placeholder="Digite seu nome" pattern="\d,\d\d" class="entradas" type="text"
+                                id="nome" maxlength="15" autofocus />
                         </div>
                         <div>
                             <label for="sobrenome">Sobrenome *</label>
-                            <input placeholder="Digite seu sobrenome"  class="entradas" type="text" id="sobrenome" maxlength="15" />
+                            <input placeholder="Digite seu sobrenome" class="entradas" type="text" id="sobrenome"
+                                maxlength="15" />
                         </div>
                     </section>
                     <section class="area-dupla">
                         <div>
                             <label for="cpf">CPF *</label>
-                            <input placeholder="Digite seu CPF"  class="entradas" type="text" id="cpf" maxlength="14" />
+                            <input placeholder="Digite seu CPF" class="entradas" type="text" id="cpf" maxlength="14" />
                         </div>
                         <div>
                             <label for="data">Data de nascimento *</label>
@@ -73,31 +70,33 @@
                         <option value="o">Outros</option>
                     </select>
                     <label for="nome-materno">Nome materno</label>
-                    <input placeholder="Digite o nome Materno" type="text" id="nome-materno" maxlength="30"/>
+                    <input placeholder="Digite o nome Materno" type="text" id="nome-materno" maxlength="30" />
                 </section>
                 <section class="container-entradas-cadastro" id="area-direita">
                     <section class="area-dupla">
                         <div>
                             <label for="tel-cel">Telefone celular *</label>
-                            <input placeholder="Digite seu N° celular"  class="entradas" type="tel" id="tel-cel" maxlength="15" />
+                            <input placeholder="Digite seu N° celular" class="entradas" type="tel" id="tel-cel"
+                                maxlength="15" />
                         </div>
                         <div>
                             <label for="tel-fix">Telefone fixo</label>
-                            <input placeholder="Digite seu N° fixo" type="tel" id="tel-fix"  maxlength="14"/>
+                            <input placeholder="Digite seu N° fixo" type="tel" id="tel-fix" maxlength="14" />
                         </div>
                     </section>
                     <label for="endereco">Endereço *</label>
-                    <input placeholder="Digite seu endereço completo"  class="entradas" type="text" id="endereco" />
+                    <input placeholder="Digite seu endereço completo" class="entradas" type="text" id="endereco" />
                     <label for="login">Login *</label>
-                    <input placeholder="Digite seu login"  class="entradas" type="text" id="login" />
+                    <input placeholder="Digite seu login" class="entradas" type="text" id="login" />
                     <section class="area-dupla">
                         <div>
                             <label for="senha">Senha *</label>
-                            <input placeholder="Digite uma senha"  class="entradas" type="password" id="senha" />
+                            <input placeholder="Digite uma senha" class="entradas" type="password" id="senha" />
                         </div>
                         <div>
                             <label for="confirm-senha">Confirmar senha *</label>
-                            <input placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha" required/>
+                            <input placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha"
+                                required />
                         </div>
                     </section>
                 </section>

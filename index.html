@@ -15,37 +15,30 @@
     <header>
         <nav id="header-secundario">
             <ul>
-                <li><button id="font"><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button></li>
+                <li class="button-font-size"><button id="font"><img src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button>
+                <section class="input-font-size input-font-size-hidden">
+                    <input type="range" min="1" max="100" step="0.1" class="font-size-input" id="font-size">
+                </section></li>
                 <li><button id="themes"><img src="img/icons/icons-buttons/icone_ps.png" alt="icone-tema"></button></li>
             </ul>
         </nav>
         <section id="primary-header">
             <img src="img/logo-telecall.png" alt="Logo-Telecall">
-            <nav>
-                <ul>
-                    <li>
-                        <a class="linkado">Área do Cliente</a>
-                    </li>
-                    <li>
-                        <a class="" href="paginaCadastro.html">Cadastro</a>
-                    </li>
-                </ul>
-            </nav>
         </section>
     </header>
-    <section id="janela-mensagem" class="esconder-container">
-        <button type="button" class="exit">X</button>
+    <section class="janela-mensagem">
+        <button type="button" class="exit"><span>&#10006;</span></button>
         <h2 id="mensagem">
-
+            Menssagem teste para verificar fonte 
         </h2>
     </section>
 
     <main>
-        <form id="esqueci-senha" class="esconder-container">
+        <form class="esqueci-senha">
             <div class="banner">
                 <h1>Esqueceu a senha?</h1>
             </div>
-            <button type="button" class="exit">X</button>
+            <button type="button" class="exit"><span>&#10006;</span></button>
             <section class="container-entradas-login">
                 <label for="login">Digite o seu login / CPF</label>
                 <input placeholder="Digite seu login" class="entrada-login" type="text">

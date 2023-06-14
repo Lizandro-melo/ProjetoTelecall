@@ -8,6 +8,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Lexend Deca', sans-serif;
+    transition: background 500ms;
 }
 
 :root {
@@ -35,7 +36,7 @@ body {
     background-color: var(--bg-color-padrao);
     width: 100%;
     height: 100%;
-    
+
 }
 
 /*
@@ -81,38 +82,94 @@ body {
     width: 30px;
 }
 
-#janela-user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.button-font-size {
+    position: relative;
+}
+
+.input-font-size{
     position: absolute;
-    right: 5px;
-    transition: 500ms;
-    top: -120px;
-    z-index: 100;
-}
-
-#janela-user nav ul {
-    list-style-type: none;
-}
-
-#janela-user nav ul li button {
+    background-color: #f0f0f0;
+    border: 1px solid;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
-    height: 30px;
-    background-color: white;
-    border: 1px solid rgb(177, 177, 177);
-    font-size: 12px;
-    transition: 300ms;
-    cursor: pointer;
+    height: 28px;
+    left: -50px;
+    top: 25px;
+    transition: top  500ms;
 }
 
-#janela-user nav ul li button:hover {
+.input-font-size-hidden{
+    top: -120px !important;
+}
 
-    background-color: rgb(207, 207, 207);
+.font-size-input{
+    appearance: none;
+    height: 5px;
+    margin: 0 20px;
+}
 
+
+
+#user-li {
+    position: relative;
+    
+}
+
+.janela-user {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center !important;
+    flex-direction: column !important;
+    z-index: 5;
+    top: 23px;
+    transition: top 500ms;
+    
+}
+
+.janela-user-hidden{
+    top: -170px !important;
+}
+
+.janela-user-nav {
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+}
+
+.janela-user-ul {
+    border: 1px solid ;
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.janela-user-li {
+    display:flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.janela-user-button {
+    font-size: 12px;
+    display: flex;
+    justify-content: center ;
+    width: 110px !important;
+    height: 40px !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0px !important;
+}
+
+.janela-user-button:hover {
+    background-color: #cccccc !important;
 }
 
 /*
@@ -164,11 +221,11 @@ body {
  * customizações login
 */
 
-#janela-mensagem{
-    width: 200px;
-    height: 80px;
-    background-color: var(--bg-color-form);
-    border-radius: 30px;
+.janela-mensagem {
+    box-shadow: 0 0 100px 1000px rgba(0, 0, 0, 0.397);
+    width: 300px;
+    height: 40px;
+    background-color: #f0f0f0;
     display: flex;
     border: none;
     justify-content: center;
@@ -179,12 +236,17 @@ body {
     padding: 70px;
     z-index: 2;
     transition: transform 200ms;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(0%);
 }
 
-#janela-mensagem h2{
+.janela-mensagem h2 {
     font-size: 20px;
     text-align: center;
-    color: var(--text-mensagem-color);
+    font-weight: lighter;
+    color: black;
 }
 
 .exit {
@@ -194,14 +256,19 @@ body {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    border: none;
     width: 20px;
     height: 20px;
     right: 30px;
     top: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:1px ;
+    font-weight: lighter;
 }
 
-#esqueci-senha {
+.esqueci-senha {
     width: 400px;
     background-color: var(--bg-color-form);
     border-radius: 30px;
@@ -214,20 +281,18 @@ body {
     padding: 70px;
     z-index: 2;
     transition: transform 200ms;
-}
-
-.aparecer-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%) scale(100%);
+    transform: translate(-50%, -40%) scale(0%);
 }
 
 .esconder-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%) scale(0%) !important;
+    transform: translate(-50%, -40%) scale(0) !important;
+}
+
+.aparecer-container {
+    transform: translate(-50%, -40%) scale(100%) !important;
 }
 
 #form-login {
@@ -333,13 +398,13 @@ body {
 #area-entradas {
     display: flex;
     justify-content: center;
-    
+
 }
 
 .container-entradas-cadastro {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 #area-esquerda {
@@ -664,7 +729,7 @@ footer {
 
 
 
-.esquerda-footer{
+.esquerda-footer {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -672,18 +737,20 @@ footer {
     justify-content: left;
 }
 
-#sobre-a-telecall{
+#sobre-a-telecall {
     display: flex;
     width: 70%;
     height: 40%;
     flex-direction: column;
-    
+
 }
 
-.direita-footer{
+.direita-footer {
     display: flex;
 }
-.esquerda-footer:nth-child(1) , .direita-footer:nth-child(1) {
+
+.esquerda-footer:nth-child(1),
+.direita-footer:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -691,7 +758,8 @@ footer {
     height: 400px;
 }
 
-.esquerda-footer:nth-child(1)::after , .direita-footer:nth-child(1)::after {
+.esquerda-footer:nth-child(1)::after,
+.direita-footer:nth-child(1)::after {
     content: "";
     width: 1px;
     height: 100%;
@@ -701,7 +769,8 @@ footer {
     transform: translate(50%);
 }
 
-.esquerda-footer:nth-child(2) , .direita-footer:nth-child(2) {
+.esquerda-footer:nth-child(2),
+.direita-footer:nth-child(2) {
     display: flex;
     width: 100%;
     height: 400px;
@@ -716,7 +785,7 @@ footer {
     width: 100%;
     height: 100%;
     display: flex;
-    
+
 }
 
 #table-footer {
@@ -724,7 +793,8 @@ footer {
     padding: 20px 100px;
 
 }
-#sobre-a-telecall{
+
+#sobre-a-telecall {
     display: flex;
     padding: 25px 20px 80px 20px;
 }
@@ -784,7 +854,9 @@ footer {
 
     }
 
-    #container-beneficios article, #internet article, #telefonia article{
+    #container-beneficios article,
+    #internet article,
+    #telefonia article {
         transform: scale(85%);
     }
 
@@ -815,12 +887,12 @@ footer {
         width: 100px;
     }
 
-    #sobre-a-telecall h2{
+    #sobre-a-telecall h2 {
         font-size: 15px;
         text-align: center;
     }
 
-    #sobre-a-telecall p{
+    #sobre-a-telecall p {
         font-size: 10px;
         text-align: center;
     }
@@ -834,45 +906,47 @@ footer {
         padding: 70px 15px;
     }
 
-    #esqueci-senha, #form-login, #form-cadastro
-    {
+    #esqueci-senha,
+    #form-login,
+    #form-cadastro {
         width: 100%;
         padding: 70px 0;
         border-radius: 0px;
     }
-    
+
     .banner {
         width: 188px;
         height: 58px;
     }
 
-    .banner h1{
+    .banner h1 {
         font-size: 18px;
 
     }
-    
+
     #area-entradas {
         flex-direction: column;
     }
 
-    #area-direita, #area-esquerda {
+    #area-direita,
+    #area-esquerda {
         margin: 0;
     }
 
-    #form-cadastro{
+    #form-cadastro {
         flex-direction: column;
         margin: 0;
         position: static;
         transform: translate(0);
     }
 
-    #conteiner-buttons-cadastro{
+    #conteiner-buttons-cadastro {
         justify-content: start;
         width: 280px;
         margin: 50px 0;
     }
 
-    #container-mensagem-help-cadastro{
+    #container-mensagem-help-cadastro {
         position: absolute;
         left: 60%;
     }
