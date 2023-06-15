@@ -190,6 +190,7 @@ const buttonTop = () => {
 
         mybutton.addEventListener("click", () => {
             document.documentElement.scrollTop = 0;
+            document.scrollIntoView({ behavior: "smooth" });
         }
         )
     };
