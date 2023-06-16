@@ -19,7 +19,7 @@ const enviarDados = () => {
     $("#button-cadastro").click((event) => {
         event.preventDefault();
         if (verificarCampos() != undefined) {
-            return modal(verificarCampos(), $("#form-cadastro")[0]);
+            return modal(verificarCampos());
         }
         criarUser();
         window.open("index.html", "_self");
