@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lexend Deca', sans-serif;
+    transition: background 500ms;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color-padrao);
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-mensagem-color);
+}
+
+:root {
+    --primary-color: #CA1C2A;
+    --secundary-color: #AA1824;
+    --text-primary-color: #004A7B;
+    --text-color-article: #004A7B;
+    --bg-color-form: #d9d9d9b6;
+    --text-secundary-color: #DF202F;
+    --bg-color-entradas: #D1D1D1;
+    --text-planos-color: #006bcd;
+    --bg-color-article: #f0f0f0;
+    --bg-color-footer: #CA1C2A;
+    --shadow-color-primary: #e7e7e7;
+    --shadow-color-secundary: #ffffff;
+    --bg-color-padrao: white;
+    --text-button-hover: white;
+    --bg-color-button-theme: black;
+    --text-mensagem-color: black;
+    --invert: 0;
+}
+
+
+/*
+ * customizações do header secundario
+*/
+
+#header-secundario {
+    background-color: var(--secundary-color);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 27px;
+}
+
+#header-secundario ul {
+    display: flex;
+    margin: 0 5px;
+}
+
+
+#header-secundario ul li button {
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: 0 11px;
+    height: 20px;
+    background-color: white;
+    margin: 0 0 0 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 400ms;
+}
+
+.button-header-secundario:hover {
+    transform: translateY(20%) scale(105%);
+}
+
+#themes {
+    background-color: var(--bg-color-button-theme) !important;
+}
+
+#themes img {
+    filter: invert(var(--invert));
+}
+
+#header-secundario ul li button img {
+    width: 30px;
+}
+
+.button-font-size {
+    position: relative;
+}
+
+.input-font-size {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    left: -50px;
+    top: 25px;
+    transition: top 500ms;
+}
+
+.input-font-size-hidden {
+    top: -120px !important;
+}
+
+.font-size-input {
+    appearance: none;
+    height: 5px;
+    margin: 0 20px;
+}
+
+
+
+#user-li {
+    position: relative;
+
+}
+
+.janela-user {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center !important;
+    flex-direction: column !important;
+    z-index: 5;
+    top: 23px;
+    transition: top 500ms;
+
+}
+
+.janela-user-hidden {
+    top: -170px !important;
+}
+
+.janela-user-nav {
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+}
+
+.janela-user-ul {
+    border: 1px solid;
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.janela-user-li {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.janela-user-button {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    width: 110px !important;
+    height: 40px !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0px !important;
+}
+
+.janela-user-button:hover {
+    background-color: #cccccc !important;
+}
+
+/*
+ * customizações do header primario
+*/
+
+#primary-header {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 63px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgb(122, 122, 122);
+}
+
+#primary-header img {
+    width: 200px;
+    border-radius: 50px;
+    margin: 0 30px;
+    cursor: pointer;
+}
+
+#primary-header nav ul {
+    display: flex;
+}
+
+
+#primary-header nav ul li a {
+    text-decoration: none;
+    color: var(--text-primary-color);
+    font-weight: bold;
+    font-size: 15px;
+    height: 36px;
+    width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 20px 0 3px;
+}
+
+#imagem-conteudo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-between;
+    background-color: var(--bg-color-article);
+    border-radius: 20px;
+    color: var(--text-mensagem-color) !important;
+}
+
+#imagem-conteudo h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 45px;
+}
+
+#imagem-conteudo img{
+    width: 600px;
+    margin: 20px 0px 20px 0;
+    border-radius: 20px;
+    padding: 0 50px 0 0;
+}
+
+.cpaas-definicao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--bg-color-article);
+    align-items: center;
+    margin:  50px 0 50px 0;
+    height: 100%;
+    padding: 50px;
+    border-radius: 20px;
+    color: var(--text-mensagem-color);
+}
+
+.cpaas-definicao img{
+    width: 450px;
+}
+
+
+
+#container-servicos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color-article);
+    padding:  0 0 50px 0;
+    border-radius: 20px;
+    color: var(--text-mensagem-color);
+}
+
+#container-servicos h3{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#servicos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+#servicos article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 40px;
+    background: var(--bg-color-article);
+    box-shadow: -22px 22px 20px var(--shadow-color-primary),
+        22px -22px 20px var(--shadow-color-secundary);
+    width: 200px;
+    height: 200px;
+    margin: 20px 40px;
+    padding: 30px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+#servicos article:hover{
+    transform: scale(110%);
+}
+
+#container-servicos img{
+    width: 100px;
+}
+ 
+#container-utilizacoes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color-article);
+    margin: 50px 0 50px 0;
+    padding:  50px 0 50px 0;
+    border-radius: 20px;
+    color: var(--text-mensagem-color);
+}
+
+.util{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.util article{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 40px;
+    background: var(--bg-color-article);
+    box-shadow: -22px 22px 20px var(--shadow-color-primary),
+        22px -22px 20px var(--shadow-color-secundary);
+    width: 230px;
+    height: 230px;
+    margin: 20px 20px;
+    padding: 10px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+#container-utilizacoes h4{
+    display: flex;
+    justify-content: center;
+}
+#container-utilizacoes p{
+    width: 240px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+h1, h2, h3{
+    color:  var(--text-mensagem-color);
+}
+
+h4{
+    font-size: 20px;  
+}
+h2{
+    font-size: 30px;
+}
+h3, h5 {
+    font-size: 26px;
+}
+
+/*footer*/
+
+
+footer h2 {
+    color: black !important;
+}
+
+footer {
+    
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-color-footer);
+    position: relative;
+}
+
+#container-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copy {
+    text-decoration: none;
+    color: black;
+}
+
+
+.esquerda-footer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    justify-content: left;
+}
+
+#sobre-a-telecall {
+    display: flex;
+    width: 70%;
+    height: 40%;
+    flex-direction: column;
+
+}
+
+.direita-footer {
+    display: flex;
+}
+
+.esquerda-footer:nth-child(1),
+.direita-footer:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+.esquerda-footer:nth-child(1)::after,
+.direita-footer:nth-child(1)::after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--bg-color-padrao);
+    position: absolute;
+    left: 50%;
+    transform: translate(50%);
+}
+
+.esquerda-footer:nth-child(2),
+.direita-footer:nth-child(2) {
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+
+#table-footer tr td a {
+    color: black;
+    text-decoration: none;
+}
+
+#table-footer tr td {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+#table-footer {
+    display: flex;
+    padding: 30px 100px;
+
+}
+
+#sobre-a-telecall {
+    display: flex;
+    padding: 25px 20px 80px 20px;
+}
+
+#container-logo-footer {
+    background-color: #ffffff;
+    filter: opacity(100%);
+    padding: 20px;
+    border-radius: 40px;
+}
+
+#logo-footer {
+    filter: invert(100%);
+}
+
+#btnTop {
+    position: fixed;
+    bottom: 30px;
+    right: -70px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--bg-color-article);
+    color: var(--text-planos-color);
+    border: 1px solid var(--text-planos-color);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: 1s;
+    z-index: 100;
+}
+
+#btnTop:hover {
+    background-color: var(--text-planos-color);
+    color: var(--text-button-hover);
+}
+
+@media screen and (max-width: 1100px){
+
+    #primary-header {
+        justify-content: center;
+    }
+
+    #header-secundario {
+        justify-content: center;
+    }
+
+    #header-secundario ul li {
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    #logo-footer {
+        width: 100px;
+    }
+
+    #sobre-a-telecall h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #sobre-a-telecall p {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    #table-footer tr td {
+        font-size: 10px;
+        padding: 10px 0;
+    }
+
+    #table-footer {
+        padding: 70px 15px;
+    }
+
+
+    #imagem-conteudo h1{
+        display: none;
+    }
+
+    #imagem-conteudo img{
+        width: 100%;
+        padding: 0;
+    }
+
+    #imagem-conteudo{
+        padding: 30px;
+    }
+
+    .cpaas-definicao{
+        display: flex;
+        text-align: center;
+       padding: 100px;
+    }
+
+    .cpaas-definicao img{
+        display: none;
+    }
+}

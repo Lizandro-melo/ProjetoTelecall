@@ -11,7 +11,7 @@
     transition: background 500ms;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -95,7 +95,7 @@ body {
     position: relative;
 }
 
-.input-font-size{
+.input-font-size {
     position: absolute;
     background-color: #f0f0f0;
     border: 1px solid;
@@ -106,14 +106,14 @@ body {
     height: 28px;
     left: -50px;
     top: 25px;
-    transition: top  500ms;
+    transition: top 500ms;
 }
 
-.input-font-size-hidden{
+.input-font-size-hidden {
     top: -120px !important;
 }
 
-.font-size-input{
+.font-size-input {
     appearance: none;
     height: 5px;
     margin: 0 20px;
@@ -123,7 +123,7 @@ body {
 
 #user-li {
     position: relative;
-    
+
 }
 
 .janela-user {
@@ -135,23 +135,23 @@ body {
     z-index: 5;
     top: 23px;
     transition: top 500ms;
-    
+
 }
 
-.janela-user-hidden{
+.janela-user-hidden {
     top: -170px !important;
 }
 
 .janela-user-nav {
-    
+
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    
+
 }
 
 .janela-user-ul {
-    border: 1px solid ;
+    border: 1px solid;
     display: flex !important;
     align-items: center !important;
     flex-direction: column !important;
@@ -159,7 +159,7 @@ body {
 }
 
 .janela-user-li {
-    display:flex !important;
+    display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     padding: 0 !important;
@@ -169,7 +169,7 @@ body {
 .janela-user-button {
     font-size: 12px;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     width: 110px !important;
     height: 40px !important;
     border-radius: 0 !important;
@@ -273,7 +273,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left:1px ;
+    padding-left: 1px;
     font-weight: lighter;
 }
 
@@ -736,6 +736,10 @@ footer {
     justify-content: space-between;
 }
 
+.copy {
+    text-decoration: none;
+    color: black;
+}
 
 
 .esquerda-footer {
@@ -841,6 +845,26 @@ footer {
     color: var(--text-button-hover);
 }
 
+.cpaas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-cpaas {
+    width: 700px;
+    border-radius: 20px;
+    transition: transform 500ms;
+    margin: 40px;
+    box-shadow: -22px 22px 20px var(--shadow-color-primary),
+        22px -22px 20px var(--shadow-color-secundary);
+}
+
+
+.img-cpaas:hover {
+    transform: scale(105%);
+}
 
 @media screen and (min-width: 1440px) {
     #carrossel {
@@ -853,6 +877,10 @@ footer {
 }
 
 @media screen and (max-width: 1100px) {
+
+    .img-cpaas {
+        width: 500px;
+    }
 
     #primary-header nav ul {
         display: none;
@@ -882,7 +910,7 @@ footer {
         margin: 20px;
     }
 
-    #carrosel{
+    #carrosel {
         width: 100%;
     }
 

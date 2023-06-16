@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telecall - Pagina Principal</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/function.js"></script>
 </head>
@@ -15,8 +15,8 @@
     <header>
         <nav id="header-secundario">
             <ul>
-                <li class="button-font-size"><button id="font"><img src="img/icons/icons-buttons/TTps.png"
-                            alt="icone-font"></button>
+                <li class="button-font-size"><button class="button-header-secundario" id="font"><img
+                            src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button>
                     <section class="input-font-size input-font-size-hidden">
                         <input type="range" min="1" max="100" step="0.1" class="font-size-input" id="font-size">
                     </section>
@@ -54,6 +54,9 @@
                     </li>
                     <li>
                         <a href="#map">Mapa</a>
+                    </li>
+                    <li>
+                        <a href="#cpaas">CPAAS</a>
                     </li>
                 </ul>
             </nav>
@@ -180,14 +183,19 @@
                 width="600" height="450" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
+        <section class="cpaas">
+            <h2 id="cpaas">CPAAS</h2>
+            <a href="cpaas.html"><img class="img-cpaas" src="img/cpaas/cpaas.jpg" alt="Imagem CPAAS"></a>
+        </section>
         <button id="btnTop">◬</button>
     </main>
     <footer>
         <section id="container-footer">
             <section class="esquerda-footer">
                 <section id="container-logo-footer">
-                    <a href="paginaPrincipal.html">
+                    <a class="copy" href="paginaPrincipal.html">
                         <img id="logo-footer" src="img/Telecall-footer.png" alt="Logo-Telecall-footer">
+                        <span>&#169;</span>
                     </a>
                 </section>
                 <section id="sobre-a-telecall">

@@ -1,0 +1,5 @@
+preConfig()
+buttonTop()
+janelaUser()
+trocarTema()
+obsevadorDeThema()

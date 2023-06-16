@@ -233,12 +233,3 @@ const janelaUser = () => {
 
 
 }
-
-
-const fontSize = () => {
-    $('#font').click(() => {
-        $(".input-font-size").toggleClass("input-font-size-hidden");
-        $("#font-size").val(1)
-    })
-
-}
