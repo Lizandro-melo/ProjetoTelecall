@@ -4,15 +4,18 @@ const verificarCampos = () => {
         const element = $(".entradas")[i];
         if (element.value == "") {
             codigo = "0001";
+
         } else if ($(".entradas")[8].value != $(".entradas")[9].value) {
             codigo = "0010";
         }
-    };
+    }
+
     if (codigo == "0001") {
         return "Preencha todos os campos";
     } else if (codigo == "0010") {
         return "As senhas não conferem";
     }
+
 }
 
 const enviarDados = () => {
@@ -137,22 +140,27 @@ const verificarTema = (classname, color) => {
 }
 
 const logarUser = () => {
-
-    for (let i = 0; i < 10; i++) {
-        const user = JSON.parse(localStorage.getItem(`user`));
-        $("#form-login").submit((event) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    $("#form-login").submit((event) => {
+        try {
             if ($(".entradas")[0].value == "" || $(".entradas")[1].value == "") {
                 event.preventDefault()
                 modal("Preencha todos os Campos")
-            } else if ($(".entradas")[0].value == user.login && $(".entradas")[1].value == user.senha) {
-                event.preventDefault()
-                window.open("paginaPrincipal.html", "_self")
-            } else {
+                return;
+            } else if ($(".entradas")[0].value != user.login && $(".entradas")[1].value != user.senha) {
                 event.preventDefault()
                 modal("O Login ou senha não conferem")
+                return;
+            } else {
+                event.preventDefault()
+                window.open("paginaPrincipal.html", "_self")
             }
-        })
-    }
+        } catch {
+            event.preventDefault()
+            modal("O Login ou senha não conferem")
+        }
+    })
+
 }
 
 
@@ -190,7 +198,6 @@ const buttonTop = () => {
 
         mybutton.addEventListener("click", () => {
             document.documentElement.scrollTop = 0;
-            document.scrollIntoView({ behavior: "smooth" });
         }
         )
     };

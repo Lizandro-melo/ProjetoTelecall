@@ -502,14 +502,20 @@ footer {
     }
 
     #sobre-a-telecall p {
-        font-size: 10px;
+        font-size: 9px;
         text-align: center;
     }
 
     #table-footer tr td {
         font-size: 10px;
+
+    }
+
+    #table-footer tr td h2{
+        font-size: 18px;
         padding: 10px 0;
     }
+
 
     #table-footer {
         padding: 70px 15px;
@@ -523,6 +529,7 @@ footer {
     #primeira-sessao {
         height: 100%;
         width: 100%;
+        margin: 0;
         justify-content: center;
     }
 
@@ -534,6 +541,12 @@ footer {
         align-items: center;
         text-align: center;
     }
+
+    #sessao-funciona article {
+        width: 350px;
+        justify-content: center;
+    }
+
 
     #sessao-funciona  img{
         display: none;
@@ -556,5 +569,14 @@ footer {
     #usuarios{
         display: flex;
         justify-content: center;
+    }
+
+    #header-secundario ul li button{
+        font-size: 11px;
+        margin: 0;
+    }
+
+    #header-secundario ul li{
+        margin: 0 10px;
     }
 }

@@ -232,8 +232,8 @@ body {
 
 .janela-mensagem {
     box-shadow: 0 0 100px 1000px rgba(0, 0, 0, 0.397);
-    width: 300px;
     height: 40px;
+    width: 300px;
     background-color: #f0f0f0;
     display: flex;
     border: none;
@@ -273,7 +273,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 1px;
     font-weight: lighter;
 }
 
@@ -448,7 +447,7 @@ body {
 
 #msg-cadastro {
     position: absolute;
-    width: 180px;
+    width: 140px;
     top: 50%;
     transform: translate(0, -50%);
     left: 80%;
@@ -861,11 +860,6 @@ footer {
         22px -22px 20px var(--shadow-color-secundary);
 }
 
-
-.img-cpaas:hover {
-    transform: scale(105%);
-}
-
 @media screen and (min-width: 1440px) {
     #carrossel {
         width: 1300px;
@@ -933,7 +927,7 @@ footer {
     }
 
     #sobre-a-telecall p {
-        font-size: 10px;
+        font-size: 9px;
         text-align: center;
     }
 
@@ -989,5 +983,29 @@ footer {
     #container-mensagem-help-cadastro {
         position: absolute;
         left: 60%;
+    }
+
+    .janela-mensagem{
+        width: 200px;
+        
+    }
+
+    .janela-mensagem h2{
+        font-size: 20px;
+        
+    }
+
+    .img-cpaas{
+       width: 100%;
+       margin: 30px 0;
+    }
+
+    #header-secundario ul li button{
+        font-size: 11px;
+        margin: 0;
+    }
+
+    #header-secundario ul li{
+        margin: 0 10px;
     }
 }

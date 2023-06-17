@@ -539,12 +539,17 @@ footer {
     }
 
     #sobre-a-telecall p {
-        font-size: 10px;
+        font-size: 9px;
         text-align: center;
     }
 
     #table-footer tr td {
         font-size: 10px;
+
+    }
+
+    #table-footer tr td h2{
+        font-size: 18px;
         padding: 10px 0;
     }
 
@@ -574,5 +579,13 @@ footer {
 
     .cpaas-definicao img{
         display: none;
+    }
+    #header-secundario ul li button{
+        font-size: 11px;
+        margin: 0;
+    }
+
+    #header-secundario ul li{
+        margin: 0 10px;
     }
 }
