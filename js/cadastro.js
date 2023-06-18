@@ -3,3 +3,4 @@ trocarTema()
 enviarDados();
 filtrarCampos();
 fontSize();
+ 

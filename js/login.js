@@ -3,3 +3,4 @@ trocarTema();
 logarUser();
 redefinirSenha();
 fontSize();
+ 

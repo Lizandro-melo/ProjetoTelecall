@@ -65,6 +65,7 @@
                     </section>
                     <label for="sexo">Sexo *</label>
                     <select id="sexo" class="entradas">
+                        <option value="i" disabled selected>Selecione o sexo</option>
                         <option value="m">Masculino</option>
                         <option value="f">Feminino</option>
                         <option value="o">Outros</option>
@@ -86,19 +87,22 @@
                     </section>
                     <label for="endereco">Endereço *</label>
                     <input autocomplete="off" placeholder="Digite seu endereço completo" class="entradas" type="text" id="endereco" />
-                    <label for="login">Login *</label>
-                    <input autocomplete="off" placeholder="Digite seu login" class="entradas" type="text" id="login" />
+                    <div class="areaLogin">
+                        <span id="mensagemLogin" class="mensagem">Deve conter no maximo 6 caracteres alfabéticos</span>
+                        <label for="login">Login *</label>
+                        <input autocomplete="off" placeholder="Digite seu login" class="entradas" type="text" id="login" maxlength="6"/>
+                    </div>
                     <section class="area-dupla">
                         <div class="areaSenha">
-                            <span id="mensagemSenha" class="">Deve conter no maximo 8 caracteres alfabéticos e numeros</span>
+                            <span id="mensagemSenha" class="mensagem">Deve conter 8 caracteres alfabéticos</span>
                             <label for="senha">Senha *</label>
-                            <input autocomplete="off" placeholder="Digite uma senha" class="entradas" type="password" id="senha" maxlength="14"/>
+                            <input autocomplete="off" placeholder="Digite uma senha" class="entradas" type="password" id="senha" maxlength="8"/>
                             
                         </div>
                         <div>
                             <label for="confirm-senha">Confirmar senha *</label>
                             <input autocomplete="off" placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha"
-                            maxlength="14"/>
+                            maxlength="8"/>
                             
                         </div>
                     </section>

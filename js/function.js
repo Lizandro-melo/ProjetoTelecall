@@ -1,10 +1,16 @@
 const verificarCampos = () => {
     let codigo;
+    let regexLogin = /^\D{6}$/
+    login = $("#login").val();
+    let regex = /^\D{8}$/
+    senha = $("#senha").val();
+
     for (let i = 0; i < $(".entradas").length; i++) {
         const element = $(".entradas")[i];
         if (element.value == "") {
             codigo = "0001";
-
+        } else if (!regex.test(senha) || !regexLogin.test(login)) {
+            codigo = "0020";
         } else if ($(".entradas")[8].value != $(".entradas")[9].value) {
             codigo = "0010";
         }
@@ -14,6 +20,8 @@ const verificarCampos = () => {
         return "Preencha todos os campos";
     } else if (codigo == "0010") {
         return "As senhas não conferem";
+    } else if (codigo == "0020") {
+        return "Os campos de login e senha devem seguir os requisitos"
     }
 
 }
@@ -22,7 +30,9 @@ const enviarDados = () => {
     $("#button-cadastro").click((event) => {
         event.preventDefault();
         if (verificarCampos() != undefined) {
-            return modal(verificarCampos());
+            modal(verificarCampos());
+            $(".entradas").focus()
+            return;
         }
         criarUser();
         window.open("index.html", "_self");
@@ -106,16 +116,32 @@ const filtrarCampos = () => {
         $("#tel-fix").val(fix)
     })
     $("#senha").on("input", () => {
-        let regex = /^\D{8}\d[0-9]$/
+        let regex = /^\D{8}$/
 
         senha = $("#senha").val();
 
-        if(!regex.test(senha)){
-            $("#mensagemSenha").addClass("mostrarMensagem");
-        }else {
+        if (regex.test(senha)) {
             $("#mensagemSenha").removeClass("mostrarMensagem");
+        } else if ($("#senha")[0].value == "") {
+            $("#mensagemSenha").removeClass("mostrarMensagem");
+        } else {
+            $("#mensagemSenha").addClass("mostrarMensagem");
         }
 
+    })
+
+    $("#login").on("input", () => {
+        let regex = /^\D{6}$/
+
+        login = $("#login").val();
+
+        if (regex.test(login)) {
+            $("#mensagemLogin").removeClass("mostrarMensagem");
+        } else if ($("#login")[0].value == "") {
+            $("#mensagemLogin").removeClass("mostrarMensagem");
+        } else {
+            $("#mensagemLogin").addClass("mostrarMensagem");
+        }
 
     })
 }
