@@ -31,7 +31,7 @@
     <section class="janela-mensagem">
         <button type="button" class="exit"><span>&#10006;</span></button>
         <h2 id="mensagem">
-            Menssagem teste para verificar fonte 
+            
         </h2>
     </section>
     <main>
@@ -89,14 +89,17 @@
                     <label for="login">Login *</label>
                     <input autocomplete="off" placeholder="Digite seu login" class="entradas" type="text" id="login" />
                     <section class="area-dupla">
-                        <div>
+                        <div class="areaSenha">
+                            <span id="mensagemSenha" class="">Deve conter no maximo 8 caracteres alfabéticos e numeros</span>
                             <label for="senha">Senha *</label>
-                            <input autocomplete="off" placeholder="Digite uma senha" class="entradas" type="password" id="senha" />
+                            <input autocomplete="off" placeholder="Digite uma senha" class="entradas" type="password" id="senha" maxlength="14"/>
+                            
                         </div>
                         <div>
                             <label for="confirm-senha">Confirmar senha *</label>
                             <input autocomplete="off" placeholder="Comfirme sua senha" class="entradas" type="password" id="confirm-senha"
-                                required />
+                            maxlength="14"/>
+                            
                         </div>
                     </section>
                 </section>

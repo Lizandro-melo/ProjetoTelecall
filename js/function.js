@@ -105,6 +105,19 @@ const filtrarCampos = () => {
         fix = fix.replace(/^(\d{1,2})(\d{1,4})(\d{1,4})$/, "($1) $2-$3");
         $("#tel-fix").val(fix)
     })
+    $("#senha").on("input", () => {
+        let regex = /^\D{8}\d[0-9]$/
+
+        senha = $("#senha").val();
+
+        if(!regex.test(senha)){
+            $("#mensagemSenha").addClass("mostrarMensagem");
+        }else {
+            $("#mensagemSenha").removeClass("mostrarMensagem");
+        }
+
+
+    })
 }
 
 const obsevadorDeThema = () => {

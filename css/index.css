@@ -860,6 +860,29 @@ footer {
         22px -22px 20px var(--shadow-color-secundary);
 }
 
+.areaSenha{
+    position: relative;
+}
+
+#mensagemSenha{
+    position: absolute;
+    font-size: 10px;
+    text-align: center;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: var(--bg-color-article);
+    top: -20px;
+    transform: scale(0);
+    transition: transform 500ms;
+}
+
+.mostrarMensagem{
+    display: flex !important;
+    transform: scale(100%) !important;
+}
+
 @media screen and (min-width: 1440px) {
     #carrossel {
         width: 1300px;
