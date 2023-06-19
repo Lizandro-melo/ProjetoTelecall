@@ -186,7 +186,7 @@ const logarUser = () => {
                 event.preventDefault()
                 modal("Preencha todos os Campos")
                 return;
-            } else if ($(".entradas")[0].value != user.login && $(".entradas")[1].value != user.senha) {
+            } else if ($(".entradas")[0].value != user.login || $(".entradas")[1].value != user.senha) {
                 event.preventDefault()
                 modal("O Login ou senha não conferem")
                 return;
