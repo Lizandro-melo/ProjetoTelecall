@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>2FA Telecall</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/2fa.css">
+    <script src="js/function.js"></script>
+</head>
+<body> 
+    <header>
+        <nav id="header-secundario">
+            <ul>
+                <li class="button-font-size"><button class="button-header-secundario" id="font"><img
+                            src="img/icons/icons-buttons/TTps.png" alt="icone-font"></button>
+                    <section class="input-font-size input-font-size-hidden">
+                        <input type="range" min="1" max="100" step="0.1" class="font-size-input" id="font-size">
+                    </section>
+                </li>
+                <li><button class="button-header-secundario" id="themes"><img src="img/icons/icons-buttons/icone_ps.png"
+                            alt="icone-tema"></button></li>
+                <li id="user-li"><button class="button-header-secundario" id="user_name">
+                    </button>
+                    <section class="janela-user janela-user-hidden">
+                        <nav class="janela-user-nav">
+                            <ul class="janela-user-ul">
+                                <li class="janela-user-li"><button class="janela-user-button">Area de Usuario</button>
+                                </li>
+                                <li class="janela-user-li"><button class="janela-user-button">Configurações</button>
+                                </li>
+                                <li class="janela-user-li"><button class="janela-user-button">Suporte</button></li>
+                                <li class="janela-user-li"><button class="janela-user-button" id="sair">Sair</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="primary-header">
+            <a href="paginaPrincipal.html"><img src="img/logo-telecall.png" alt="Logo-Telecall"></a>
+            
+        </section>
+    </header>
+    <main>
+        <section id="primeira-sessao">
+            <section id="primeira-dados">
+                <h1>AUTENTICAÇÃO DE DOIS FATORES</h1>
+                <p>Fortaleça a estratégia de segurança de seu negócio.</p>
+            </section>
+            <img src="img/2fa/2fa.jpg" alt="2fa-Imagem">
+        </section>
+        <section id="total-funciona">
+            <h2>Como funciona?</h2>
+            <section id="sessao-funciona">
+                <article>
+                    <img src="img/2fa/laptop.png" alt="Laptop" class="laptop">
+                    <p>Usuário acessa seu site ou aplicativo e digita a senha cadastrada para entrar em seu perfil ou completar uma transação.</p>
+                </article>
+                <article>
+                    <img src="img/2fa/warning (2).png" alt="warning" id="alerta">
+                    <p>A Telecall recebe a tentativa de login e solicita que o usuário insira seu número de telefone para autorizar o acesso.</p>
+                </article>
+                <article>
+                    <img src="img/2fa/smartphone-pin.png" alt="smartphone" id="telefone">
+                    <p>Após inserir seu número, a Telecall envia para o usuário por SMS ou chamada de voz um código PIN de uso único.</p>
+                </article>
+                <article>
+                    <img src="img/2fa/laptop2.png" alt="laptop-2" class="laptop">
+                    <p>O usuário insere o código no site ou aplicativo para concluir o processo de verificação.</p>
+                </article>
+            </section>
+        </section>
+        <section class="beneficios" id="beneficios">
+            <h2>Benefícios do 2FA</h2>
+            <section id="beneficios-lista">
+                <img src="img/2fa/2fa-steps.png" alt="2fa-steps">
+                <ul>
+                    <li>
+                        Ofereça segurança aprimorada para seus clientes
+                    </li>
+                    <li>Reduza casos de fraude e invasões e evite o acesso a dados por invasores.
+                    </li>
+                    <li>Envio de OTP por meio de vários canais, incluindo SMS e voz.
+                    </li>
+                    <li>Flexibilidade de canais garante que o usuário conseguirá completar a tarefa desejada.
+                    </li>
+                    <li>API simples e de rápida implementação.
+                    </li>
+                    <li>Plataforma intuitiva que permite visualizar relatórios de uso por dia, mês ou ano.
+                    </li>
+                </ul>
+            </section>     
+        </section>
+        <section class="detalhes">
+            <article>
+                <h3>Finanças</h3>
+                <ul>
+                    <li>
+                        Acesso ao portal/app
+                    </li>
+                    <li>Autenticação para transações bancárias </li>
+                    <li>Pagamentos Online 
+                    </li>
+                    <li>Digital Wallets 
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>Saúde</h3>
+                <ul>
+                    <li>
+                        Acesso ao portal/app
+                    </li>
+                    <li>
+                        Agendamentos
+                    </li>
+                    <li>Tokens de autorização
+                    </li>
+                    <li>Telemedicina</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Turismo</h3>
+                <ul>
+                    <li>
+                        Acesso ao portal/app
+                    </li>
+                    <li>Gestão de Reservas
+                    </li>
+                    <li>Acesso ao histórico
+                    </li>
+                    <li>Salvar dados de pagamentos
+                    </li>
+                    <li>Recuperação de senha
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <button id="btnTop">◬</button>
+    <footer>
+        <section id="container-footer">
+            <section class="esquerda-footer">
+                <section id="container-logo-footer">
+                    <a class="copy" href="paginaPrincipal.html">
+                        <img id="logo-footer" src="img/Telecall-footer.png" alt="Logo-Telecall-footer">
+                        <span>&#169;</span>
+                    </a>
+                </section>
+                <section id="sobre-a-telecall">
+                    <h2>Sobre a Telecall</h2>
+                    <p>A Telecall é uma operadora regulada pela ANATEL, detentora de uma rede de fibra própria, de alta
+                        capacidade, oferecendo aos seus clientes uma nova experiência de telefonia e Internet
+                        empresarial, com o mais alto padrão de qualidade, velocidade e disponibilidade. Soluções que
+                        contam com uma série de serviços de valores adicionados, gerando aos clientes maior
+                        produtividade, dinamismo e efetividade nas operações.</p>
+                </section>
+            </section>
+            
+            <section class="direita-footer">
+                <table id="table-footer">
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h2>Contato</h2>
+                                </li>
+                                <li>joselizandro@souunisuam.com.br</li>
+                                <li>jvpaiva@souunisuam.com.br</li>
+                                <li><a href="https://github.com/Lizandro-melo" target="_Blank">Github</a></li>
+                                <li><a href="https://www.linkedin.com/in/jos%C3%A9-lizandro-2a85b1234/"
+                                        target="_blank">LinkedIn</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h2>Descubra</h2>
+                                </li>
+                                <li><a href="#total-funciona">Como funciona</a></li>
+                                <li><a href="#beneficios">Benefícios</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    <h2>Site links</h2>
+                                </li>
+                                <li><a href="paginaPrincipal.html">Home</a></li>
+                                <li><a href="paginaCadastro.html">Cadastro</a></li>
+                                <li><a href="index.html">Login</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </section>
+    </footer>
+    <script src="js/cpaas.js"></script>
+</body>
+</html>
