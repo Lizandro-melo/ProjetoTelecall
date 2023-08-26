@@ -129,7 +129,7 @@
                 <button class="absolute font-semibold text-padrao top-14 centralizar border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors">Enviar</button>
                 <section>
                     <span class="max-lg:right-0 max-lg:top-10 absolute text-xs text-padrao right-36 top-6">Já é cliente Telecall? <br />
-                        <a class="font-semibold text-red-700" href="index.html">Fazer login</a>
+                        <a class="font-semibold text-red-700" href="paginaLogin.php">Fazer login</a>
                     </span>
                 </section>
             </section>

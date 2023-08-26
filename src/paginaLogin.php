@@ -10,7 +10,6 @@
     <link href="css/output.css" rel="stylesheet">
     <title>Telecall - Area do Cliente</title>
 </head>
-
 <body class="transition-colors">
     <header class="shadow-lg shadow-zinc-400">
         <nav class="bg-secundary w-full h-7 flex justify-end items-center">
@@ -27,7 +26,7 @@
         </section>
     </header>
     <main>
-        <form action="http://localhost/projetotelecall/src/server/" method="POST" class="max-lg:w-full absolute centralizar bg-form w-2/5 h-3/5 flex flex-col py-10 items-center rounded-3xl">
+        <form action="http://localhost/projetotelecall/src/server/config.php" method="POST" class="max-lg:w-full absolute centralizar bg-form w-2/5 h-3/5 flex flex-col py-10 items-center rounded-3xl">
             <section
                 class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
                 <h1 class="text-2xl">Área do cliente</h1>
@@ -44,7 +43,7 @@
             </section>
             <section class=" relative w-60">
                 <span class="absolute text-xs left-0 top-1 text-padrao">Ainda não é cliente?<br>
-                    <a class="text-red-700 font-semibold" href="paginaCadastro.html">Cadastre-se aqui.</a>
+                    <a class="text-red-700 font-semibold" href="./paginaCadastro.php">Cadastre-se aqui.</a>
                 </span>
                 <span class="absolute text-xs right-0 top-1 text-padrao">
                     <a class="font-semibold text-red-700" href="#">Esqueci a senha.

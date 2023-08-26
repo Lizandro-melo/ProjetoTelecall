@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php
 
-?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +17,12 @@
         <nav class="bg-secundary w-full h-7 flex justify-end items-center">
             <ul class="flex mr-7 gap-4">
                 <li>
-                    <section class="cursor-pointer flex items-center bg-white rounded-2xl w-full px-4 h-6 gap-2
-                    ">
-                        <span><img src="img/icons/icon-perfil.svg" alt=""></span>
-                        <h2>_User_Name_</h2>
-                    </section>
+                    <a href="paginaLogin.php" class="cursor-pointer flex items-center bg-white rounded-2xl w-full px-4 h-6 gap-2">
+                        <span><img src="img/icons/icon-perfil.svg" alt="user"></span>
+                        <h2>
+                            Área do cliente
+                        </h2>
+                    </a>
                 </li>
                 <li>
                     <button id="themes" class="flex items-center bg-white rounded-2xl w-16 h-6">
@@ -36,12 +35,10 @@
             <img class="ml-5 h-14 rounded-3xl" src="img/logo-telecall.png" alt="Logo-Telecall">
             <nav class="absolute right-16">
                 <ul class="flex gap-x-16">
-                    <li class="lg:block hidden text-base px-4 py-1 text-white font-medium"><a
-                            href="#beneficios">Beneficios</a></li>
+                    <li class="lg:block hidden text-base px-4 py-1 text-white font-medium"><a href="#beneficios">Beneficios</a></li>
                     <li class="lg:block hidden text-base px-4 py-1 text-white font-medium"><a href="#planos">Planos</a>
                     </li>
-                    <li class="lg:block hidden text-base px-4 py-1 text-white font-medium"><a
-                            href="#localizacao">Localização</a></li>
+                    <li class="lg:block hidden text-base px-4 py-1 text-white font-medium"><a href="#localizacao">Localização</a></li>
                     <li class="lg:block hidden text-base px-4 py-1 text-white font-medium"><a href="#sobre">Sobre</a>
                     </li>
                     <li id="b-navbar" class="lg:hidden block"><img src="img/icons/icon-options.svg" alt=""></li>
@@ -51,26 +48,22 @@
         <section id="options" class="xl:hidden absolute -z-30 right-0 w-full -translate-y-full transition-transform">
             <nav>
                 <ul class="flex flex-col justify-center items-center gap-x-16">
-                    <a href="#beneficios"
-                        class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
+                    <a href="#beneficios" class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
                         <li>
                             Beneficios
                         </li>
                     </a>
-                    <a href="#planos"
-                        class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
+                    <a href="#planos" class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
                         <li>
                             Planos
                         </li>
                     </a>
-                    <a href="#localizacao"
-                        class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
+                    <a href="#localizacao" class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
                         <li>
                             Localização
                         </li>
                     </a>
-                    <a href="#sobre"
-                        class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
+                    <a href="#sobre" class="w-full option bg-primary hover:bg-red-800 cursor-pointer text-base px-4 py-10 text-white font-medium text-center">
                         <li>
                             Sobre
                         </li>
@@ -93,8 +86,7 @@
                 Beneficios para sua empresa.
             </h2>
             <section class="flex flex-wrap w-4/5 justify-center gap-16 -z-50">
-                <article
-                    class="-z-50  relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
+                <article class="-z-50  relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
                     <h2 class="text-label font-medium text-lg">
                         Redução de custos
                     </h2>
@@ -103,8 +95,7 @@
                         Elimine o custo de investimento em equipamentos e manutenção.
                     </p>
                 </article>
-                <article
-                    class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
+                <article class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
                     <h2 class="text-label font-medium text-lg">
                         Pronto para usar
                     </h2>
@@ -113,8 +104,7 @@
                         Receba os aparelhos já formatos, com tudo instalado e configurado conforme sua necessidade.
                     </p>
                 </article>
-                <article
-                    class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
+                <article class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
                     <h2 class="text-label font-medium text-lg">
                         Modernização
                     </h2>
@@ -123,8 +113,7 @@
                         O parque de TI da sua empresa sempre atualizado com os equipamentos mais modernos do mercado.
                     </p>
                 </article>
-                <article
-                    class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
+                <article class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
                     <h2 class="text-label font-medium text-lg">
                         Manutenção
                     </h2>
@@ -133,8 +122,7 @@
                         Realizadas de forma ágil e sem custo adicional.
                     </p>
                 </article>
-                <article
-                    class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
+                <article class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
                     <h2 class="text-label font-medium text-lg">
                         Logística Completa
                     </h2>
@@ -143,8 +131,7 @@
                         Entrega e retirada em todo o Brasil.
                     </p>
                 </article>
-                <article
-                    class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
+                <article class="relative flex justify-center flex-col items-center w-72 h-72 p-5 text-center shadow-2xl rounded-3xl gap-4 hover:scale-110 transition-transform">
                     <h2 class="text-label font-medium text-lg">
                         Suporte
                     </h2>
@@ -162,74 +149,53 @@
                     Internet
                 </h2>
                 <section class="flex flex-wrap w-full justify-center gap-16">
-                    <article
-                        class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-4 hover:scale-110 transition-transform">
+                    <article class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-4 hover:scale-110 transition-transform">
                         <h2 class="text-label font-medium text-lg">Banda larga</h2>
                         <h3 class="text-label font-medium text-lg">100MB</h3>
-                        <span class="text-label font-medium text-lg animate-bounce">R$ <span
-                                class="text-blue-600">99,90</span>/mês</span>
-                        <button
-                            class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
+                        <span class="text-label font-medium text-lg animate-bounce">R$ <span class="text-blue-600">99,90</span>/mês</span>
+                        <button class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
                     </article>
-                    <article
-                        class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-4 hover:scale-110 transition-transform">
+                    <article class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-4 hover:scale-110 transition-transform">
                         <h2 class="text-label font-medium text-lg">Banda larga</h2>
                         <h3 class="text-label font-medium text-lg">300MB</h3>
-                        <span class="text-label font-medium text-lg animate-bounce">R$ <span
-                                class="text-blue-600">119,90</span>/mês</span>
-                        <button
-                            class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
+                        <span class="text-label font-medium text-lg animate-bounce">R$ <span class="text-blue-600">119,90</span>/mês</span>
+                        <button class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
                     </article>
-                    <article
-                        class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-4 hover:scale-110 transition-transform">
+                    <article class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-4 hover:scale-110 transition-transform">
                         <h2 class="text-label font-medium text-lg">Banda larga</h2>
                         <h3 class="text-label font-medium text-lg">600MB</h3>
-                        <span class="text-label font-medium text-lg animate-bounce">R$ <span
-                                class="text-blue-600">299,99</span>/mês</span>
-                        <button
-                            class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
+                        <span class="text-label font-medium text-lg animate-bounce">R$ <span class="text-blue-600">299,99</span>/mês</span>
+                        <button class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
                     </article>
                 </section>
                 <h2 class="my-10 text-2xl font-medium text-label z-30">
                     Telefonia
                 </h2>
                 <section class="flex flex-wrap w-full justify-center gap-16">
-                    <article
-                        class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-10 hover:scale-110 transition-transform">
+                    <article class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-10 hover:scale-110 transition-transform">
                         <h2 class="text-label font-medium text-lg">Softphone</h2>
-                        <span class="text-label font-medium text-lg animate-bounce">R$ <span
-                                class="text-blue-600">69,90</span>/mês</span>
-                        <button
-                            class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
+                        <span class="text-label font-medium text-lg animate-bounce">R$ <span class="text-blue-600">69,90</span>/mês</span>
+                        <button class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
                     </article>
-                    <article
-                        class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-10 hover:scale-110 transition-transform">
+                    <article class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-10 hover:scale-110 transition-transform">
                         <h2 class="text-label font-medium text-lg">Aparelho IP</h2>
-                        <span class="text-label font-medium text-lg animate-bounce">R$ <span
-                                class="text-blue-600">79,90</span>/mês</span>
-                        <button
-                            class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
+                        <span class="text-label font-medium text-lg animate-bounce">R$ <span class="text-blue-600">79,90</span>/mês</span>
+                        <button class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
                     </article>
-                    <article
-                        class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-10 hover:scale-110 transition-transform">
+                    <article class="flex justify-center flex-col items-center w-64 h-64 p-5 text-center shadow-2xl rounded-3xl relative gap-10 hover:scale-110 transition-transform">
                         <h2 class="text-label font-medium text-lg">Call center / Aparelho IP</h2>
-                        <span class="text-label font-medium text-lg animate-bounce">R$ <span
-                                class="text-blue-600">239,90</span>/mês</span>
-                        <button
-                            class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
+                        <span class="text-label font-medium text-lg animate-bounce">R$ <span class="text-blue-600">239,90</span>/mês</span>
+                        <button class="border px-4 py-2 border-blue-600 text-blue-600 hover:text-white hover:bg-blue-600 transition-colors ">Contrate</button>
                     </article>
                 </section>
             </section>
         </section>
         <section class="flex flex-col items-center">
             <h2 id="localizacao" class="my-10 text-2xl font-medium text-label z-30">Nossa localização</h2>
-            <iframe class="w-3/4 h-96 rounded-xl"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1836.3524211121767!2d-43.34734190448022!3d-22.997878752823084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda488eb4a8e5%3A0xd92e16bc83ef0d07!2sTelecall!5e0!3m2!1spt-BR!2sbr!4v1685073986609!5m2!1spt-BR!2sbr"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            <iframe class="w-3/4 h-96 rounded-xl" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1836.3524211121767!2d-43.34734190448022!3d-22.997878752823084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda488eb4a8e5%3A0xd92e16bc83ef0d07!2sTelecall!5e0!3m2!1spt-BR!2sbr!4v1685073986609!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </section>
-        <button id="btnTop" class=" transition-all fixed bottom-20 -right-20 w-16 h-16 bg-blue-950 rounded-full"><span
-                class="invert font-black">◬</span></button>
+        <button id="btnTop" class=" transition-all fixed bottom-20 -right-20 w-16 h-16 bg-blue-950 rounded-full"><span class="invert font-black">◬</span></button>
         <section class="flex flex-col items-center">
             <section class=" w-5/6 text-center justify-center">
                 <h2 id="sobre" class="my-10 text-2xl font-medium text-label z-30">Sobre a Telecall</h2>
@@ -242,14 +208,8 @@
             </section>
             <section class="flex gap-5 mt-10">
                 <section class="flex gap-10 scale-75 -z-10">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8wMFmszGWZE"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jW3iTCw6T-c"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8wMFmszGWZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jW3iTCw6T-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </section>
             </section>
         </section>
