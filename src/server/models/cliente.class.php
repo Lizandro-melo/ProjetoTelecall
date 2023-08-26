@@ -1,8 +1,6 @@
 <?php
-
 class Cliente
 {
-
     private string $nome;
     private string $sobrenome;
     private string $cpf;
@@ -15,18 +13,20 @@ class Cliente
     private string $login;
     private string $senha;
 
-    public function __construct(string $nome, string $sobrenome, string $cpf, string $sexo, string $dataNascimento, string $telefoneCelular, string $telefoneFixo, string $nomeMaterno, string $endereco, string $login, string $senha){
-        $this->nome = $nome;
-        $this->sobrenome = $sobrenome;
-        $this->cpf = $cpf;
-        $this->sexo = $sexo;
-        $this->dataNascimento = $dataNascimento;
-        $this->telefoneCelular = $telefoneCelular;
-        $this->telefoneFixo = $telefoneFixo;
-        $this->nomeMaterno = $nomeMaterno;
-        $this->endereco = $endereco;
-        $this->login = $login;
-        $this->senha = $senha;
+    public function __construct(DbConnection $db, $login, $senha){
+        foreach($db->__getCliente($login, $senha) as $row){
+            $this->nome=$row['nome'];
+            $this->sobrenome=$row['sobrenome'];
+            $this->cpf=$row['cpf'];
+            $this->sexo=$row['sexo'];
+            $this->dataNascimento=$row['data_nascimento'];
+            $this->telefoneCelular=$row['telefone_celular'];
+            $this->telefoneFixo=$row['telefone_fixo'];
+            $this->nomeMaterno=$row['nome_materno'];
+            $this->endereco=$row['endereco'];
+            $this->login=$row['login'];
+            $this->senha=$row['senha'];
+        }
     }
 
     public function __getNome()
@@ -70,7 +70,6 @@ class Cliente
         return $this->endereco;
     }
 
-
     public function __setNome(string $nome)
     {
         $this->nome = $nome;
@@ -113,4 +112,3 @@ class Cliente
     }
 
 }
-?>

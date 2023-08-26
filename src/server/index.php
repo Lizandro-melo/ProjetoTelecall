@@ -1,15 +1,15 @@
 <?php
 require("db/connectionDb.class.php");
+require("models/cliente.class.php");
+try {
+    $login = (string) $_POST['login'];
+    $senha = (string) $_POST['senha'];
+    $db = new DbConnection();
+    $db->__autentication($login, $senha);
+    $cliente = new Cliente($db, $login, $senha);
 
-
-$db = new DbConnection();
-
-$login = $_POST['login'];
-$senha = $_POST['senha'];
-
-
-
-$db->__autentication($login, $senha);
-
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 
 ?>
