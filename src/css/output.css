@@ -548,7 +548,7 @@ video {
   --bg-color-fundo: white;
   --bg-color-form: #dfdfe7;
   --text-label: rgb(30 58 138);
-  --text-padrao: black;
+  --text-padrao: red;
   --invert: 100%;
 }
 

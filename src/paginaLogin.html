@@ -27,8 +27,7 @@
         </section>
     </header>
     <main>
-        <section
-            id="escolha"
+        <section id="escolha"
             class=" max-lg:w-full absolute centralizar  bg-form w-2/4 py-14 flex flex-col  items-center rounded-3xl">
             <section
                 class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
@@ -39,30 +38,21 @@
                     Antes de continuar, diga qual seu tipo de usuario?
                 </p>
             </section>
-            <section
-            class="mt-10 flex gap-5"
-            >
-                <button
-                id="b-master"
-                class="font-semibold left-0  h-10 px-10 border-red-800 border hover:bg-red-800 hover:text-white transition-colors text-padrao"
-                >
+            <section class="mt-10 flex gap-5">
+                <button id="b-master"
+                    class="font-semibold left-0  h-10 px-10 border-red-800 border hover:bg-red-800 hover:text-white transition-colors text-padrao">
                     Master
                 </button>
-                <button
-                id="b-comum"
-                class="font-semibold left-0 h-10 px-10 border-red-800 border hover:bg-red-800 hover:text-white transition-colors text-padrao"
-                >
+                <button id="b-comum"
+                    class="font-semibold left-0 h-10 px-10 border-red-800 border hover:bg-red-800 hover:text-white transition-colors text-padrao">
                     Comum
                 </button>
             </section>
         </section>
-        <form action="" method="POST"
-            id="cliente"
+        <form action="" method="POST" id="cliente"
             class="max-lg:w-full absolute centralizar bg-form w-2/4 h-3/4 !hidden flex flex-col pt-24 items-center rounded-3xl">
-            <section
-            onclick="window.location.reload()"
-            class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer"
-            >
+            <section onclick="window.location.reload()"
+                class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer">
                 Voltar
             </section>
             <section
@@ -100,19 +90,27 @@
             </section>
         </form>
         <section
-        class="z-50 max-lg:w-full centralizar bg-form w-full flex flex-col pt-24 items-center rounded-3xl"
-        >
-            <section class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
-                <h1 class="text-2xl">Área do cliente</h1>
-    
-        </section>
-        <form action="" method="POST"
-            id="master"
-            class="max-lg:w-full absolute centralizar bg-form w-2/4 h-3/4 !hidden flex flex-col pt-24 items-center rounded-3xl">
+            class="z-50 max-lg:w-full centralizar bg-form w-2/5 !hidden flex flex-col py-10 justify-center items-center rounded-3xl border border-black">
             <section
-            onclick="window.location.reload()"
-            class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer"
+                class="bg-primary w-4/12 h-14 rounded-2xl flex items-center justify-center text-white font-semibold">
+                <h1 class="text-2xl">2FA</h1>
+            </section>
+            <p class="text-xl mt-11 text-center w-3/4 text-padrao">
+                Responda a pergunta de segurança para comfirmar-mos que é você mesmo.
+            </p>
+            <section
+            class="flex items-center mt-10 gap-2"
             >
+                <label class="text-label font-semibold " for="pergunta">
+                    < Pergunta: >
+                </label>
+                <input placeholder="Resposta" type="text" class="invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900">
+            </section>
+        </section>
+        <form action="" method="POST" id="master"
+            class="max-lg:w-full absolute centralizar bg-form w-2/4 h-3/4 !hidden flex flex-col pt-24 items-center rounded-3xl">
+            <section onclick="window.location.reload()"
+                class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer">
                 Voltar
             </section>
             <section
@@ -145,11 +143,11 @@
     </main>
     <script src="js/trocarTema.js"></script>
     <script>
-        $("#b-master").click(()=>{
+        $("#b-master").click(() => {
             $("#escolha").hide();
             $("#master").toggleClass("!hidden");
         })
-        $("#b-comum").click(()=>{
+        $("#b-comum").click(() => {
             $("#escolha").hide();
             $("#cliente").toggleClass("!hidden");
         })
