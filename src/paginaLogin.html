@@ -10,6 +10,7 @@
     <link href="css/output.css" rel="stylesheet">
     <title>Telecall - Area do Cliente</title>
 </head>
+
 <body class="transition-colors">
     <header class="shadow-lg shadow-zinc-400">
         <nav class="bg-secundary w-full h-7 flex justify-end items-center">
@@ -26,7 +27,44 @@
         </section>
     </header>
     <main>
-        <form action="./server/autenticar.php" method="POST" class="max-lg:w-full absolute centralizar bg-form w-2/5 h-3/5 flex flex-col py-10 items-center rounded-3xl">
+        <section
+            id="escolha"
+            class=" max-lg:w-full absolute centralizar  bg-form w-2/4 py-14 flex flex-col  items-center rounded-3xl">
+            <section
+                class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
+                <h1 class="text-2xl">Bem vindo</h1>
+            </section>
+            <section class="w-64 text-center text-3xl ">
+                <p>
+                    Antes de continuar, diga qual seu tipo de usuario?
+                </p>
+            </section>
+            <section
+            class="mt-10 flex gap-5"
+            >
+                <button
+                id="b-master"
+                class="font-semibold left-0  h-10 px-10 border-red-800 border hover:bg-red-800 hover:text-white transition-colors text-padrao"
+                >
+                    Master
+                </button>
+                <button
+                id="b-comum"
+                class="font-semibold left-0 h-10 px-10 border-red-800 border hover:bg-red-800 hover:text-white transition-colors text-padrao"
+                >
+                    Comum
+                </button>
+            </section>
+        </section>
+        <form action="" method="POST"
+            id="cliente"
+            class="max-lg:w-full absolute centralizar bg-form w-2/4 h-3/4 !hidden flex flex-col pt-24 items-center rounded-3xl">
+            <section
+            onclick="window.location.reload()"
+            class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer"
+            >
+                Voltar
+            </section>
             <section
                 class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
                 <h1 class="text-2xl">Área do cliente</h1>
@@ -34,14 +72,14 @@
             <section class="flex flex-col">
                 <label for="login" class="my-2 text-label font-semibold ">Login</label>
                 <input placeholder="Digite seu login"
-                    class="invalid:outline-red-700 w-60 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2" type="text"
-                    id="login" name="login" required>
+                    class="invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2"
+                    type="text" id="login" name="login" required>
                 <label for="senha" class="my-2 text-label font-semibold ">Senha</label>
                 <input placeholder="Digite sua senha"
-                    class=" invalid:outline-red-700 w-60 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2" type="password"
-                    id="senha" name="senha" required>
+                    class=" invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2"
+                    type="password" id="senha" name="senha" required>
             </section>
-            <section class=" relative w-60">
+            <section class="relative w-60">
                 <span class="absolute text-xs left-0 top-1 text-padrao">Ainda não é cliente?<br>
                     <a class="text-red-700 font-semibold" href="./paginaCadastro.html">Cadastre-se aqui.</a>
                 </span>
@@ -49,14 +87,66 @@
                     <a class="font-semibold text-red-700" href="#">Esqueci a senha.
                     </a>
                 </span>
-                <button type="submit"
-                    class="absolute font-semibold top-70s centralizar border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">
-                    Entrar
-                </button>
+                <section class="flex w-full justify-evenly mt-16">
+                    <button type="submit"
+                        class=" font-semibold border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">
+                        Entrar
+                    </button>
+                    <button type="reset"
+                        class=" font-semibold left-0  border-red-800 border w-10 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">
+                        &cross;
+                    </button>
+                </section>
+            </section>
+        </form>
+        <form action="" method="POST"
+            id="master"
+            class="max-lg:w-full absolute centralizar bg-form w-2/4 h-3/4 !hidden flex flex-col pt-24 items-center rounded-3xl">
+            <section
+            onclick="window.location.reload()"
+            class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer"
+            >
+                Voltar
+            </section>
+            <section
+                class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
+                <h1 class="text-2xl">Área Master</h1>
+            </section>
+            <section class="flex flex-col">
+                <label for="login" class="my-2 text-label font-semibold ">Login</label>
+                <input placeholder="Digite seu login"
+                    class="invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2"
+                    type="text" id="login" name="login" required>
+                <label for="senha" class="my-2 text-label font-semibold ">Senha</label>
+                <input placeholder="Digite sua senha"
+                    class=" invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2"
+                    type="password" id="senha" name="senha" required>
+            </section>
+            <section class="relative w-60">
+                <section class="flex w-full justify-evenly mt-10">
+                    <button type="submit"
+                        class=" font-semibold border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">
+                        Entrar
+                    </button>
+                    <button type="reset"
+                        class=" font-semibold left-0  border-red-800 border w-10 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">
+                        &cross;
+                    </button>
+                </section>
             </section>
         </form>
     </main>
     <script src="js/trocarTema.js"></script>
+    <script>
+        $("#b-master").click(()=>{
+            $("#escolha").hide();
+            $("#master").toggleClass("!hidden");
+        })
+        $("#b-comum").click(()=>{
+            $("#escolha").hide();
+            $("#cliente").toggleClass("!hidden");
+        })
+    </script>
 </body>
 
 </html>
