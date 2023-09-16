@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/output.css" rel="stylesheet">
+    <title>Telecall - Redefinir</title>
+</head>
+
+<body class="transition-colors">
+    <header class="shadow-lg shadow-zinc-400">
+        <nav class="bg-secundary w-full h-7 flex justify-end items-center">
+            <ul class="mr-7">
+                <li>
+                    <button id="themes" class="flex items-center justify-start bg-white rounded-2xl w-16 h-6">
+                        <img class="w-10 invert" src="img/icons/icone_ps.png" alt="icone-tema">
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <section class="bg-primary flex justify-start h-16 items-center">
+            <img class="ml-5 h-14 rounded-3xl" src="img/logo-telecall.png" alt="Logo-Telecall">
+        </section>
+    </header>
+    <main>
+        <form action="" method="POST" id="cliente"
+            class="max-lg:w-full absolute centralizar bg-form w-2/4 h-2/4 flex flex-col pt-16 items-center rounded-3xl">
+            <section onclick="window.history.back()"
+                class="absolute left-7 top-7 bg-primary w-24 h-10 rounded-md flex items-center justify-center text-white font-semibold mb-4 cursor-pointer">
+                Voltar
+            </section>
+            <section
+                class="bg-primary w-2/5 h-14 rounded-2xl flex items-center justify-center text-white font-semibold mb-4">
+                <h1 class="text-2xl">Redefinir Senha</h1>
+            </section>
+            <section class="flex flex-col">
+                <label for="login" class="my-2 text-label font-semibold ">Digite</label>
+                <input placeholder="Login / CPF"
+                    class="invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900 pl-2"
+                    type="text" id="login" name="login" required>
+            </section>
+            <section class=" w-60">
+                <section class="flex w-full justify-evenly mt-10">
+                    <button type="submit"
+                        class=" font-semibold border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">
+                        Entrar
+                    </button>
+                </section>
+            </section>
+        </form>
+        <section
+            class="z-50 max-lg:w-full centralizar bg-form w-2/5 !hidden flex flex-col py-10 justify-center items-center rounded-3xl border border-black">
+            <section
+                class="bg-primary w-4/12 h-14 rounded-2xl flex items-center justify-center text-white font-semibold">
+                <h1 class="text-2xl">2FA</h1>
+            </section>
+            <p class="text-xl mt-11 text-center w-3/4 text-padrao">
+                Responda a pergunta de segurança para comfirmar-mos que é você mesmo.
+            </p>
+            <section
+            class="flex items-center mt-10 gap-2"
+            >
+                <label class="text-label font-semibold " for="pergunta">
+                    < Pergunta: >
+                </label>
+                <input placeholder="Resposta" type="text" class="invalid:outline-red-700 w-64 h-10 text-center bg-zinc-400 text-black placeholder:text-stone-900">
+            </section>
+        </section>
+    </main>
+    <script src="js/trocarTema.js"></script>
+</body>
+
+</html>
