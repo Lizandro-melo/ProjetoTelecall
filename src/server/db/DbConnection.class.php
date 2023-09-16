@@ -4,9 +4,9 @@ class DbConnection
 {
 
     private string $servername = "localhost";
-    private string $username = "Telecall";
-    private string $password = "Telecall415263";
-    public string $port = "3308";
+    private string $username = "root";
+    private string $password = "415263";
+    public string $port = "3306";
     private $conn;
 
     public function __construct()
@@ -18,24 +18,15 @@ class DbConnection
         }
     }
 
-    public function __autentication(string $login, string $pass)
-    {
-        $query = "SELECT login, senha FROM cliente WHERE login='$login' AND senha='$pass'";
-        $exec = $this->conn->query($query);
-        $result = $exec->fetchColumn();
-        if ($result == $login) {
-            header("location: http://localhost/projetotelecall/src/paginaPrincipal.php");
-
-            return;
-        } else {
-            return "error";
-        }
-    }
-
     public function __getCliente($login, $senha)
     {
         $query = "SELECT * FROM cliente WHERE login = '$login' AND senha = '$senha'";
         $exec = $this->conn->query($query);
         return $exec;
+    }
+
+    public function __getCoon()
+    {
+        return $this->conn;
     }
 }
