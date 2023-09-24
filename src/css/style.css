@@ -1,0 +1,77 @@
+
+:root {
+  --primary-color: #ca1c2a;
+  --secundary-color: #aa1824;
+  --bg-color-fundo: white;
+  --bg-color-form: #dfdfe7;
+  --text-label: rgb(30 58 138);
+  --text-padrao: black;
+  --invert: 100%;
+}
+
+.text-label {
+  color: var(--text-label);
+}
+
+.text-padrao {
+  color: var(--text-padrao);
+}
+
+.bg-form {
+  background-color: var(--bg-color-form);
+}
+
+.bg-secundary {
+  background-color: var(--secundary-color);
+}
+
+.color-secundary {
+  background-color: var(--secundary-color);
+}
+
+#themes {
+  background-color: var(--bg-color-fundo);
+}
+
+#themes img {
+  filter: invert(var(--invert));
+}
+
+.top-70s {
+  top: 4.5rem !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.janela-mensagem,
+.esqueci-senha {
+  display: none;
+}
+
+.centralizar {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centralizar-footer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-form {
+  background-color: var(--bg-color-form);
+}
+
+.w-368 {
+  width: 368px;
+}
+
+.top-por{
+  top: 57%;
+}

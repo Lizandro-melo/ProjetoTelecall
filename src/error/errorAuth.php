@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="../css/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
   <title>Telecall - Area do Cliente</title>
 </head>
 
