@@ -35,27 +35,27 @@
     </header>
     <main>
       <section
-        class="bg-stone-100 shadow-lg shadow-stone-400 max-w-xl absolute top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
+        class="bg-modal shadow-lg shadow-stone-800 max-w-xl absolute top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
       >
         <section class="px-20 py-14 flex flex-col gap-16">
           <section class="justify-center flex items-center">
-            <span class="font-bold text-2xl max-lg:text-xl">Bem vindo</span>
+            <span class="font-bold text-padrao text-2xl max-lg:text-xl">Bem vindo</span>
           </section>
           <section class="flex justify-center items-center">
-            <p class="text-center text-xl max-lg:text-lg">
+            <p class="text-center text-padrao text-xl max-lg:text-lg">
               Antes de continuar, diga qual seu tipo de usuario?
             </p>
           </section>
           <section class="flex justify-center items-center gap-5">
             <button
               onclick="window.location.href = 'paginaLoginMaster.html'"
-              class="font-semibold hover:bg-red-700 bg-white hover:text-white transition-colors shadow-xl shadow-stone-300 w-32 h-10 border-red-700 border text-red-700"
+              class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors w-32 h-10 border-red-700 border text-red-700"
             >
               Master
             </button>
             <button
               onclick="window.location.href = 'paginaLoginComum.html'"
-              class="font-semibold hover:bg-red-700 bg-white hover:text-white transition-colors shadow-xl shadow-stone-300 w-32 h-10 border-red-700 border text-red-700"
+              class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors w-32 h-10 border-red-700 border text-red-700"
             >
               Comum
             </button>
@@ -63,6 +63,11 @@
         </section>
       </section>
     </main>
+    <section 
+    class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5"
+    >
+    <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
+    </section>
   </body>
-  <script></script>
-</html>
+  <script src="js/trocarTema.js"></script>
+  </html>

@@ -3,10 +3,11 @@
   --primary-color: #ca1c2a;
   --secundary-color: #aa1824;
   --bg-color-fundo: white;
-  --bg-color-form: #dfdfe7;
+  --bg-color-modal: rgb(245 245 244 / 1);
+  --button-color-modal: white;
   --text-label: rgb(30 58 138);
   --text-padrao: black;
-  --invert: 100%;
+  --invert: 0;
 }
 
 .text-label {
@@ -17,8 +18,12 @@
   color: var(--text-padrao);
 }
 
-.bg-form {
-  background-color: var(--bg-color-form);
+.bg-modal {
+  background-color: var(--bg-color-modal);
+}
+
+.bg-modal-button{
+  background-color: var(--button-color-modal);
 }
 
 .bg-secundary {
