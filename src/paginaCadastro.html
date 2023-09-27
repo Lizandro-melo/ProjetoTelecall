@@ -36,7 +36,7 @@
 
     <main>
       <form
-        class="absolute h-4/5 bg-form flex flex-col px-10 items-center rounded-3xl justify-center"
+        class="absolute h-4/5 bg-form flex flex-col px-10 items-center rounded-3xl justify-center" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" 
       >
         <section class="flex flex-col justify-center items-center">
           <section
@@ -250,7 +250,7 @@
           </section>
           <section class="relative w-full">
             <button
-              class="absolute font-semibold text-padrao top-14 centralizar border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors"
+              class="absolute font-semibold text-padrao top-14 centralizar border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors" name="enviar-cadastro"
             >
               Enviar
             </button>
