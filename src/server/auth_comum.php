@@ -1,6 +1,6 @@
 <?php 
     function AuthComum(){
-        if(isset($_POST['enviar-cadastro'])):
+        if(isset($_POST['enviar-cadastro'])){
             echo # ; //tela de erro
             /* DADOS DE CADASTRO DE CLIENTE 
             nome , sobrenome , cpf , data , sexo , nomeMaterno , telCelular , telFixo , endereco , login , senha */
@@ -47,8 +47,5 @@
             } else {
                 echo "Por favor, insira uma senha válida.";
             }*/
-
+        }
     }
-
-
-?>
