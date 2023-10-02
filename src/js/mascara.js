@@ -6,17 +6,17 @@ $("#cpf").on("input", () => {
 
     $("#cpf").val(cpf);
 })
-$("#tel-cel").on("input", () => {
-    let cel = $("#tel-cel").val();
+$("#telCelular").on("input", () => {
+    let cel = $("#telCelular").val();
     cel = cel.replace(/\D/g, "")
 
     cel = cel.replace(/^(\d{1,2})(\d{1,5})(\d{1,4})$/, "($1) $2-$3");
 
-    $("#tel-cel").val(cel)
+    $("#telCelular").val(cel)
 })
-$("#tel-fix").on("input", () => {
-    let fix = $("#tel-fix").val();
+$("#telFixo").on("input", () => {
+    let fix = $("#telFixo").val();
     fix = fix.replace(/\D/g, "")
     fix = fix.replace(/^(\d{1,2})(\d{1,4})(\d{1,4})$/, "($1) $2-$3");
-    $("#tel-fix").val(fix)
+    $("#telFixo").val(fix)
 })
