@@ -37,16 +37,16 @@
       <form
         method="post"
         action="server/auth_comum.php"
-        class="bg-stone-100 shadow-lg shadow-stone-400 w-2/4 absolute top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
+        class="bg-modal shadow-lg shadow-stone-700 w-2/5 absolute top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
       >
-      <a href="paginaLoginTipo.html" class="absolute top-8 left-8 text-lg">Voltar</a>
+      <a href="paginaLoginTipo.html" class="absolute top-8 text-padrao  left-8 text-lg">Voltar</a>
         <section class="px-20 py-14 flex flex-col gap-14">
           <section class="justify-center flex items-center">
-            <span class="font-bold text-2xl max-lg:text-xl">Cliente Comum</span>
+            <span class="font-bold text-2xl max-lg:text-xl text-padrao ">Cliente Comum</span>
           </section>
           <section class="flex flex-col justify-center items-center gap-4">
             <section class="flex flex-col gap-2">
-              <label for="login">Login</label>
+              <label for="login" class="text-label ">Login</label>
               <input
                 type="text"
                 class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
@@ -55,7 +55,7 @@
               />
             </section>
             <section class="flex flex-col gap-2">
-              <label for="senha">Senha</label>
+              <label for="senha" class="text-label ">Senha</label>
               <input
                 type="password"
                 class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
@@ -85,7 +85,7 @@
               </section>
             </section>
             <button
-              class="font-semibold hover:bg-red-700 bg-white hover:text-white transition-colors shadow-xl shadow-stone-300 w-32 h-10 border-red-700 border text-red-700"
+              class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors shadow-xl w-32 h-10 border-red-700 border text-padrao "
             >
               Entrar
             </button>
@@ -96,7 +96,7 @@
      <section 
     class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5"
     >
-    <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
+    <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-modal-button rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
     </section>
   </body>
   <script src="js/trocarTema.js"></script>
