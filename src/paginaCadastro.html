@@ -1,198 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="css/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        font-family: "Mulish", sans-serif;
-      }
-    </style>
-    <title>Telecall - Cadastro</title>
-  </head>
-  <body class="max-lg:flex max-lg:flex-col">
-    <header class="flex bg-primary max-lg:justify-between z-10">
-      <section>
-        <img
-          onclick="window.location.href= 'index.html'"
-          id="logo"
-          class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
-          src="img/logotelecall.png"
-          alt="logo-telecall"
-        />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="css/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      font-family: "Mulish", sans-serif;
+    }
+  </style>
+  <title>Telecall - Cadastro</title>
+</head>
+
+<body>
+  <header class="flex bg-primary max-lg:justify-between z-10">
+    <section>
+      <img onclick="window.location.href= 'index.html'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
+        src="img/logotelecall.png" alt="logo-telecall" />
+    </section>
+  </header>
+  <main class="">
+    <form method="post" action="server/cadastro_comum.php"
+      class="xl:scale-90 scale-90 lg:scale-75 md:static md:translate-x-0 md:translate-y-0 max-sm:static max-sm:translate-x-0 max-sm:translate-y-0 bg-modal shadow-lg shadow-stone-700 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500">
+      <section class="justify-center pt-7 flex items-center">
+        <span class="font-bold text-2xl text-padrao">Tela de cadastro
+        </span>
       </section>
-    </header>
-    <main class="">
-      <form
-        method="post"
-        action="server/auth_comum.php"
-        class="bg-modal shadow-lg shadow-stone-700 max-lg:w-screen max-lg:h-screen max-lg:flex max-lg:flex-col max-lg:justify-center absolute max-lg:top-0 max-lg:transform-none max-lg:left-0 top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500"
-      >
-        <section class="justify-center pt-7 flex items-center">
-          <span class="font-bold text-2xl max-lg:text-lg text-padrao"
-            >Tela de cadastro
-          </span>
-        </section>
-        <section class="flex justify-center items-center p-7">
-          <section class="flex gap-10 max-lg:flex-col">
-            <section class="flex flex-col gap-3">
+      <section class="flex justify-center items-center p-7">
+        <section class="flex gap-10 max-sm:flex-col">
+          <section class="flex flex-col gap-3">
+            <section class="flex flex-col">
+              <label for="nome" class="text-label">Nome</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="nome" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{13,40}$" required placeholder="Pelo menos (Nome Sobrenome)"/>
+            </section>
+            <section class="flex gap-5">
               <section class="flex flex-col">
-                <label for="nome" class="text-label">Nome</label>
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="nome"
-                />
-              </section>
-              <section class="flex gap-5">
-                <section class="flex flex-col">
-                  <label for="sexo" class="text-label">Sexo</label>
-                  <select
-                    class="h-10 w-full pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                    name="sexo"
-                  >
-                    <option value="s" disabled selected>Qual seu sexo</option>
-                    <option value="m">Masculino</option>
-                    <option value="f">Feminino</option>
-                    <option value="o">Outros</option>
-                  </select>
-                </section>
-                <section class="flex flex-col">
-                  <label for="dataNascimento" class="text-label"
-                    >Data de Nascimento</label
-                  >
-                  <input
-                    class="h-10 w-full pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                    type="date"
-                    name="dataNascimento"
-                  />
-                </section>
+                <label for="sexo" class="text-label">Sexo</label>
+                <select
+                  class="h-10 w-full pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                  name="sexo" required>
+                  <option value="s" disabled selected>Qual seu sexo</option>
+                  <option value="m">Masculino</option>
+                  <option value="f">Feminino</option>
+                  <option value="o">Outros</option>
+                </select>
               </section>
               <section class="flex flex-col">
-                <label for="cpf" class="text-label">CPF</label>
+                <label for="dataNascimento" class="text-label">Data de Nascimento</label>
                 <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="cpf"
-                  id="cpf"
-                  maxlength="14"
-                />
-              </section>
-              <section class="flex flex-col">
-                <label for="nomeMaterno" class="text-label">Nome Materno</label>
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="nomeMaterno"
-                />
-              </section>
-              <section class="flex flex-col">
-                <label for="telCelular" class="text-label"
-                  >Telefone Celular</label
-                >
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="telCelular"
-                  id="telCelular"
-                />
+                  class="h-10 w-full pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                  type="date" name="dataNascimento" required/>
               </section>
             </section>
-            <section class="flex flex-col gap-3">
-              <section class="flex flex-col">
-                <label for="telFixo" class="text-label">Telefone Fixo</label>
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="telFixo"
-                />
-              </section>
-              <section class="flex flex-col">
-                <label for="endereco" class="text-label"
-                  >Endereço completo</label
-                >
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="endereco"
-                />
-              </section>
-              <section class="flex flex-col">
-                <label for="login" class="text-label">Login</label>
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="text"
-                  name="login"
-                />
-              </section>
-              <section class="flex flex-col">
-                <label for="senha" class="text-label">Senha</label>
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="password"
-                  name="senha"
-                />
-              </section>
-              <section class="flex flex-col">
-                <label for="comSenha" class="text-label">Confirmar senha</label>
-                <input
-                  class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                  type="password"
-                  name="comSenha"
-                />
-              </section>
+            <section class="flex flex-col">
+              <label for="cpf" class="text-label">CPF</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="cpf" id="cpf" maxlength="14" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" required placeholder="XXX.XXX.XXX-XX"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="nomeMaterno" class="text-label">Nome Materno</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="nomeMaterno" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{15,40}$" required placeholder="Pelo menos (Nome Sobrenome)"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="telCelular" class="text-label">Telefone Celular</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="telCelular" id="telCelular" pattern="^\([1-9]{2}\) 9[0-9]{4}-[0-9]{4}$" maxlength="15" required placeholder="(XX) 9XXXX-XXXX"/>
+            </section>
+          </section>
+          <section class="flex flex-col gap-3">
+            <section class="flex flex-col">
+              <label for="telFixo" class="text-label">Telefone Fixo</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="telFixo" id="telFixo" pattern="^\([1-9]{2}\) [0-9]{4}-[0-9]{4}$" maxlength="14" required  placeholder="(XX) XXXX-XXXX"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="cep" class="text-label">CEP</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="cep" id="cep" pattern="^[0-9]{8}$" required placeholder="XXXXXXXX"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="rua" class="text-label">Rua e N°</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="rua" id="rua" pattern="^[rR]ua\s[A-Za-zÀ-ÖØ-öø-ÿ\s]{1,50}$" required placeholder="Rua XXXXXXXXX N°"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="complemento" class="text-label">Complemento</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="complemento" id="complemento" placeholder="Casa / Fundos / Loja" />
+            </section>
+            <section class="flex flex-col">
+              <label for="bairro" class="text-label">Bairro</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="bairro" id="bairro" required placeholder="Bairro" />
+            </section>
+          </section>
+          <section class="flex flex-col gap-3">
+            <section class="flex flex-col">
+              <label for="localidade" class="text-label">Localidade</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="localidade" id="localidade" required  placeholder="Localização" />
+            </section>
+            <section class="flex flex-col">
+              <label for="uf" class="text-label">UF</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="uf" id="uf" placeholder="XX"  required/>
+            </section>
+            <section class="flex flex-col">
+              <label for="login" class="text-label">Login</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="login" pattern="^[A-Za-z]{6}$" required placeholder="6 caracteres alfabeticos"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="senha" class="text-label">Senha</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="password" name="senha" id="senha" pattern="^.{8}$" required placeholder="Maximo 8 caracteres"/>
+            </section>
+            <section class="flex flex-col">
+              <label for="comSenha" class="text-label">Confirmar senha</label>
+              <input
+                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="password" name="comSenha" id="comSenha" pattern="^.{8}$" required placeholder="Repita sua senha"/>
             </section>
           </section>
         </section>
-        <section
-          class="flex-none w-full p-3 flex justify-center items-center relative max-lg:mb-12"
-        >
-        <section >
-              <section>
-                <span class="absolute text-xs top-0 right-44 max-lg:right-5 text-padrao"
-                  >Já é cliente?<br />
-                  <a
-                    class="text-red-700 font-semibold"
-                    href="paginaLoginTipo.html"
-                    >Faça o login aqui.</a
-                  >
-                </span>
-              </section>
-            </section>
-          <button
-            class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors shadow-xl w-32 h-10 border-red-700 border text-padrao"
-          >
-            Enviar
-          </button>
+      </section>
+      <section class="flex-none w-full p-3 flex justify-center items-center relative ">
+        <section>
+          <section>
+            <span class="absolute text-xs top-0 right-44 max-sm:right-3 text-padrao">Já é cliente?<br />
+              <a class="text-red-700 font-semibold" href="paginaLoginTipo.html">Faça o login aqui.</a>
+            </span>
+          </section>
+          <section>
+            <span id="mensagemError" class=" hidden absolute text-xs top-5 left-36 max-sm:left-3 text-padrao text-red-700 font-black animate-bounce">
+              Senhas não conferem
+            </span>
+          </section>
         </section>
-      </form>
-    </main>
-    <section
-      class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5"
-    >
-      <button
-        id="themes"
-        class="flex text-sm justify-center items-center text-padrao bg-modal-button rounded-full h-5 px-2"
-      >
-        <img
-          src="img/icons/theme.png"
-          class="invert w-4"
-          alt="icon perfil"
-        />Tema
-      </button>
-    </section>
-    <script src="js/trocarTema.js"></script>
-    <script src="js/mascara.js"></script>
-  </body>
+        <button
+          class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors shadow-xl w-32 h-10 border-red-700 border text-padrao" id="cadastrar">
+          Enviar
+        </button>
+      </section>
+    </form>
+  </main>
+  <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
+    <button id="themes"
+      class="flex text-sm justify-center items-center text-padrao bg-modal-button rounded-full h-5 px-2">
+      <img src="img/icons/theme.png" class="invert w-4" alt="icon perfil" />Tema
+    </button>
+  </section>
+  <script src="js/trocarTema.js"></script>
+  <script src="js/mascara.js"></script>
+  <script src="js/verificar.js"></script>
+  <script src="js/puxarCep.js"></script>
+</body>
+
 </html>

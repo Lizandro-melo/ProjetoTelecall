@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,48 +19,43 @@
         font-family: "Mulish", sans-serif;
       }
     </style>
-    <title>Redefinir senha</title>
+    <title>2FA</title>
   </head>
 
   <body class="transition-colors">
     <header class="flex bg-primary max-lg:justify-between z-10">
       <section>
         <img
-          onclick="window.location.href= 'index.html'"
+          onclick="window.location.href= '../index.html'"
           id="logo"
           class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
-          src="img/logotelecall.png"
+          src="../img/logotelecall.png"
           alt="logo-telecall"
         />
       </section>
     </header>
     <main>
       <form
-        action=""
+        action="../server/resposta2fa.php"
         method="POST"
         id="cliente"
-        class="bg-modal shadow-lg shadow-stone-700 w-2/4 absolute top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
+        class="bg-modal shadow-lg shadow-stone-700 w-2/4 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
       >
-        <a
-          href="paginaLoginTipo.html"
-          class="absolute top-8 text-padrao left-8 text-lg"
-          >Voltar</a
-        >
         <section class="justify-center flex items-center">
           <span class="font-bold text-2xl max-lg:text-xl text-padrao pt-5"
-            >Redefinir Senha</span
+            >2FA</span
           >
         </section>
         <section class="flex flex-col items-center justify-center pb-5 pt-8">
           <label for="login" class="my-2 text-label font-semibold"
-            >Imforme-nos</label
+            >Qual o CEP do seu endereço?</label
           >
           <input
-            placeholder="Login / CPF"
+            placeholder="XXXXXXXX"
             class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
             type="text"
-            id="login"
-            name="login"
+            id="resposta"
+            name="resposta"
             required
           />
           <section class="w-60">
@@ -84,7 +79,7 @@
         class="flex text-sm justify-center items-center text-padrao bg-modal-button rounded-full h-5 px-2"
       >
         <img
-          src="img/icons/theme.png"
+          src="../img/icons/theme.png"
           class="invert w-4"
           alt="icon perfil"
         />Tema

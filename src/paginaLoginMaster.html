@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telecall - Tela de Login Master</title>
+    <title>Telecall - Tela de Login</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +37,7 @@
       <form
         method="post"
         action="server/auth_master.php"
-        class="bg-modal shadow-lg shadow-stone-700 w-2/5 absolute top-por left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
+        class="bg-modal shadow-lg shadow-stone-700 w-2/5 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
       >
       <a href="paginaLoginTipo.html" class="text-padrao absolute top-8 left-8 text-lg">Voltar</a>
         <section class="px-20 py-14 flex flex-col gap-10">
@@ -53,6 +53,7 @@
                 type="text"
                 class="h-10 w-64 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700  placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
                 placeholder="Digite aqui seu login"
+                name="login"
                 required
               />
             </section>
@@ -62,6 +63,7 @@
                 type="password"
                 class="h-10 w-64 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700  placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
                 placeholder="Digite aqui sua senha"
+                name="senha"
                 required
               />
             </section>

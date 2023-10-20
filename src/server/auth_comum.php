@@ -1,51 +1,48 @@
-<?php 
-    function AuthComum(){
-        if(isset($_POST['enviar-cadastro'])){
-            echo # ; //tela de erro
-            /* DADOS DE CADASTRO DE CLIENTE 
-            nome , sobrenome , cpf , data , sexo , nomeMaterno , telCelular , telFixo , endereco , login , senha */
-            
-            //filters(validate e sanitize)
-            $nome = filter_input(INPUT_POST , 'nome' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $nome = filter_input(INPUT_POST , 'nome' , FILTER_SANITIZE_STRING);
+<?php
 
-            $sobrenome = filter_input(INPUT_POST , 'sobrenome' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $sobrenome = filter_input(INPUT_POST , 'sobrenome' , FILTER_SANITIZE_STRING);
+require_once "./db/ConnectionDb.class.php";
 
-            $cpf = filter_input(INPUT_POST , 'cpf' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $cpf = filter_input(INPUT_POST, 'cpf' , FILTER_SANITIZE_STRING);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            $data = filter_input(INPUT_POST , 'data' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $data = filter_input(INPUT_POST, 'data' , FILTER_SANITIZE_STRING);
+    $dbConnection = new ConnectionDb();
 
-            $sexo = filter_input(INPUT_POST, 'sexo' , FILTER_VALIDATE_BOOLEAN);
+    $mysqli = $dbConnection->getCon();
 
-            $nomeMaterno = filter_input(INPUT_POST , 'nomeMaterno' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $nomeMaterno = filter_input(INPUT_POST, 'nomeMaterno', FILTER_SANITIZE_NUMBER_INT);
+    $login = $_POST["login"];
+    $senha = $_POST["senha"];
 
-            $telCelular = filter_input(INPUT_POST , 'telCelular' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $telCelular = filter_input(INPUT_POST, 'telCelular', FILTER_SANITIZE_STRING);
+    $Random = rand(1, 3);
 
-            $telFixo = filter_input(INPUT_POST , 'telFixo' , FILTER_SANITIZE_SPECIAL_CHARS);
-            $telFixo = filter_input(INPUT_POST, 'telFixo', FILTER_SANITIZE_STRING);
+    $verificarLogin = "SELECT login FROM telecall.cliente_comum where login = '$login'";
+    if ($result = $mysqli->execute_query($verificarLogin)) {
+        if ($result->num_rows == 1) {
+            $verificarSenha = "SELECT cpf FROM telecall.cliente_comum WHERE senha = '$senha'";
+            if ($result = $mysqli->execute_query($verificarSenha)) {
+                if ($result->num_rows == 1) {
+                    setcookie("cpf", $result->fetch_column());
+                    switch ($Random) {
+                        case 1:
+                            header("Location: ../2fa/pergunta2fa1.php");
+                            setcookie("pergunta", "cep");
+                            break;
+                        case 2:
+                            header("Location: ../2fa/pergunta2fa2.php");
+                            setcookie("pergunta", "data_nascimento");
+                            break;
+                        case 3:
+                            header("Location: ../2fa/pergunta2fa3.php");
+                            setcookie("pergunta", "nome_materno");
+                            break;
+                        default:
+                            break;
+                    }
+                }else{
+                    header("Location:../error/errorAuth.html");
+                }
+            }
+        } else {
 
-            $endereco = filter_input(INPUT_POST , 'endereco' ,FILTER_SANITIZE_SPECIAL_CHARS);
-            $endereco = filter_input(INPUT_POST , 'endereco' ,FILTER_VALIDATE_INT);
-
-            $login = filter_input(INPUT_POST , 'endereco' ,FILTER_SANITIZE_SPECIAL_CHARS);
-            $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
-            
-            $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-
-
-            // tentativa até então falha de enviar uma senha cripitografada
-            
-            /*if ($senha) {
-                $senha_criptografada = hash('sha256', $senha);
-                // Faça o processamento adicional aqui
-                echo "Senha criptografada: $senha_criptografada";
-            } else {
-                echo "Por favor, insira uma senha válida.";
-            }*/
+            header("Location:../error/errorAuth.html");
         }
     }
+}
