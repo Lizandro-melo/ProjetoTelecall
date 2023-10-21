@@ -1,6 +1,7 @@
 <?php
 
 require_once "./db/ConnectionDb.class.php";
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -12,28 +13,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $Random = rand(1, 3);
 
-    $verificarUser = "SELECT cpf FROM telecall.cliente_comum where cpf = '$entrada' or login = '$entrada'";
-    if ($result = $mysqli->execute_query($verificarUser)) {
-        if ($result->num_rows == 1) {
-            setcookie("cpf", $result->fetch_column());
-            switch ($Random) {
-                case 1:
-                    header("Location: ../2fa/pergunta2fa1Senha.php");
-                    setcookie("pergunta", "cep");
-                    break;
-                case 2:
-                    header("Location: ../2fa/pergunta2fa2Senha.php");
-                    setcookie("pergunta", "data_nascimento");
-                    break;
-                case 3:
-                    header("Location: ../2fa/pergunta2fa3Senha.php");
-                    setcookie("pergunta", "nome_materno");
-                    break;
-                default:
-                    break;
-            }
-        } else {
-            header("Location: ../error/errorUserUndefined.html");
+    function verificarCliente($mysqli, $entrada)
+    {
+        $query = "SELECT cpf FROM telecall.cliente_comum where cpf = '$entrada' or login = '$entrada'";
+        $result = $mysqli->execute_query($query);
+        return ($result->num_rows == 1) ? $result->fetch_assoc() : false;
+    }
+    if (verificarCliente($mysqli, $entrada) === false) {
+        $_SESSION["role"] = "erro";
+        header("Location: ../error/errorUserUndefined.php");
+    } else {
+        $_SESSION["cpf"] = verificarCliente($mysqli, $entrada)["cpf"];
+        switch ($Random) {
+            case 1:
+                $_SESSION['pergunta'] = "cep";
+                header("Location:../2fa/pergunta2fa1Senha.php");
+                break;
+            case 2:
+                $_SESSION['pergunta'] = "data_nascimento";
+                header("Location:../2fa/pergunta2fa2Senha.php");
+                break;
+            case 3:
+                $_SESSION['pergunta'] = "nome_materno";
+                header("Location:../2fa/pergunta2fa3Senha.php");
+                break;
+            default:
+                break;
         }
     }
 }

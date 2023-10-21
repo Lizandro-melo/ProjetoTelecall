@@ -1,6 +1,7 @@
 <?php
 
 require_once "./db/ConnectionDb.class.php";
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -8,34 +9,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mysqli = $dbConnection->getCon();
 
-    $cpf = $_COOKIE["cpf"];
-    $pergunta = $_COOKIE["pergunta"];
+    $cpf = $_SESSION["cpf"];
+    $pergunta = $_SESSION["pergunta"];
     $resposta = $_POST["resposta"];
 
-    if ($pergunta == "cep") {
-        $verificarCep = "SELECT cpf FROM telecall.endereco where $pergunta = '$resposta'";
-        $result = $mysqli->execute_query($verificarCep);
-        if ($result->num_rows == 1) {
-            $cpf = $result->fetch_column();
-            $verificarUser = "SELECT cpf FROM telecall.cliente_comum where cpf = '$cpf'";
-            $result = $mysqli->execute_query($verificarUser);
-            while ($row = $result->fetch_row()) {
-                setcookie("cpf", $row[0]);
-            }
-            header("Location: ../redefinirSenha2.php");
+    function verificarResposta($resposta, $pergunta, $cpf, $mysqli)
+    {
+        if ($pergunta == "cep") {
+            $query = "SELECT cpf FROM telecall.endereco WHERE cep = '$resposta' AND cpf = '$cpf'";
+            $queryNome = "SELECT nome FROM telecall.cliente_comum WHERE cpf = '$cpf'";
         } else {
-            header("Location: ../error/errorRespostaIncorreta.html");
+            $query = "SELECT cpf, nome FROM telecall.cliente_comum WHERE $pergunta = '$resposta' AND cpf = '$cpf'";
         }
-    } else {
-        $verificarUser = "SELECT cpf FROM telecall.cliente_comum where $pergunta = '$resposta'";
-        $result = $mysqli->execute_query($verificarUser);
-        if ($result->num_rows == 1) {
-            while ($row = $result->fetch_row()) {
-                setcookie("cpf", $row[0]);
+
+        $result = $mysqli->execute_query($query);
+        if ($result->num_rows === 1) {
+            if ($pergunta == "cep") {
+                $resultNome = $mysqli->execute_query($queryNome);
+                $nome = $resultNome->fetch_assoc()["nome"];
+            } else {
+                $nome = $result->fetch_assoc()["nome"];
             }
+            $data = date('Y-m-d H:i:s');
+            $logMessage = "Solicitou a redefinição da senha";
+            $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
+                         VALUES ('$data', '$logMessage', '$cpf', '$nome')";
+            $mysqli->execute_query($logQuery);
+            $mysqli->commit();
+            $mysqli->close();
+            $_SESSION["role"] = "redefinirSenha";
             header("Location: ../redefinirSenha2.php");
         } else {
-            header("Location:../error/errorRespostaIncorreta.html");
+            $data = date('Y-m-d H:i:s');
+            $logMessage = "o cliente do CPF $cpf tentou responder a pergunta sobre $pergunta e errou.";
+            $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
+                         VALUES ('$data', '$logMessage', '$cpf', '')";
+            $mysqli->execute_query($logQuery);
+            $mysqli->commit();
+            $mysqli->close();
+            $_SESSION["role"] = "erro";
+            header("Location: ../error/errorRespostaIncorreta.php");
         }
     }
+
+    verificarResposta($resposta, $pergunta, $cpf, $mysqli);
 }

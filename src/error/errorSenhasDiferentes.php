@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if($_SESSION["role"] != "erro"){
+  header("Location: ../index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -15,7 +23,7 @@
     <header class="flex bg-primary max-lg:justify-between z-10">
       <section>
         <img
-          onclick="window.location.href= '../index.html'"
+          onclick="window.location.href= '../index.php'"
           id="logo"
           class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
           src="../img/logotelecall.png"

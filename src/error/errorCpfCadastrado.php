@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if($_SESSION["role"] != "erro"){
+  header("Location: ../index.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -8,14 +16,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="../css/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>Error</title>
+    <title>Telecall - Area do Cliente</title>
   </head>
 
   <body class="transition-colors">
     <header class="flex bg-primary max-lg:justify-between z-10">
       <section>
         <img
-          onclick="window.location.href= '../index.html'"
+          onclick="window.location.href= '../index.php'"
           id="logo"
           class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
           src="../img/logotelecall.png"
@@ -30,11 +38,11 @@
       >
         <section class="justify-center flex items-center pt-4">
           <span class="font-bold text-2xl max-lg:text-xl text-padrao"
-            >LOGIN JÁ CADASTRADO</span
+            >CPF já Cadastrado</span
           >
         </section>
         <p class="text-xl mt-11 text-center w-3/4 text-padrao">
-          Desculpe, mas verificamos que já existe este login em nosso sistema.
+          Desculpe, mas verificamos que já existe este CPF em nosso sistema.
         </p>
         <section class="flex items-center mt-10 gap-2 pb-7">
           <button

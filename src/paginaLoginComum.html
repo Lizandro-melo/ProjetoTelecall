@@ -1,107 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telecall - Tela de Login</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="css/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        font-family: "Mulish", sans-serif;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="flex bg-primary max-lg:justify-between z-10">
-      <section>
-        <img
-          onclick="window.location.href= 'index.html'"
-          id="logo"
-          class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
-          src="img/logotelecall.png"
-          alt="logo-telecall"
-        />
-      </section>
-    </header>
-    <main >
-      <form
-        method="post"
-        action="server/auth_comum.php"
-        class="bg-modal shadow-lg shadow-stone-700 w-2/5 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full"
-      >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telecall - Tela de Login</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="css/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      font-family: "Mulish", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="flex bg-primary max-lg:justify-between z-10">
+    <section>
+      <img onclick="window.location.href= 'index.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
+        src="img/logotelecall.png" alt="logo-telecall" />
+    </section>
+  </header>
+  <main>
+    <form method="post" action="server/auth_comum.php"
+      class="bg-modal shadow-lg shadow-stone-700 w-2/5 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full">
       <a href="paginaLoginTipo.html" class="absolute top-8 text-padrao  left-8 text-lg">Voltar</a>
-        <section class="px-20 py-14 flex flex-col gap-14">
-          <section class="justify-center flex items-center">
-            <span class="font-bold text-2xl max-lg:text-xl text-padrao ">Cliente Comum</span>
+      <section class="px-20 py-14 flex flex-col gap-14">
+        <section class="justify-center flex items-center">
+          <span class="font-bold text-2xl max-lg:text-xl text-padrao ">Cliente Comum</span>
+        </section>
+        <section class="flex flex-col justify-center items-center gap-4">
+          <section class="flex flex-col gap-2">
+            <label for="login" class="text-label ">Login</label>
+            <input type="text" name="login" id="login"
+              class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+              placeholder="Digite aqui seu login" required />
           </section>
-          <section class="flex flex-col justify-center items-center gap-4">
-            <section class="flex flex-col gap-2">
-              <label for="login" class="text-label ">Login</label>
-              <input
-                type="text"
-                name="login"
-                id="login"
-                class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                placeholder="Digite aqui seu login"
-                required
-              />
-            </section>
-            <section class="flex flex-col gap-2">
-              <label for="senha" class="text-label ">Senha</label>
-              <input
-                type="password"
-                name="senha"
-                id="senha"
-                class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                placeholder="Digite aqui sua senha"
-                required
-              />
-            </section>
-          </section>
-          <section class="flex flex-col justify-center items-center relative">
-            <section >
-              <section>
-                <span class="absolute text-xs left-16 max-lg:-left-4 -top-12 text-padrao"
-                  >Ainda não é cliente?<br />
-                  <a
-                    class="text-red-700 font-semibold"
-                    href="paginaCadastro.html"
-                    >Cadastre-se aqui.</a
-                  >
-                </span>
-              </section>
-              <section>
-                <a
-                  class="text-red-700 font-semibold absolute text-xs right-16 max-lg:-right-4 -top-12"
-                  href="redefinirSenha.php"
-                  >Esqueci a senha</a
-                >
-              </section>
-            </section>
-            <button
-              class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors shadow-xl w-32 h-10 border-red-700 border text-padrao "
-            >
-              Entrar
-            </button>
+          <section class="flex flex-col gap-2">
+            <label for="senha" class="text-label ">Senha</label>
+            <input type="password" name="senha" id="senha"
+              class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+              placeholder="Digite aqui sua senha" required />
           </section>
         </section>
-      </form>
-    </main>
-     <section 
-    class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5"
-    >
-    <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-modal-button rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
-    </section>
-  </body>
-  <script src="js/trocarTema.js"></script>
+        <section class="flex gap-4 justify-center items-center relative">
+          <section>
+            <section>
+              <span class="absolute text-xs left-16 max-lg:-left-4 -top-12 text-padrao">Ainda não é cliente?<br />
+                <a class="text-red-700 font-semibold" href="paginaCadastro.html">Cadastre-se aqui.</a>
+              </span>
+            </section>
+            <section>
+              <a class="text-red-700 font-semibold absolute text-xs right-16 max-lg:-right-4 -top-12"
+                href="redefinirSenha.php">Esqueci a senha</a>
+            </section>
+          </section>
+          <button
+            class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors shadow-xl w-32 h-10 border-red-700 border text-padrao ">
+            Entrar
+          </button>
+          <button
+          type="reset"
+            class="font-semibold hover:bg-red-700 bg-modal-button hover:text-white transition-colors shadow-xl w-10 h-10 border-red-700 border text-padrao ">
+            &#10006;
+          </button>
+        </section>
+      </section>
+    </form>
+  </main>
+  <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
+    <button id="themes"
+      class="flex text-sm justify-center items-center text-padrao bg-modal-button rounded-full h-5 px-2"><img
+        src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
+  </section>
+</body>
+<script src="js/trocarTema.js"></script>
+
 </html>

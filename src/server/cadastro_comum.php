@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verificarCpf = "SELECT cpf FROM telecall.cliente_comum where cpf = '$cpf'";
     if ($result = $mysqli->execute_query($verificarCpf)) {
         if ($result->num_rows == 1) {
-            header("Location: ../error/errorCpfCadastrado.html");
+            $_SESSION["role"] = "erro";
+            header("Location: ../error/errorCpfCadastrado.php");
             return;
         }
     }
@@ -39,14 +40,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verificarLogin = "SELECT login FROM telecall.cliente_comum where login = '$login'";
     if ($result = $mysqli->execute_query($verificarLogin)) {
         if ($result->num_rows == 1) {
-            header("Location: ../error/errorLoginExistente.html");
+            $_SESSION["role"] = "erro";
+            header("Location: ../error/errorLoginExistente.php");
             return;
         }
     }
 
     // VERIFICAR SE AS DUAS SENHAS CONFEREM
     if($senha != $comSenha){
-        header("Location: ../error/errorSenhasDiferentes.html");
+        $_SESSION["role"] = "erro";
+        header("Location: ../error/errorSenhasDiferentes.php");
         return;
     }
 
@@ -81,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <header class='flex bg-primary max-lg:justify-between z-10'>
             <section>
             <img
-                onclick='window.location.href= '../index.html''
+                onclick='window.location.href= '../index.php''
                 id='logo'
                 class='w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer'
                 src='../img/logotelecall.png'

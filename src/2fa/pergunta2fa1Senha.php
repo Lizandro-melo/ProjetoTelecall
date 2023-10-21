@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if($_SESSION['pergunta'] != "cep"){
+}else if ($_SESSION['pergunta'] != "data_nascimento"){
+}else if ($_SESSION['pergunta'] != "nome_materno"){
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br" class="dark">
   <head>
@@ -26,7 +35,7 @@
     <header class="flex bg-primary max-lg:justify-between z-10">
       <section>
         <img
-          onclick="window.location.href= '../index.html'"
+          onclick="window.location.href= '../index.php'"
           id="logo"
           class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
           src="../img/logotelecall.png"

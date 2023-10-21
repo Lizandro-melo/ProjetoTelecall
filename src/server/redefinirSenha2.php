@@ -1,6 +1,7 @@
 <?php
 
 require_once "./db/ConnectionDb.class.php";
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -10,10 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $senha = $_POST["senha"];
     $comSenha = $_POST["comSenha"];
-    $cpf = $_COOKIE["cpf"];
+    $cpf = $_SESSION["cpf"];
     
     // VERIFICAR SE AS DUAS SENHAS CONFEREM
     if($senha != $comSenha){
+        $_SESSION["role"] = "erro";
         header("Location: ../error/errorSenhasDiferentes.html");
         return;
     }
@@ -21,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $redefinir = "UPDATE `telecall`.`cliente_comum` SET `senha` = '$senha' WHERE (`cpf` = '$cpf')";
     $mysqli->execute_query($redefinir);
     $mysqli->commit();
+    session_destroy();
     header("Location: ../redefinirSenhaSucesso.php");
     $mysqli->close();
 }

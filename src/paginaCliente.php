@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (session_status() === PHP_SESSION_DISABLED) {
+    header("location: index.php");
+}
+if ($_SESSION["role"] != "comum") {
+    header("location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +25,7 @@
 </head>
 
 <body class="transition-colors">
-    <header class="flex bg-primary max-lg:justify-between z-10">
+    <header class="flex relative bg-primary max-lg:justify-between z-10 items-center">
         <section>
             <img onclick="window.location.href= 'paginaCliente.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
         </section>
@@ -83,6 +92,11 @@
                     </ul>
                 </li>
             </ul>
+        </section>
+        <section>
+            <?php
+            echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - comum </span>"
+            ?>
         </section>
     </header>
     <main>
@@ -216,7 +230,7 @@
                             <a href="paginaCadastro.html"> Cadastro </a>
                         </li>
                         <li>
-                            <a href="index.html"> Login </a>
+                            <a href="index.php"> Login </a>
                         </li>
                     </ul>
                 </section>
@@ -224,6 +238,7 @@
         </section>
     </footer>
     <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
+        <a href="./server/exitServer.php" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2">Sair</a>
         <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
         <a href="#" class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Comum</a>
     </section>

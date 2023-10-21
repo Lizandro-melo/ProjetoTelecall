@@ -1,3 +1,11 @@
+<?php
+session_start();
+if($_SESSION["role"] != "redefinirSenha"){
+  header("Location: ./index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" class="dark">
 
@@ -23,7 +31,7 @@
 <body class="transition-colors">
   <header class="flex bg-primary max-lg:justify-between z-10">
     <section>
-      <img onclick="window.location.href= 'index.html'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
+      <img onclick="window.location.href= 'index.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
     </section>
   </header>
   <main>
@@ -34,11 +42,11 @@
       <section class="flex flex-col items-center justify-center pb-5 pt-8 gap-4">
         <section class="flex flex-col">
           <label for="senha" class="my-2 text-label font-semibold">Nova Senha</label>
-          <input placeholder="Digite sua nova senha - Max 8" class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600" type="text" id="senha" name="senha" pattern="^.{8}$"  required />
+          <input placeholder="Digite sua nova senha - Max 8" class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600" type="password" id="senha" name="senha" pattern="^.{8}$"  required />
         </section>
         <section class="flex flex-col">
           <label for="senha" class="my-2 text-label font-semibold">Comfirmar Senha</label>
-          <input placeholder="Comfirme a sua nova senha - Max 8" class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600" pattern="^.{8}$" type="text" id="comSenha" name="comSenha" required />
+          <input placeholder="Comfirme a sua nova senha - Max 8" class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600" pattern="^.{8}$" type="password" id="comSenha" name="comSenha" required />
         </section>
         <section class="w-60">
           <section class="flex w-full justify-evenly mt-10">

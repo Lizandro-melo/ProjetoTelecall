@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (session_status() === PHP_SESSION_DISABLED) {
+    header("location: index.php");
+
+}
+
+if($_SESSION["role"] != "master"){
+    header("location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,16 +48,16 @@
                     Beneficios
                     <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                     </ul>
                 </li>
@@ -52,16 +65,16 @@
                     Planos
                     <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                     </ul>
                 </li>
@@ -75,20 +88,35 @@
                     Contato
                     <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
+                        </li>
+                    </ul>
+                </li>
+                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                    Sistemas
+                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                        <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800"
+                        onclick="window.location.href = 'tabela.php'"
+                        >
+                            Consultar Cliente
                         </li>
                     </ul>
                 </li>
             </ul>
+        </section>
+        <section>
+            <?php
+            echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - master </span>"
+            ?>
         </section>
     </header>
     <main>
@@ -222,7 +250,7 @@
                             <a href="paginaCadastro.html"> Cadastro </a>
                         </li>
                         <li>
-                            <a href="index.html"> Login </a>
+                            <a href="index.php"> Login </a>
                         </li>
                     </ul>
                 </section>
@@ -230,8 +258,9 @@
         </section>
     </footer>
     <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
+        <a href="./server/exitServer.php" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2">Sair</a>
         <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
-        <a href="#" class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Master</a>
+        <a class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Master</a>
     </section>
     <script src="js/buttonTop.js"></script>
     <script src="js/carrossel.js"></script>
