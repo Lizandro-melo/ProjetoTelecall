@@ -258,7 +258,7 @@ if($_SESSION["role"] != "master"){
         </section>
     </footer>
     <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
-        <a href="./server/exitServer.php" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2">Sair</a>
+        <a href="./server/exitServer.php" class="flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2">Sair</a>
         <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
         <a class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Master</a>
     </section>
