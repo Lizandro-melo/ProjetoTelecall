@@ -25,69 +25,91 @@ if ($_SESSION["role"] != "comum") {
 </head>
 
 <body class="transition-colors">
-    <header class="flex relative bg-primary max-lg:justify-between z-10 items-center">
+<header class="flex bg-primary max-lg:justify-between z-10">
         <section>
-            <img onclick="window.location.href= 'paginaCliente.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
+            <img onclick="window.location.href= 'paginaMaster.php'" id="logo"
+                class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
         </section>
         <section class="flex items-center relative">
-            <section class="h-full peer/menuresponsivo justify-center items-center hidden max-lg:!flex max-sm:w-10 pr-5 cursor-pointer">
+            <section
+                class="h-full peer/menuresponsivo justify-center items-center hidden max-lg:!flex max-sm:w-10 pr-5 cursor-pointer">
                 <img class="w-14 invert" src="img/icons/menuicon.png" alt="icon menu" />
             </section>
-            <ul class="transition-all flex gap-8 text-sm h-full items-center text-white font-semibold max-lg:bg-red-700 max-lg:h-96 max-lg:w-screen max-lg:absolute max-lg:flex-col max-lg:gap-0 z-10 max-lg:-top-96 max-lg:right-0 hover:top-full max-lg:peer-hover/menuresponsivo:top-full">
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+            <ul
+                class="transition-all flex gap-8 text-sm h-full items-center text-white font-semibold max-lg:bg-red-700 max-lg:h-96 max-lg:w-screen max-lg:absolute max-lg:flex-col max-lg:gap-0 z-10 max-lg:-top-96 max-lg:right-0 hover:top-full max-lg:peer-hover/menuresponsivo:top-full">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Beneficios
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                     </ul>
                 </li>
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Planos
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                     </ul>
                 </li>
-                <li class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
+                <li
+                    class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
                     localização
                 </li>
-                <li class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
+                <li
+                    class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
                     Sobre
                 </li>
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Contato
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
                         </li>
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
-                            Option
+                            Exemplo
+                        </li>
+                    </ul>
+                </li>
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                    Sistemas
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                        <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800"
+                            onclick="window.location.href = 'consultarLogComum.php'">
+                            Consultar Logs
                         </li>
                     </ul>
                 </li>
@@ -95,8 +117,8 @@ if ($_SESSION["role"] != "comum") {
         </section>
         <section>
             <?php
-            echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - comum </span>"
-            ?>
+            echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - Comum </span>"
+                ?>
         </section>
     </header>
     <main>

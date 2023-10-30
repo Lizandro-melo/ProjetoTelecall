@@ -1,6 +1,6 @@
 function loadTable() {
     $.ajax({
-        url: './server/puxarLogMaster.php',
+        url: './server/puxarLogComum.php',
         method: 'POST',
         data: {
 

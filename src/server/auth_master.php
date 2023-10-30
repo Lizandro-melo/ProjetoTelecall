@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data = date('Y-m-d H:i:s');
         $nome = $userInfo['nome'];
         $logMessage = "logou no sistema como cliente master.";
-        $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
-                         VALUES ('$data', '$logMessage', '$cpf', '$nome')";
+        $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`) 
+                         VALUES ('$data', '$logMessage', '$cpf')";
         $mysqli->execute_query($logQuery);
         $mysqli->commit();
         $mysqli->close();

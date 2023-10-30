@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $data = date('Y-m-d H:i:s');
             $logMessage = "Solicitou a redefinição da senha";
-            $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
-                         VALUES ('$data', '$logMessage', '$cpf', '$nome')";
+            $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`) 
+                         VALUES ('$data', '$logMessage', '$cpf')";
             $mysqli->execute_query($logQuery);
             $mysqli->commit();
             $mysqli->close();
@@ -44,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $data = date('Y-m-d H:i:s');
             $logMessage = "o cliente do CPF $cpf tentou responder a pergunta sobre $pergunta e errou.";
-            $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
-                         VALUES ('$data', '$logMessage', '$cpf', '')";
+            $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`) 
+                         VALUES ('$data', '$logMessage', '$cpf')";
             $mysqli->execute_query($logQuery);
             $mysqli->commit();
             $mysqli->close();

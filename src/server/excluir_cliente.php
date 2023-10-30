@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Assim que o metodo for disparado, enviará um log para o banco de dados como forma de registrar;
     $logMessage = "$nomeCliente do $cpfClienteComum foi excluido do nosso banco de dados pelo master $nome do CPF $cpfMaster";
-    $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
-                     VALUES ('$data', '$logMessage', '$cpfMaster', '$nome')";
+    $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`) 
+                     VALUES ('$data', '$logMessage', '$cpfMaster')";
 
     $db = new ConnectionDb();
     $con = $db->getCon();
