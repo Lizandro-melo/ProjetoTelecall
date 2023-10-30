@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_DISABLED) {
 
 }
 
-if($_SESSION["role"] != "master"){
+if ($_SESSION["role"] != "master") {
     header("location: index.php");
 }
 
@@ -25,7 +25,8 @@ if($_SESSION["role"] != "master"){
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:wght@300;400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:wght@300;400&display=swap"
+        rel="stylesheet" />
     <style>
         main {
             font-family: "Montserrat", sans-serif;
@@ -37,16 +38,21 @@ if($_SESSION["role"] != "master"){
 <body class="transition-colors">
     <header class="flex bg-primary max-lg:justify-between z-10">
         <section>
-            <img onclick="window.location.href= 'paginaMaster.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
+            <img onclick="window.location.href= 'paginaMaster.php'" id="logo"
+                class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
         </section>
         <section class="flex items-center relative">
-            <section class="h-full peer/menuresponsivo justify-center items-center hidden max-lg:!flex max-sm:w-10 pr-5 cursor-pointer">
+            <section
+                class="h-full peer/menuresponsivo justify-center items-center hidden max-lg:!flex max-sm:w-10 pr-5 cursor-pointer">
                 <img class="w-14 invert" src="img/icons/menuicon.png" alt="icon menu" />
             </section>
-            <ul class="transition-all flex gap-8 text-sm h-full items-center text-white font-semibold max-lg:bg-red-700 max-lg:h-96 max-lg:w-screen max-lg:absolute max-lg:flex-col max-lg:gap-0 z-10 max-lg:-top-96 max-lg:right-0 hover:top-full max-lg:peer-hover/menuresponsivo:top-full">
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+            <ul
+                class="transition-all flex gap-8 text-sm h-full items-center text-white font-semibold max-lg:bg-red-700 max-lg:h-96 max-lg:w-screen max-lg:absolute max-lg:flex-col max-lg:gap-0 z-10 max-lg:-top-96 max-lg:right-0 hover:top-full max-lg:peer-hover/menuresponsivo:top-full">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Beneficios
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
                             Exemplo
                         </li>
@@ -61,9 +67,11 @@ if($_SESSION["role"] != "master"){
                         </li>
                     </ul>
                 </li>
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Planos
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
                             Exemplo
                         </li>
@@ -78,15 +86,19 @@ if($_SESSION["role"] != "master"){
                         </li>
                     </ul>
                 </li>
-                <li class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
+                <li
+                    class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
                     localização
                 </li>
-                <li class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
+                <li
+                    class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
                     Sobre
                 </li>
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Contato
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
                             Exemplo
                         </li>
@@ -101,13 +113,18 @@ if($_SESSION["role"] != "master"){
                         </li>
                     </ul>
                 </li>
-                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li
+                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Sistemas
-                    <ul class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul
+                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800"
-                        onclick="window.location.href = 'tabela.php'"
-                        >
+                            onclick="window.location.href = 'tabela.php'">
                             Consultar Cliente
+                        </li>
+                        <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800"
+                            onclick="window.location.href = 'consultarLogMaster.php'">
+                            Consultar Logs
                         </li>
                     </ul>
                 </li>
@@ -116,7 +133,7 @@ if($_SESSION["role"] != "master"){
         <section>
             <?php
             echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - master </span>"
-            ?>
+                ?>
         </section>
     </header>
     <main>
@@ -130,35 +147,43 @@ if($_SESSION["role"] != "master"){
         <section class="flex flex-col justify-center items-center text-padrao">
             <span class="font-semibold text-2xl my-10 max-lg:text-base">Beneficios para sua empresa.</span>
             <section class="flex flex-wrap justify-center gap-10 w-4/5">
-                <section class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
+                <section
+                    class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
                     <span>Redução de custos</span>
                     <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-reducao.png" alt="redução icon" />
                     <span>Elimine o custo de investimento em equipamentos e
                         manutenção.</span>
                 </section>
-                <section class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
+                <section
+                    class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
                     <span>Pronto para usar</span>
                     <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-pronto.png" alt="pronto icon" />
                     <span>Receba os aparelhos já formatos, com tudo instalado e configurado
                         conforme sua necessidade.</span>
                 </section>
-                <section class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
+                <section
+                    class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
                     <span>Modernização</span>
-                    <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-modernizacao.png" alt="mordenização icon" />
+                    <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-modernizacao.png"
+                        alt="mordenização icon" />
                     <span>O parque de TI da sua empresa sempre atualizado com os
                         equipamentos mais modernos do mercado.</span>
                 </section>
-                <section class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
+                <section
+                    class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
                     <span>Manutenção</span>
-                    <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-manutencao.png" alt="manutenção icon" />
+                    <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-manutencao.png"
+                        alt="manutenção icon" />
                     <span>Realizadas de forma ágil e sem custo adicional.</span>
                 </section>
-                <section class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
+                <section
+                    class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
                     <span>Logística Completa</span>
                     <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-logistica.png" alt="log icon" />
                     <span>Entrega e retirada em todo o Brasil.</span>
                 </section>
-                <section class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
+                <section
+                    class="flex w-72 flex-col h-72 justify-center items-center shadow-lg shadow-slate-900 text-center gap-5 p-8 rounded-2xl hover:scale-105 transition-transform max-lg:w-48 max-lg:h-48 max-lg:text-xs max-lg:gap-2">
                     <span>Suporte</span>
                     <img class="max-lg:w-12" src="img/icons/icons-beneficios/icone-suporte.png" alt="sup icon" />
                     <span>Time de especialistas disponível 24x7.</span>
@@ -169,7 +194,9 @@ if($_SESSION["role"] != "master"){
             <h2 id="localizacao" class="my-10 text-2xl font-medium text-padrao max-lg:text-base">
                 Nossa localização
             </h2>
-            <iframe class="w-3/4 h-96 max-lg:h-full rounded-xl" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1836.3524211121767!2d-43.34734190448022!3d-22.997878752823084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda488eb4a8e5%3A0xd92e16bc83ef0d07!2sTelecall!5e0!3m2!1spt-BR!2sbr!4v1685073986609!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            <iframe class="w-3/4 h-96 max-lg:h-full rounded-xl"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1836.3524211121767!2d-43.34734190448022!3d-22.997878752823084!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda488eb4a8e5%3A0xd92e16bc83ef0d07!2sTelecall!5e0!3m2!1spt-BR!2sbr!4v1685073986609!5m2!1spt-BR!2sbr"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </section>
         <section class="flex flex-col items-center">
@@ -189,8 +216,14 @@ if($_SESSION["role"] != "master"){
             </section>
             <section class="flex gap-5 mt-10">
                 <section class="flex max-lg:hidden gap-10 scale-75 -z-10">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8wMFmszGWZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jW3iTCw6T-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8wMFmszGWZE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jW3iTCw6T-c"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </section>
             </section>
         </section>
@@ -258,9 +291,13 @@ if($_SESSION["role"] != "master"){
         </section>
     </footer>
     <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
-        <a href="./server/exitServer.php" class="flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2">Sair</a>
-        <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
-        <a class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Master</a>
+        <a href="./server/exitServer.php"
+            class="flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2">Sair</a>
+        <button id="themes"
+            class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img
+                src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
+        <a class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img
+                src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Master</a>
     </section>
     <script src="js/buttonTop.js"></script>
     <script src="js/carrossel.js"></script>
