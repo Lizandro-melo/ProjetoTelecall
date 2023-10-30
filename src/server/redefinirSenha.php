@@ -3,6 +3,8 @@
 require_once "./db/ConnectionDb.class.php";
 session_start();
 
+
+//Codigo faz quase a mesma coisa que o de autenticar Comum, a diferença é que ele rerna para uma pagina de pergunta diferente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $dbConnection = new ConnectionDb();

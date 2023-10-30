@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+// Esse script é o responsavel por buscar todos os usuarios do banco de dados;
+// Primeiro de tudo faço uma verificação para saber se quem fez esse pedido foi um usuario master;
 if ($_SESSION["role"] != "master") {
     header("location: index.php");
 }

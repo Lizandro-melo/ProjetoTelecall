@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-
+//Responsavel por desconectar e limpar todas as variaveis;
 ?>
 
 <!DOCTYPE html>
