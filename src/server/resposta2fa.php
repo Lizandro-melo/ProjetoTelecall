@@ -21,6 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return ($result->num_rows == 1) ? $result->fetch_assoc() : false;
     }
 
+    
+    //Verifica se a Resposta esta correta, se sim efetuará o login, assim retonando a pagina principal com todas as informações do usuario logado
     function verificarResposta($resposta, $pergunta, $cpf, $mysqli)
     {
         if ($pergunta == "cep") {

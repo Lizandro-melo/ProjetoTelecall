@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST["login"];
     $senha = $_POST["senha"];
 
+    // Função responsavel por verificar e pegar todas as informações do usuario assim que efetuar o login
     function fetchUserInfo($mysqli, $cpf)
     {
         $query = "SELECT cpf, nome, sexo, data_nascimento, nome_materno, telefone_celular, telefone_fixo, login 
@@ -29,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return ($result->num_rows == 1) ? $result->fetch_assoc() : false;
     }
 
+    //Diferente da de usuario comum, temos essa função que retorna o cpf do usuario
     function verificarSenha($mysqli, $login, $senha)
     {
         $loginReturn = verificarLogin($mysqli, $login)["login"];
@@ -40,6 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf = verificarSenha($mysqli, $login, $senha);
 
     $userInfo = fetchUserInfo($mysqli, $cpf);
+
+    //ao efetuar o login usaremos Session para distribuir as informações pessoais do usuario;
     if ($userInfo) {
         $_SESSION["cpf"] = $userInfo["cpf"];
         $_SESSION["nome"] = $userInfo["nome"];

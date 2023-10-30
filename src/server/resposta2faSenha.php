@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pergunta = $_SESSION["pergunta"];
     $resposta = $_POST["resposta"];
 
+
+    //Função de verificar responsta do pedido de redefinição de senha
     function verificarResposta($resposta, $pergunta, $cpf, $mysqli)
     {
         if ($pergunta == "cep") {

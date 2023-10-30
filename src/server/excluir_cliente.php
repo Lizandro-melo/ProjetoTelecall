@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Script de excluir um cliente, assim como o de consultar todos os clientes, eu também verifico quem fez a requisição
 if ($_SESSION["role"] != "master") {
     return;
 }
@@ -11,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpfMaster = $_SESSION["cpf"];
     $nome = $_SESSION["nome"];
     $data = date('Y-m-d H:i:s');
+
+    //Assim que o metodo for disparado, enviará um log para o banco de dados como forma de registrar;
     $logMessage = "$nomeCliente do $cpfClienteComum foi excluido do nosso banco de dados pelo master $nome do CPF $cpfMaster";
     $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`, `nome`) 
                      VALUES ('$data', '$logMessage', '$cpfMaster', '$nome')";
