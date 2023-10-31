@@ -18,6 +18,7 @@ if ($_SESSION["role"] != "master") {
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="print.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400&display=swap" rel="stylesheet" />
@@ -62,6 +63,7 @@ if ($_SESSION["role"] != "master") {
             class="flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2">Sair</a>
     </section>
 </body>
+<script src="print.js"></script>
 <script src="js/trocarTema.js"></script>
 <script src="js/puxarClientes.js"></script>
 

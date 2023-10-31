@@ -16,8 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST["login"];
     $senha = $_POST["senha"];
 
+    $perguntaCliente = ["Qual seu CEP do seu endereço?", "Qual o nome da sua mãe?", "Qual a data do seu nascimento?"];
+    $perguntaBanco = ["cep", "nome_materno", "data_nascimento"];
+
     // Crio uma Variavel randomica de 1 a 3 para a pergunta aleatoria 2fa
-    $Random = rand(1, 3);
+    $Random = rand(0, 2);
 
     //Função responsavel por veriicar se o login existe, como forma de segurança verifico primeiro o login depois a senha;
     function verificarLogin($mysqli, $login)
@@ -45,21 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //caso o contrario efetuara o login e assim enviado para a tela de pergunta 2fa o cpf do usuario para assim executar a consulta;
         $_SESSION["cpf"] = verificarSenha($mysqli, $login, $senha)["cpf"];
         //Com base na variavel ramdomica o php retornara ao cliente uma pagina de pergunta sobre o usuario aleatoriamente;
-        switch ($Random) {
-            case 1:
-                $_SESSION['pergunta'] = "cep";
-                header("Location: ../2fa/pergunta2fa1.php");
-                break;
-            case 2:
-                $_SESSION['pergunta'] = "data_nascimento";
-                header("Location: ../2fa/pergunta2fa2.php");
-                break;
-            case 3:
-                $_SESSION['pergunta'] = "nome_materno";
-                header("Location: ../2fa/pergunta2fa3.php");
-                break;
-            default:
-                break;
-        }
+        $_SESSION['perguntaCliente'] = $perguntaCliente[$Random];
+        $_SESSION['perguntaBanco'] = $perguntaBanco[$Random];
+        header("Location: ../2fa/pergunta2fa.php");
     }
 }

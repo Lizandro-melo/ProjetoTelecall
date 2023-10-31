@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-if($_SESSION['pergunta'] != "cep"){
-}else if ($_SESSION['pergunta'] != "data_nascimento"){
-}else if ($_SESSION['pergunta'] != "nome_materno"){
-}
+$Pergunta = $_SESSION['perguntaCliente'];
 
 ?>
 <!DOCTYPE html>
@@ -36,13 +33,34 @@ if($_SESSION['pergunta'] != "cep"){
     </section>
   </header>
   <main>
-    <form action="../server/resposta2fa.php" method="POST" id="cliente" class="bg-modal shadow-lg shadow-stone-700 w-2/4 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full">
+    <form action="../server/resposta2faSenha.php" method="POST" id="cliente" class="bg-modal shadow-lg shadow-stone-700 w-2/4 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500 max-lg:w-full">
       <section class="justify-center flex items-center">
         <span class="font-bold text-2xl max-lg:text-xl text-padrao pt-5">2FA</span>
       </section>
       <section class="flex flex-col items-center justify-center pb-5 pt-8">
-        <label for="login" class="my-2 text-label font-semibold">Qual o nome da sua mãe?</label>
-        <input placeholder="Exatamente como no cadastro" class="h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600" type="text" id="resposta" name="resposta" required />
+        <?php
+        switch ($_SESSION['perguntaBanco']) {
+          case "data_nascimento":
+            echo "<label for='dataNascimento' class='my-2 text-label font-semibold'>$Pergunta</label>
+                <input class='h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600' type='date' id='resposta' name='resposta' required />";
+            break;
+
+          default:
+            echo "<label for='pergunta' class='my-2 text-label font-semibold'
+                >$Pergunta</label
+              >
+              <input
+                placeholder='Responda a pergunta!'
+                class='h-10 w-72 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600'
+                type='text'
+                id='resposta'
+                name='resposta'
+                required
+              />";
+            break;
+        }
+
+        ?>
         <section class="w-60">
           <section class="flex w-full justify-evenly mt-10">
             <button type="submit" class="font-semibold border-red-800 border w-44 h-10 hover:bg-red-800 hover:text-white transition-colors text-padrao">

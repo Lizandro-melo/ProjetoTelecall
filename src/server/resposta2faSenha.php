@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mysqli = $dbConnection->getCon();
 
     $cpf = $_SESSION["cpf"];
-    $pergunta = $_SESSION["pergunta"];
+    $pergunta = $_SESSION['perguntaBanco'];
     $resposta = $_POST["resposta"];
 
 

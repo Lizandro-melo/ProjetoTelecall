@@ -53,7 +53,7 @@
         </section>
         <section class="flex flex-col items-center justify-center pb-5 pt-8">
           <label for="login" class="my-2 text-label font-semibold"
-            >Imforme-nos</label
+            >Informe-nos</label
           >
           <input
             placeholder="Login / CPF"

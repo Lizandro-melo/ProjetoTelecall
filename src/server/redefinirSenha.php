@@ -13,7 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $entrada = $_POST["entrada"];
 
-    $Random = rand(1, 3);
+    $perguntaCliente = ["Qual seu CEP do seu endereço?", "Qual o nome da sua mãe?", "Qual a data do seu nascimento?"];
+    $perguntaBanco = ["cep", "nome_materno", "data_nascimento"];
+
+    // Crio uma Variavel randomica de 1 a 3 para a pergunta aleatoria 2fa
+    $Random = rand(0, 2);
 
     function verificarCliente($mysqli, $entrada)
     {
@@ -26,21 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../error/errorUserUndefined.php");
     } else {
         $_SESSION["cpf"] = verificarCliente($mysqli, $entrada)["cpf"];
-        switch ($Random) {
-            case 1:
-                $_SESSION['pergunta'] = "cep";
-                header("Location:../2fa/pergunta2fa1Senha.php");
-                break;
-            case 2:
-                $_SESSION['pergunta'] = "data_nascimento";
-                header("Location:../2fa/pergunta2fa2Senha.php");
-                break;
-            case 3:
-                $_SESSION['pergunta'] = "nome_materno";
-                header("Location:../2fa/pergunta2fa3Senha.php");
-                break;
-            default:
-                break;
-        }
+        $_SESSION['perguntaCliente'] = $perguntaCliente[$Random];
+        $_SESSION['perguntaBanco'] = $perguntaBanco[$Random];
+        header("Location:../2fa/pergunta2faSenha.php");
     }
 }
