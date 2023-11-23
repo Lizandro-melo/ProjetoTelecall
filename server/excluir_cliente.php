@@ -22,13 +22,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db = new ConnectionDb();
     $con = $db->getCon();
 
-    $query = "DELETE FROM telecall.cliente_comum WHERE cpf = '$cpfClienteComum'";
+    $query1 = "DELETE FROM telecall.log WHERE cpf = '$cpfClienteComum'";
+    $query2 = "DELETE FROM telecall.endereco WHERE cpf = '$cpfClienteComum'";
+    $query3 = "DELETE FROM telecall.cliente_master WHERE cpf = '$cpfClienteComum'";
+    $query4 = "DELETE FROM telecall.cliente_comum WHERE cpf = '$cpfClienteComum'";
 
-    if ($con->execute_query($query)) {
-        echo "Client deleted successfully.";
-    } else {
-        echo "Failed to delete client.";
+    $con->execute_query($query1);
+    $con->execute_query($query2);
+    $con->execute_query($query3);
+    $con->execute_query($query4);
+    if ($con->execute_query($query1)) {
+        if ($con->execute_query($query2)) {
+            if ($con->execute_query($query3)) {
+                if ($con->execute_query($query4)) {
+                    echo "Client deleted successfully.";
+                }
+            }
+        }
     }
+    
     $con->execute_query($logQuery);
     $con->commit();
     $con->close();

@@ -3,17 +3,14 @@ session_start();
 
 require_once "./db/ConnectionDb.class.php";
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $dbConnection = new ConnectionDb();
-
     $mysqli = $dbConnection->getCon();
 
-    $login = $_POST["login"];
-    $senha = $_POST["senha"];
+    $cpf = $_SESSION["cpf"];
+    $pergunta = $_SESSION['perguntaBanco'];
+    $resposta = $_POST["resposta"];
 
-    // Função responsavel por verificar e pegar todas as informações do usuario assim que efetuar o login
     function fetchUserInfo($mysqli, $cpf)
     {
         $query = "SELECT cpf, nome, sexo, data_nascimento, nome_materno, telefone_celular, telefone_fixo, login 
@@ -23,27 +20,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return ($result->num_rows == 1) ? $result->fetch_assoc() : false;
     }
 
-    function verificarLogin($mysqli, $login)
+    
+    //Verifica se a Resposta esta correta, se sim efetuará o login, assim retonando a pagina principal com todas as informações do usuario logado
+    function verificarResposta($resposta, $pergunta, $cpf, $mysqli)
     {
-        $query = "SELECT login FROM telecall.cliente_master where login = '$login'";
+        if ($pergunta == "cep") {
+            $query = "SELECT cpf FROM telecall.endereco WHERE cep = '$resposta' AND cpf = '$cpf'";
+        } else {
+            $query = "SELECT cpf FROM telecall.cliente_comum WHERE $pergunta = '$resposta' AND cpf = '$cpf'";
+        }
         $result = $mysqli->execute_query($query);
-        return ($result->num_rows == 1) ? $result->fetch_assoc() : false;
+        if ($result->num_rows == 1) {
+            return fetchUserInfo($mysqli, $cpf);
+        } else {
+            $_SESSION["role"] = "erro";
+            header("Location: ../error/errorRespostaIncorreta.php");
+        }
     }
 
-    //Diferente da de usuario comum, temos essa função que retorna o cpf do usuario
-    function verificarSenha($mysqli, $login, $senha)
-    {
-        $loginReturn = verificarLogin($mysqli, $login)["login"];
-        $query = "SELECT cpf FROM telecall.cliente_master WHERE senha = '$senha' and login = '$loginReturn'";
-        $result = $mysqli->execute_query($query);
-        return $result->fetch_assoc()["cpf"];
-    }
 
-    $cpf = verificarSenha($mysqli, $login, $senha);
-
-    $userInfo = fetchUserInfo($mysqli, $cpf);
-
-    //ao efetuar o login usaremos Session para distribuir as informações pessoais do usuario;
+    $userInfo = verificarResposta($resposta, $pergunta, $cpf, $mysqli);
     if ($userInfo) {
         $_SESSION["cpf"] = $userInfo["cpf"];
         $_SESSION["nome"] = $userInfo["nome"];
@@ -52,33 +48,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["nome_materno"] = $userInfo["nome_materno"];
         $_SESSION["telefone_celular"] = $userInfo["telefone_celular"];
         $_SESSION["telefone_fixo"] = $userInfo["telefone_fixo"];
-        $_SESSION["login"] = verificarLogin($mysqli, $login)["login"];
+        $_SESSION["login"] = $userInfo["login"];
 
-        $enderecoQuery = "SELECT cep, lagradouro, bairro, localidade, uf, complemento 
+        $enderecoQuery = "SELECT cep, logradouro, bairro, localidade, uf, complemento 
                               FROM telecall.endereco 
                               WHERE cpf = '$cpf'";
         $enderecoResult = $mysqli->execute_query($enderecoQuery);
         $enderecoData = $enderecoResult->fetch_assoc();
 
         $_SESSION["cep"] = $enderecoData["cep"];
-        $_SESSION["lagradouro"] = $enderecoData["lagradouro"];
+        $_SESSION["logradouro"] = $enderecoData["logradouro"];
         $_SESSION["bairro"] = $enderecoData["bairro"];
         $_SESSION["localidade"] = $enderecoData["localidade"];
         $_SESSION["uf"] = $enderecoData["uf"];
         $_SESSION["complemento"] = $enderecoData["complemento"];
-
         $data = date('Y-m-d H:i:s');
         $nome = $userInfo['nome'];
-        $logMessage = "logou no sistema como cliente master.";
+        $logMessage = "logou no sistema como cliente comum.";
         $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`) 
                          VALUES ('$data', '$logMessage', '$cpf')";
         $mysqli->execute_query($logQuery);
         $mysqli->commit();
         $mysqli->close();
-        $_SESSION["role"] = "master";
-        header("Location: ../paginaMaster.php");
+        $_SESSION["role"] = "comum";
+        header("Location: ../paginaCliente.php");
     } else {
+        $data = date('Y-m-d H:i:s');
+        $logMessage = "o cliente do CPF $cpf tentou responder a pergunta sobre $pergunta e errou.";
+        $logQuery = "INSERT INTO `telecall`.`log` (`data_hora`, `log_mensage`, `cpf`) 
+                         VALUES ('$data', '$logMessage', '$cpf')";
+        $mysqli->execute_query($logQuery);
+        $mysqli->commit();
+        $mysqli->close();
         $_SESSION["role"] = "erro";
-        header("Location: ../error/errorAuth.php");
+        header("Location: ../error/errorRespostaIncorreta.php");
     }
 }

@@ -3,17 +3,20 @@ session_start();
 if (session_status() === PHP_SESSION_DISABLED) {
     header("location: index.php");
 }
-if ($_SESSION["role"] != "comum") {
+
+if ($_SESSION["role"] != "master") {
     header("location: index.php");
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Cliente</title>
+    <title>Home - Master</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,26 +25,24 @@ if ($_SESSION["role"] != "comum") {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:wght@300;400&display=swap" rel="stylesheet" />
+    <style>
+        main {
+            font-family: "Montserrat", sans-serif;
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
 </head>
 
 <body class="transition-colors">
-<header class="flex bg-primary max-lg:justify-between z-10">
+    <header class="flex bg-primary max-lg:justify-between z-10">
         <section>
-            <img onclick="window.location.href= 'paginaMaster.php'" id="logo"
-                class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
+            <img onclick="window.location.href= 'paginaMaster.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer" src="img/logotelecall.png" alt="logo-telecall" />
         </section>
         <section class="flex items-center relative">
-            <section
-                class="h-full peer/menuresponsivo justify-center items-center hidden max-lg:!flex max-sm:w-10 pr-5 cursor-pointer">
-                <img class="w-14 invert" src="img/icons/menuicon.png" alt="icon menu" />
-            </section>
-            <ul
-                class="transition-all flex gap-8 text-sm h-full items-center text-white font-semibold max-lg:bg-red-700 max-lg:h-96 max-lg:w-screen max-lg:absolute max-lg:flex-col max-lg:gap-0 z-10 max-lg:-top-96 max-lg:right-0 hover:top-full max-lg:peer-hover/menuresponsivo:top-full">
-                <li
-                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+            <ul class="transition-all flex gap-8 text-sm h-full items-center text-white font-semibold max-lg:bg-red-700 max-lg:h-96 max-lg:w-screen max-lg:absolute max-lg:flex-col max-lg:gap-0 z-10 max-lg:-top-96 max-lg:right-0 hover:top-full max-lg:peer-hover/menuresponsivo:top-full">
+                <li class=" max-lg:hidden h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Beneficios
-                    <ul
-                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul class=" transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
                             Exemplo
                         </li>
@@ -56,11 +57,9 @@ if ($_SESSION["role"] != "comum") {
                         </li>
                     </ul>
                 </li>
-                <li
-                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Planos
-                    <ul
-                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul class=" transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
                             Exemplo
                         </li>
@@ -75,19 +74,15 @@ if ($_SESSION["role"] != "comum") {
                         </li>
                     </ul>
                 </li>
-                <li
-                    class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
+                <li class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
                     localização
                 </li>
-                <li
-                    class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
+                <li class="cursor-pointer max-lg:h-20 max-lg:flex max-lg:justify-center max-lg:items-center max-lg:w-full">
                     Sobre
                 </li>
-                <li
-                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Contato
-                    <ul
-                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                    <ul class=" transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
                         <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800">
                             Exemplo
                         </li>
@@ -102,13 +97,13 @@ if ($_SESSION["role"] != "comum") {
                         </li>
                     </ul>
                 </li>
-                <li
-                    class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
+                <li class="h-full flex justify-center items-center relative cursor-pointer lg:after:content-['&#9660;'] after:ml-1 after:text-white after:text-sm group/menu max-lg:w-full max-lg:h-20">
                     Sistemas
-                    <ul
-                        class="!hidden transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
-                        <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800"
-                            onclick="window.location.href = 'consultarLogComum.php'">
+                    <ul class=" transition-all lg:group-hover/menu:!flex lg:group-hover/menu:top-full flex flex-col -top-64 absolute z-10 min-w-full bg-red-700">
+                        <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800" onclick="window.location.href = 'tabela.php'">
+                            Consultar Cliente
+                        </li>
+                        <li class="h-14 w-full px-5 flex justify-center items-center hover:bg-red-800" onclick="window.location.href = 'consultarLogMaster.php'">
                             Consultar Logs
                         </li>
                     </ul>
@@ -117,8 +112,8 @@ if ($_SESSION["role"] != "comum") {
         </section>
         <section>
             <?php
-            echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - Comum </span>"
-                ?>
+            echo "<span class='text-white text-xl absolute top-8 right-5'>" . $_SESSION["login"] . " - master </span>"
+            ?>
         </section>
     </header>
     <main>
@@ -259,10 +254,18 @@ if ($_SESSION["role"] != "comum") {
             </section>
         </section>
     </footer>
-    <section class="bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5">
+    <section class=" bg-primary flex w-full fixed bottom-0 h-6 justify-end pr-5 items-center gap-5 max-lg:gap-1">
+
+        <button class="invisible max-lg:visible flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2" onclick="window.location.href = 'tabela.php'">
+            Consultar Cliente
+        </button>
+        <button class="invisible max-lg:visible flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2" onclick="window.location.href = 'consultarLogMaster.php'">
+            Consultar Logs
+        </button>
+
         <a href="./server/exitServer.php" class="flex text-sm justify-center items-center text-black bg-white rounded-full h-5 px-2">Sair</a>
         <button id="themes" class="flex text-sm justify-center items-center text-padrao bg-white rounded-full h-5 px-2"><img src="img/icons/theme.png" class="invert w-4" alt="icon perfil">Tema</button>
-        <a href="#" class="flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Comum</a>
+        <a class="max-lg:text-xs flex text-sm justify-center items-center bg-white rounded-full h-5 px-2"><img src="img/icons/icon-perfil.svg" alt="icon perfil">Cliente Master</a>
     </section>
     <script src="js/buttonTop.js"></script>
     <script src="js/carrossel.js"></script>

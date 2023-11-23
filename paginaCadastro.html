@@ -23,26 +23,26 @@
 <body>
   <header class="flex bg-primary max-lg:justify-between z-10">
     <section>
-      <img onclick="window.location.href= 'index.php'" id="logo" class="w-4/5 pl-5 py-4 max-sm:w-2/4 cursor-pointer"
+      <img onclick="window.location.href= 'index.php'" id="logo" class="w-4/5 pl-5 py-4 max-md:w-2/4 cursor-pointer"
         src="img/logotelecall.png" alt="logo-telecall" />
     </section>
   </header>
-  <main class="">
+  <main class="w-full">
     <form method="post" action="server/cadastro_comum.php"
-      class="xl:scale-90 scale-90 lg:scale-75 md:static md:translate-x-0 md:translate-y-0 max-sm:static max-sm:translate-x-0 max-sm:translate-y-0 bg-modal shadow-lg shadow-stone-700 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500">
+      class=" xl:scale-90 scale-90 max-lg:scale-75 md:static md:translate-x-0 md:translate-y-0 max-md:static max-md:translate-x-0 max-md:translate-y-0 bg-modal shadow-lg shadow-stone-700 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-lg border border-stone-500">
       <section class="justify-center pt-7 flex items-center">
         <span class="font-bold text-2xl text-padrao">Tela de cadastro
         </span>
       </section>
       <section class="flex justify-center items-center p-7">
-        <section class="flex gap-10 max-sm:flex-col">
+        <section class="flex gap-10 max-lg:gap-2 max-md:flex-col max-lg:scale-90">
           <section class="flex flex-col gap-3">
             <section class="flex flex-col">
               <label for="nome" class="text-label">Nome</label>
               <input
-                class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                type="text" name="nome" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{13,40}$" required
-                placeholder="Pelo menos (Nome Sobrenome)" />
+                class=" h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
+                type="text" name="nome" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{7,40}$" required
+                placeholder="Pelo menos (Nome Sobrenome)" title="Deve conter pelo menos nome e sobrenome"/>
             </section>
             <section class="flex gap-5">
               <section class="flex flex-col">
@@ -68,21 +68,21 @@
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
                 type="text" name="cpf" id="cpf" maxlength="14" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" required
-                placeholder="XXX.XXX.XXX-XX" />
+                placeholder="XXX.XXX.XXX-XX" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" title="Seu CPF deve ter esse formato: XXX.XXX.XXX-XX"/>
             </section>
             <section class="flex flex-col">
               <label for="nomeMaterno" class="text-label">Nome Materno</label>
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                type="text" name="nomeMaterno" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{15,40}$" required
-                placeholder="Pelo menos (Nome Sobrenome)" />
+                type="text" name="nomeMaterno" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s]{8,40}$" required
+                placeholder="Pelo menos (Nome Sobrenome)" title="Deve conter pelo menos nome e sobrenome."/>
             </section>
             <section class="flex flex-col">
               <label for="telCelular" class="text-label">Telefone Celular</label>
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
                 type="text" name="telCelular" id="telCelular" pattern="^\([1-9]{2}\) 9[0-9]{4}-[0-9]{4}$" maxlength="15"
-                required placeholder="(XX) 9XXXX-XXXX" />
+                required placeholder="(XX) 9XXXX-XXXX" title="seu Telefone celular deve conter esse formato (XX) XXXXX-XXXX"/>
             </section>
           </section>
           <section class="flex flex-col gap-3">
@@ -91,13 +91,13 @@
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
                 type="text" name="telFixo" id="telFixo" pattern="^\([1-9]{2}\) [0-9]{4}-[0-9]{4}$" maxlength="14"
-                required placeholder="(XX) XXXX-XXXX" />
+                required placeholder="(XX) XXXX-XXXX" title="seu Telefone fixo deve conter esse formato (XX) XXXXX-XXXX"/>
             </section>
             <section class="flex flex-col">
               <label for="cep" class="text-label">CEP</label>
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                type="text" name="cep" id="cep" pattern="^[0-9]{8}$" required placeholder="XXXXXXXX" />
+                type="text" name="cep" id="cep" pattern="^[0-9]{8}$" required placeholder="XXXXXXXX" title="Deve conter 8 caracteres numericos"/>
             </section>
             <section class="flex flex-col">
               <label for="rua" class="text-label">Rua e N°</label>
@@ -136,20 +136,20 @@
               <label for="login" class="text-label">Login</label>
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                type="text" name="login" pattern="^[A-Za-z]{6}$" required placeholder="6 caracteres alfabeticos" />
+                type="text" name="login" pattern="^[A-Za-z]{6}$" required placeholder="6 caracteres alfabeticos" title="O login deve conter exatamente 6 caracteres alfabeticos"/>
             </section>
             <section class="flex flex-col">
               <label for="senha" class="text-label">Senha</label>
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
-                type="password" name="senha" id="senha" pattern="^.{8}$" required placeholder="Maximo 8 caracteres" />
+                type="password" name="senha" id="senha" pattern="^.{8}$" required placeholder="Maximo 8 caracteres" title="A senha deve conter no maximo 8 caracteres"/>
             </section>
             <section class="flex flex-col">
               <label for="comSenha" class="text-label">Confirmar senha</label>
               <input
                 class="h-10 w-80 pl-3 focus:outline-none border bg-slate-50 text-slate-700 border-slate-200 shadow-none invalid:outline-red-600 invalid:text-red-700 placeholder:text-slate-500 focus:invalid:border-red-600 focus:invalid:ring-red-600"
                 type="password" name="comSenha" id="comSenha" pattern="^.{8}$" required
-                placeholder="Repita sua senha" />
+                placeholder="Repita sua senha" title="A senha deve conter no maximo 8 caracteres"/>
             </section>
           </section>
         </section>
@@ -157,13 +157,13 @@
       <section class="flex-none gap-5 w-full p-3 flex justify-center items-center relative ">
         <section>
           <section>
-            <span class="absolute text-xs top-0 right-44 max-sm:right-3 text-padrao">Já é cliente?<br />
+            <span class="absolute text-xs top-0 right-44 max-md:right-3 text-padrao">Já é cliente?<br />
               <a class="text-red-700 font-semibold" href="paginaLoginTipo.html">Faça o login aqui.</a>
             </span>
           </section>
           <section>
             <span id="mensagemError"
-              class=" hidden absolute text-xs top-5 left-36 max-sm:left-3 text-padrao text-red-700 font-black animate-bounce">
+              class=" hidden absolute text-xs top-5 left-36 max-md:left-3 text-padrao text-red-700 font-black animate-bounce">
               Senhas não conferem
             </span>
           </section>
@@ -175,7 +175,7 @@
         </button>
         <button type="reset"
           class="font-semibold hover:bg-red-700 px-5 bg-modal-button hover:text-white transition-colors shadow-xl  h-10 border-red-700 border text-padrao ">
-          limpar
+          Limpar campos
         </button>
       </section>
     </form>

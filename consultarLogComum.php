@@ -35,8 +35,8 @@ if ($_SESSION["role"] != "comum") {
         </section>
     </header>
     <main class="p-5">
-        <div class="overflow-x-auto flex justify-center items-center">
-            <table class="w-3/4 bg-white rounded-md shadow-lg">
+        <div class="overflow-x-auto flex justify-start items-center">
+            <table class="w-full flex-none bg-white rounded-md shadow-lg">
                 <thead>
                     <tr>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">CPF</th>

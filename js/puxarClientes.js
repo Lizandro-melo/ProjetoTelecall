@@ -58,3 +58,4 @@ function excluirCliente(cpfClienteComum, nomeCliente) {
 }
 
 loadTable();
+

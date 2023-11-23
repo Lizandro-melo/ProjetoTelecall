@@ -20,7 +20,7 @@ function loadTable() {
                 tableBody.appendChild(row);
             });
         },
-        error: function (xhr, status, error) {
+        error: function ( error) {
             console.error('Erro ao buscar os dados dos logs comuns: ' + error);
         }
     });

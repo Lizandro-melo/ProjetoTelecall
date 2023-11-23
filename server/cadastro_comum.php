@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $queryCadastro = ("INSERT INTO telecall.cliente_comum (`cpf`, `nome`, `sexo`, `data_nascimento`, `nome_materno`, `telefone_celular`, `telefone_fixo`, `login`, `senha`) VALUES ('$cpf', '$nome', '$sexo', '$dataNascimento', '$nomeMaterno', '$telCelular', '$telFixo', '$login', '$senha')");
 
     // QUERY PARA PREENCHER O ENDEREÇO DO CLIENTE
-    $queryEndereco = ("INSERT INTO telecall.endereco (`cep`, `lagradouro`, `bairro`, `localidade`, `cpf`, `uf`, `complemento`) VALUES ('$cep', '$rua', '$bairro', '$localidade', '$cpf', '$uf', '$complemento')");
+    $queryEndereco = ("INSERT INTO telecall.endereco (`cep`, `logradouro`, `bairro`, `localidade`, `cpf`, `uf`, `complemento`) VALUES ('$cep', '$rua', '$bairro', '$localidade', '$cpf', '$uf', '$complemento')");
 
 
     // EXECUTA AS QUERYS 
